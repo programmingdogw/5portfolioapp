@@ -87,4 +87,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  protected
+
+  def address_params
+    params.require(:address).permit(:postal_code)
+  end
+
+
 end
