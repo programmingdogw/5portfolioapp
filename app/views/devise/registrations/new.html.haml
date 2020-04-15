@@ -1,0 +1,80 @@
+
+
+.pagecontainer
+  -# ヘッダー
+  = render 'header'
+
+  -# メイン
+  %main.pagecontainer__main  
+    %h1.mainh1 ユーザー情報登録
+    = form_for(@user, url: user_registration_path) do |f|
+      = render "devise/shared/error_messages", resource: @user
+      
+      .field
+        = f.label :ニックネーム, class:"field__formlabel"
+        %span.field__formspan 必須
+        %br/
+        = f.text_field :nickname, autofocus: true, class:"field__forminput"
+      .field
+        = f.label :姓（全角）, class:"field__formlabel"
+        %span.field__formspan 必須
+        %br/
+        = f.text_field :lastname, class:"field__forminput"
+      .field
+        = f.label :名（全角）, class:"field__formlabel"
+        %span.field__formspan 必須
+        %br/
+        = f.text_field :firstname, class:"field__forminput"
+      .field
+        = f.label :ふりがな（姓、全角、平仮名か片仮名）, class:"field__formlabel"
+        %span.field__formspan 必須
+        %br/
+        = f.text_field :lastname_kana, class:"field__forminput"
+      .field
+        = f.label :ふりがな（名、全角、平仮名か片仮名）, class:"field__formlabel"
+        %span.field__formspan 必須
+        %br/
+        = f.text_field :firstname_kana, class:"field__forminput"
+      .field
+        = f.label :email, class:"field__formlabel"
+        %span.field__formspan 必須
+        %br/
+        = f.email_field :email,  autocomplete: "email", class:"field__forminput"
+      .field
+        = f.label :password, class:"field__formlabel"
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} characters minimum)
+        %span.field__formspan 必須
+        %br/
+        = f.password_field :password, autocomplete: "new-password", class:"field__forminput"
+      .field
+        = f.label :password_confirmation, class:"field__formlabel"
+        %span.field__formspan 必須
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password", class:"field__forminput"
+      .field
+        = f.label :生年月日, class:"field__formlabel"
+        %span.field__formspan 必須
+        %br/
+        = f.date_select :birthdate, use_month_numbers: true, start_year: 1940, end_year:2020,  prompt:"--", class:"field__forminput"
+      .field
+        = f.label :電話番号（半角数字のみ）, class:"field__formlabel"
+        %span.field__formspan 必須
+        %br/
+        = f.text_field :telephone_number, class:"field__forminput"
+        %br/
+      .actions
+        = f.submit "Next", class:"nextbtn"
+    
+
+    %br
+
+
+  -# フッター
+  = render 'footer'
+
+
+  
+
+

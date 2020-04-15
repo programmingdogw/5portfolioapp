@@ -90,8 +90,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
 
+
+  # ユーザーのストロングパラメタ許可はアプリケーションコントローラーに記述してる
+
   def address_params
-    params.require(:address).permit(:postal_code)
+    params.require(:address).permit(:lastname, :firstname, :lastname_kana, :firstname_kana,:postal_code, :prefecture, :municipality, :street, :building, :telephone_number )
   end
 
 
