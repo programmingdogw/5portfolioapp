@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
 
-  root to: "home#index"
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+  }
 
-  devise_for :users
+  devise_scope :user do
+    get 'addresses', to: 'users/registrations#new_address'
+    post 'addresses', to: 'users/registrations#create_address'
+
+    get '/users/sign_out', to: 'devise/sessions#destroy'
+  end
+
+  root to: "home#index"
  
 end
