@@ -1,22 +1,23 @@
 = stylesheet_link_tag 'home_index'
 
 .pagecontainer
-  %h1 トップページ
-  - if user_signed_in?
-    %h2 ログインしています
-    = link_to "ログアウト", destroy_user_session_path, method: :delete
-    %p サンプル
-    %br
-    = link_to "マイページへ", user_path(@user), class: ""
-    %br
-    = link_to "商品出品ページへ", new_item_path, class: ""
-    %br
-    = link_to "商品一覧ページへ", items_path, class: ""
-    %br
-  - else
-    %h2 ログインしていません
-    = link_to "新規登録", new_user_registration_path
-    = link_to "ログイン", new_user_session_path
+  .pagecontainer__header
+    %h1 トップページ
+    - if user_signed_in?
+      %h2 ログインしています
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
+      %p サンプル
+      %br
+      = link_to "マイページへ", user_path(@user), class: ""
+      %br
+      = link_to "商品出品ページへ", new_item_path, class: ""
+      %br
+      = link_to "商品一覧ページへ", items_path, class: ""
+      %br
+    - else
+      %h2 ログインしていません
+      = link_to "新規登録", new_user_registration_path
+      = link_to "ログイン", new_user_session_path
 
   .tempdiv
     -if @item1 != nil
@@ -27,7 +28,7 @@
         %br 
         = "価格#{@item1.price}"
     -else
-      = image_tag 'pict/観葉植物.jpeg', class: 'product-image'
+      = image_tag 'noimage.png', class: 'product-image', :size =>'100x100'
   .tempdiv
     -if @item2 != nil
       = link_to item_path(@item2), class: "" do
@@ -37,7 +38,7 @@
         %br 
         = "価格#{@item2.price}"      
     -else
-      = image_tag 'pict/車.jpeg', class: 'product-image'
+      = image_tag 'noimage.png', class: 'product-image', :size =>'100x100'
   .temdiv
     -if @item3 != nil
       = link_to item_path(@item3), class: "" do
@@ -47,6 +48,6 @@
         %br 
         = "価格#{@item3.price}"
     -else
-      = image_tag 'banner.jpeg', class: 'product-image'
+      = image_tag 'noimage.png', class: 'product-image', :size =>'100x100'
 
 
