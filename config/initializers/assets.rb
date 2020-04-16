@@ -17,7 +17,7 @@ Rails.application.config.assets.precompile += %w( new_address.scss )
 Rails.application.config.assets.precompile += %w( create_address.scss )
 Rails.application.config.assets.precompile += %w( sessions_new.scss )
 
-Rails.application.config.assets.precompile += %w( experiment.scss )
+Rails.application.config.assets.precompile += %w( home.scss )
 
 Rails.application.config.assets.precompile += %w( users.scss )
 
