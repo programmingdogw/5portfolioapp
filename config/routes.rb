@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   
  
 
-  resources :experiment, only: [:index, :sample] do
+  resources :home, only: [:index] do
     #Ajaxで動くアクションのルートを作成
     collection do
       get 'get_category_children', defaults: { format: 'json' }
@@ -45,7 +45,7 @@ Rails.application.routes.draw do
   end
 
   
-  get 'unexpectederrors', to: 'experiment#unexpectederrors'
+  get 'unexpectederrors', to: 'home#unexpectederrors'
   root 'home#index'
 
 end
