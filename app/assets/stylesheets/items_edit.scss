@@ -1,0 +1,191 @@
+
+
+
+
+// 大枠
+.pagecontainer{
+  padding:0,0,250px; 
+  background-color:rgb(243, 240, 240);
+  
+  // ヘッダー
+    &__header{
+      text-align: center;
+      .logolink{
+        width:30%;
+        margin-left: 20%;
+        &__image{
+          width: 30%;
+          margin: auto;
+          padding-right:150px ;
+        }
+      }
+    }
+
+
+    // メインコンテンツ
+
+    &__main{
+      background-color: white;
+      margin:auto;
+      text-align: center;
+      width: 80%;
+      padding-bottom:50px ;
+
+      // フラッシュメッセージ部分
+      .flashbox{
+        font-size: large;
+        color: red;
+      }
+      
+      // 保存済み画像一覧部分
+      .preservedimages{
+        background-color:  rgb(220, 240, 253);
+        width: 540px;
+        margin: auto;
+        .preserved-image{
+          margin-right: 20px;
+        }
+        .preserved-remove{
+          background-color:black;
+          color: white;
+          opacity: 0.5;
+          margin-left: -90px;
+
+        }
+      }
+
+
+      // フォーム部分
+      .field{
+        width: 100%;
+        padding-top:30px ;
+        position: relative;
+        min-width: 768px;
+        #image-box{
+          #previews{
+            background-color: rgb(250, 243, 243);
+            width: 540px;
+            margin: auto;
+          }
+          .js-file_group{
+            width: 46%;
+            min-width: 540px;
+            height:25px;
+            border-radius: 2%;
+            border: solid 1px lightgray;
+            background-color: rgb(220, 240, 253);
+            margin: auto;
+            margin-top:4px ;
+          }
+    
+        }
+        
+        &__formlabel{
+          position: absolute;
+          left: 28%;
+        }
+        &__formspan{
+          background-color:lightblue;
+          color: white;
+          position: absolute;
+          width: 40px;
+          right: 28%;
+          border-radius: 10%;
+        }
+        &__forminput{
+          width: 46%;
+          height:43px;
+          border-radius: 4%;
+          border: solid 2px lightgray;
+          margin-top:5px ;
+        }
+        &__textarea{
+          width: 46%;
+          height:143px;
+          margin-top:5px ;
+        }
+
+        // セレクトフォーム部分
+        .decoratedselect{          
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          width: 46%;
+          height:43px;
+          margin-top: 5px;
+          border-radius: 4%;
+          background-color: white;
+          border: solid 2px lightgray;
+          background-image: url(./images/icon_arrow.svg);
+          background-repeat: no-repeat;
+          background-size: 12px 10px;
+          background-position: right 10px center;
+        }
+        .decoratedchevron{
+          margin-left: -30px;
+        }
+      }
+
+      // カテゴリ部分
+      .listing-form-box{
+        width: 100%;
+        padding-top:30px ;
+        position: relative;
+        min-width: 768px;
+        .listing-default__label{
+          position: absolute;
+          left: 28%;
+        }
+        .listing-default--require{
+          color:red;
+          background-color:lightblue;
+          color: white;
+          position: absolute;
+          width: 40px;
+          right: 28%;
+          border-radius: 10%;
+        }
+      }
+      
+      
+
+      
+      .nextbtn{
+        margin-top: 30px;
+        background-color: skyblue;
+        color: white;
+        width:130px;
+        height: 50px;
+        border-radius: 10px;
+      }
+      #itembtn{
+        margin-top: 30px;
+        background-color: skyblue;
+        color: white;
+        width:130px;
+        height: 50px;
+        border-radius: 10px;
+      }
+    }
+
+
+
+    // フッター
+    &__footer{
+      text-align: center;
+      .footerbox{
+        padding-top: 20px;
+        margin:20px;
+        &__abouts{
+          margin-left: 10px;
+          font-size: 12px;
+        }
+      }
+      .footerlogo{
+        width:250px;
+        height: 100px;
+      }
+    }
+}
+
+

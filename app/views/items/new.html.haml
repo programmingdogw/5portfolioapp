@@ -1,0 +1,131 @@
+= stylesheet_link_tag 'items_new'
+
+.pagecontainer
+  -# ヘッダー
+  %header.pagecontainer__header
+    =link_to image_tag('banner.jpeg', alt: "ロゴ画像", class:"logolink__image"), root_path, class: "logolink"
+
+
+
+  %main.pagecontainer__main
+    .flashbox
+      = flash[:itemnotice]  
+    %h1.mainh1 商品登録ページ
+    = form_for(@item, url: items_path) do |f|
+
+      .field
+        = f.label :出品画像（１０枚まで）, class:"field__formlabel"
+        %span.field__formspan 必須
+        %br/
+        #image-box
+          #previews
+            - if @item.persisted?
+              - @item.images.each_with_index do |images, i|
+                = image_tag images.image.url, data: { index: i }, width: "100", height: '100'
+          = f.fields_for :images do |image|
+            .js-file_group{"data-index" => "#{image.index}"}
+              %i.fas.fa-camera 画像
+              = image.file_field :image, class:"js-file"
+              %strong.js-remove 削除 
+              - if @item.persisted?
+                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+
+          - if @item.persisted?
+            .js-file_group{"data-index" => "#{@item.images.count}"}
+              =file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class:'js-file'
+              .js-remove 削除
+
+
+
+      .field
+        = f.label :商品名, class:"field__formlabel"
+        %span.field__formspan 必須
+        %br/
+        = f.text_field :name, class:"field__forminput", placeholder: "40文字まで"
+      
+      .field
+        = f.label :商品説明, class:"field__formlabel"
+        %span.field__formspan 必須
+        %br/
+        = f.text_area :description, class:"field__textarea", size:'20x10', placeholder: "1000文字まで"
+
+      .field
+        = f.label :ブランド, class:"field__formlabel"
+        %span.field__formspan 任意
+        %br/
+        = f.text_field :brand, class:"field__forminput", :placeholder => "例)シャネル"
+
+
+      .listing-form-box
+        .listing-product-detail__category
+          = f.label 'カテゴリー', class: 'listing-default__label'
+          %span.listing-default--require 必須
+          .listing-select-wrapper            
+            = f.select :parentcategory, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+              
+  
+
+
+      .field
+        = f.label :発送元の地域, class:"field__formlabel"
+        = f.select :delivery_from, Item.delivery_froms.keys, prompt: '---', class:"decoratedselect"
+        %span.field__formspan 必須
+        %br/
+        
+
+      .field
+        = f.label :商品の状態, class:"field__formlabel"
+        %span.field__formspan 必須
+        %br/
+        = f.collection_select :condition_id, Condition.all, :id, :name, {:include_blank => true}, class:"decoratedselect"
+        %i.fas.fa-chevron-down.decoratedchevron
+
+      .field
+        = f.label :商品のサイズ, class:"field__formlabel"
+        %span.field__formspan 必須
+        %br/
+        = f.collection_select :size_id, Size.all, :id, :name, {:include_blank => true}, class:"decoratedselect"
+        %i.fas.fa-chevron-down.decoratedchevron
+
+      .field
+        = f.label :配送料の負担, class:"field__formlabel"
+        %span.field__formspan 必須
+        %br/
+        = f.collection_select :deliverycost_id, Deliverycost.all, :id, :name, {:include_blank => true}, class:"decoratedselect"
+        %i.fas.fa-chevron-down.decoratedchevron
+
+      .field
+        = f.label :配送の方法, class:"field__formlabel"
+        %span.field__formspan 必須
+        %br/
+        = f.collection_select :deliveryway_id, Deliveryway.all, :id, :name, {:include_blank => true}, class:"decoratedselect"
+        %i.fas.fa-chevron-down.decoratedchevron
+
+      .field
+        = f.label :発送までの日数, class:"field__formlabel"
+        %span.field__formspan 必須
+        %br/
+        = f.collection_select :deliverytime_id, Deliverytime.all, :id, :name, {:include_blank => true}, class:"decoratedselect"
+        %i.fas.fa-chevron-down.decoratedchevron
+      
+      .field
+        = f.label :販売価格（￥３００〜￥９９９９９９９）, class:"field__formlabel"
+        %span.field__formspan 必須
+        %br/
+        = f.number_field :price, class:"field__forminput"
+      
+      .field
+        = f.hidden_field :user_id, :value => current_user.id
+        = f.hidden_field :auction, :value => true
+        = f.hidden_field :dealing, :value => false
+        = f.hidden_field :sold, :value => false
+      
+        
+          
+  
+      
+      %br/
+      .actions
+        = f.submit "出品する", id:"itembtn"
+  -# フッター
+  = render partial:'devise/registrations/footer'

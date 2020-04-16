@@ -31,5 +31,10 @@ class HomeController < ApplicationController
 
   end
 
+  def unexpectederrors
+    # 予期せぬ動作が起きた場合に飛ぶページ用
+    # エラーハンドリングの遷移先として置いてる
+  end
+
   
 end

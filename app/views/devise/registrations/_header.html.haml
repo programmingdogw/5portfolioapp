@@ -1,0 +1,16 @@
+%header.pagecontainer__header
+  =link_to image_tag('banner.jpeg', alt: "ロゴ画像", class:"logolink__image"), root_path, class: "logolink"
+  %nav.progressbar
+    %ul.progressbar__ul
+      %li.userprogresslist
+        ユーザー登録
+        .userprogresslist__status
+        .userprogresslist__bar
+      %li.addressprogresslist
+        お届け先住所入力
+        .addressprogresslist__status
+        .addressprogresslist__bar
+      %li.completeprogresslist
+        完了
+        .completeprogresslist__status
+        .completeprogresslist__bar

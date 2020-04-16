@@ -1,17 +1,37 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+= stylesheet_link_tag 'sessions_new'
+
+.pagecontainer
+  -# ヘッダー
+  %header.pagecontainer__header
+    =link_to image_tag('banner.jpeg', alt: "ロゴ画像", class:"logolink__image"), root_path, class: "logolink"
+
+  -# メイン
+  %main.pagecontainer__main
+    %h1.signupnav アカウントをお持ちでない方はこちら
+    .signuplink
+      =link_to "新規登録へ", new_user_registration_path, class:'signuplink__btn'
+
+
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        = f.label :email, class:"field__formlabel"
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", class:"field__forminput"
+      .field
+        = f.label :password, class:"field__formlabel"
+        %br/
+        = f.password_field :password, autocomplete: "current-password", class:"field__forminput"
+      - if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me
+          = f.label :remember_me
+      .actions
+        = f.submit "Log in", class:'loginbtn'
+
+    -# = render "devise/shared/links" 今後使う可能性もあるのでコメントアウトして残している メール送付する機能
+
+    
+
+  -# フッター
+  = render partial:'devise/registrations/footer'
+

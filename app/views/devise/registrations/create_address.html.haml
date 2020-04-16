@@ -1,1 +1,19 @@
-登録後の遷移先仮置き
+= stylesheet_link_tag 'create_address'
+
+.pagecontainer
+  -# ヘッダー
+  = render 'header'
+
+  -# メイン
+  %main.pagecontainer__main
+    %h1.mainh1 会員登録完了
+    .completebox
+      %br おめでとうございます!!
+      %br 会員登録が完了しました。
+      %br
+      = link_to "はじめる", root_path, class:"completebox__linkbtn"
+
+  -# フッター
+  = render 'footer'
+  
+

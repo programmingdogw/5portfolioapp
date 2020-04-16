@@ -2,7 +2,48 @@
 - if user_signed_in?
   %h2 ログインしています
   = link_to "ログアウト", destroy_user_session_path, method: :delete
+  %p サンプル
+  %br
+  = link_to "マイページへ", user_path(@user), class: ""
+  %br
+  = link_to "商品出品ページへ", new_item_path, class: ""
+  %br
+  = link_to "商品一覧ページへ", items_path, class: ""
+  %br
 - else
   %h2 ログインしていません
   = link_to "新規登録", new_user_registration_path
   = link_to "ログイン", new_user_session_path
+
+.tempdiv
+  -if @item1 != nil
+    = link_to item_path(@item1), class: "" do
+      = image_tag @item1.images.first.image.url,  alt: '商品が投稿されていません'
+      %br
+      = "商品名#{@item1.name}"
+      %br 
+      = "価格#{@item1.price}"
+  -else
+    = image_tag 'pict/観葉植物.jpeg', class: 'product-image'
+.tempdiv
+  -if @item2 != nil
+    = link_to item_path(@item2), class: "" do
+      = image_tag @item2.images.first.image.url,  alt: '商品が投稿されていません'
+      %br  
+      = "商品名#{@item2.name}"
+      %br 
+      = "価格#{@item2.price}"      
+  -else
+    = image_tag 'pict/車.jpeg', class: 'product-image'
+.temdiv
+  -if @item3 != nil
+    = link_to item_path(@item3), class: "" do
+      = image_tag @item3.images.first.image.url,  alt: '商品が投稿されていません' 
+      %br  
+      = "商品名#{@item3.name}"
+      %br 
+      = "価格#{@item3.price}"
+  -else
+    = image_tag 'banner.jpeg', class: 'product-image'
+
+
