@@ -1,8 +1,9 @@
+= stylesheet_link_tag 'items_new'
 
 .pagecontainer
   -# ヘッダー
-  -# %header.pagecontainer__header
-  -#   =link_to image_tag('logo/logo.png', alt: "ロゴ画像", class:"logolink__image"), root_path, class: "logolink"
+  %header.pagecontainer__header
+    =link_to image_tag('logo/logo.png', alt: "ロゴ画像", class:"logolink__image"), root_path, class: "logolink"
 
 
 
@@ -127,4 +128,4 @@
       .actions
         = f.submit "出品する", id:"itembtn"
   -# フッター
-  -# = render partial:'devise/registrations/footer'
+  = render partial:'devise/registrations/footer'
