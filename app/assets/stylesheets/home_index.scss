@@ -8,9 +8,12 @@
   // ヘッダー
     &__header{
       text-align: center;
-      display:flex;
-      justify-content: space-around;
-      
+      .firststage{
+        background-color: pink;
+      }
+      .secondstage{
+        background-color: lightgreen;
+      }
     }
 
 

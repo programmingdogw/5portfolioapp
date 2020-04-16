@@ -4,8 +4,7 @@
   -# ヘッダー
   = render 'topheader'
 
-
--# メインまだ整形は手つけてない
+  -# メイン部分まだ整形は手付かず
   .tempdiv
     -if @item1 != nil
       = link_to item_path(@item1), class: "" do
@@ -37,4 +36,6 @@
     -else
       = image_tag 'noimage.png', class: 'product-image', :size =>'100x100'
 
+  -# フッター
+  = render 'topfooter'
 
