@@ -14,12 +14,7 @@ Rails.application.routes.draw do
     get '/users/sign_out', to: 'devise/sessions#destroy'
   end
 
-  resources :home do
-    collection do
-      get 'get_category_children', defaults: { format: 'json' }
-      get 'get_category_grandchildren', defaults: { format: 'json' }
-    end
-  end
+  
 
   resources :users, except: [:index, :new] 
   
@@ -44,15 +39,14 @@ Rails.application.routes.draw do
  
 
   resources :home, only: [:index] do
-    #Ajaxで動くアクションのルートを作成
-    collection do
-      get 'get_category_children', defaults: { format: 'json' }
-      get 'get_category_grandchildren', defaults: { format: 'json' }
-    end
+    
   end
 
   
   get 'unexpectederrors', to: 'home#unexpectederrors'
   root 'home#index'
+
+  # homeコントローラーのajax通信
+  get 'get_category_children', to: 'home#get_category_children'
 
 end

@@ -1,8 +1,8 @@
 $(document).on('turbolinks:load', ()=> {
   
   // 親カテゴリー選択後のイベント
-  $('#toppage-parentcategory').on('click', function(){
-    var parentCategory = document.getElementById('toppage-parentcategory').value; //選択された親カテゴリーの名前を取得
+  $('.toppage-parentcategory').on('click', function(){
+    var parentCategory = $('.toppage-parentcategory').data('parentname')
     if (parentCategory != "---"){ //親カテゴリーが初期値でないことを確認
       $.ajax({
         url: 'get_category_children',
@@ -11,7 +11,7 @@ $(document).on('turbolinks:load', ()=> {
         dataType: 'json'
       })
       .done(function(children){
-        console.log("あああ")
+        alert('通信成功');
       })
       .fail(function(){
         alert('カテゴリー取得に失敗しましたよーーー');
