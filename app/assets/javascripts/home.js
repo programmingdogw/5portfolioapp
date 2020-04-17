@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', ()=> {
 
   function appendList(category){
-    var html = `<li class="toppage-childcategory toppage-grandchildcategory" data-category="${category.id}">${category.name}</li>`;
+    var html = `<li class="toppage-childcategory toppage-grandchildcategory" data-category="${category.id}"><a href="#">${category.name}</a></li>`;
     return html;
   }
 
