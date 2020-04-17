@@ -6,11 +6,13 @@
   .secondstage
     .secondstage__left
       .topmenu カテゴリ
-      %ul
-        - @category_parent_array.each do |parentcategory|
-          %li.toppage-parentcategory{ data: { parentname: parentcategory } }
-            = parentcategory
-
+      .categorylist-wrapper
+        %ul.parentul
+          - @category_parent_array.each do |parentcategory|
+            %li.toppage-parentcategory{ data: { parentname: parentcategory } }
+              = parentcategory
+        %ul.childrenul
+        %ul.grandchildrenul
 
     .secondstage__right
       - if user_signed_in?
