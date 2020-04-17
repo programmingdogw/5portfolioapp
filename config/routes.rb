@@ -48,5 +48,5 @@ Rails.application.routes.draw do
   # homeコントローラーのajax通信
   get 'get_category_children', to: 'home#get_category_children'
   
-  resources :category, only: [:index, :show]
+  resources :categories, only: [:index, :show]
 end
