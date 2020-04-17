@@ -12,7 +12,19 @@
         background-color: pink;
       }
       .secondstage{
+        display:flex;
+        justify-content: space-between;
         background-color: lightgreen;
+        &__left{
+          background-color: blue;
+          .topmenu{
+            color: white;
+          }
+        }
+        &__right{
+          display:flex;
+          background-color: red;
+        }
       }
     }
 

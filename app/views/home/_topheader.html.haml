@@ -2,15 +2,21 @@
 
   .firststage
     %p 仮置き。一段目にはよくありがちなロゴと検索フィールドの予定。
+
   .secondstage
-    - if user_signed_in?
-      = link_to "ログアウト", destroy_user_session_path, method: :delete
-      = link_to "マイページへ", user_path(@user), class: ""
-      %br
-      = link_to "商品出品ページへ", new_item_path, class: ""
-      %br
-      = link_to "商品一覧ページへ", items_path, class: ""
-      %br
-    - else
-      = link_to "新規登録", new_user_registration_path
-      = link_to "ログイン", new_user_session_path
+    .secondstage__left
+      .topmenu カテゴリ
+      
+
+    .secondstage__right
+      - if user_signed_in?
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
+        = link_to "マイページへ", user_path(@user), class: ""
+        %br
+        = link_to "商品出品ページへ", new_item_path, class: ""
+        %br
+        = link_to "商品一覧ページへ", items_path, class: ""
+        %br
+      - else
+        = link_to "新規登録", new_user_registration_path
+        = link_to "ログイン", new_user_session_path
