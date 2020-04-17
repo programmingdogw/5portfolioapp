@@ -7,8 +7,9 @@
     .secondstage__left
       .topmenu カテゴリ
       - @category_parent_array.each do |parentcategory|
-        %li 
-          = parentcategory
+        %ul
+          %li#toppage-parentcategory
+            = parentcategory
 
 
     .secondstage__right
