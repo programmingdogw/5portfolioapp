@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   
 
+  
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -38,9 +39,7 @@ Rails.application.routes.draw do
   
  
 
-  resources :home, only: [:index] do
-    
-  end
+  resources :home, only: [:index] 
 
   
   get 'unexpectederrors', to: 'home#unexpectederrors'
@@ -48,5 +47,6 @@ Rails.application.routes.draw do
 
   # homeコントローラーのajax通信
   get 'get_category_children', to: 'home#get_category_children'
-
+  
+  resources :category, only: [:index, :show]
 end
