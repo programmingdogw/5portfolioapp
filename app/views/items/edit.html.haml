@@ -1,5 +1,4 @@
 
-= stylesheet_link_tag 'items_edit'
 
 .pagecontainer
   -# ヘッダー
@@ -124,3 +123,11 @@
         = f.submit "更新する", id:"itembtn"
   -# フッター
   = render partial:'devise/registrations/footer'
+
+
+
+= stylesheet_link_tag 'items_edit'
+= javascript_include_tag "edit_items.js", 'data-turbolinks-track': 'reload'
+
+
+  

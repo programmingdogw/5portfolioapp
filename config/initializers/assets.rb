@@ -24,3 +24,8 @@ Rails.application.config.assets.precompile += %w( users.scss )
 Rails.application.config.assets.precompile += %w( items_new.scss )
 
 Rails.application.config.assets.precompile += %w( items_edit.scss )
+
+
+# js側
+Rails.application.config.assets.precompile += %w( items.js )
+Rails.application.config.assets.precompile += %w( edit_items.js )
