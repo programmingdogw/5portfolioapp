@@ -26,6 +26,7 @@ $(document).on('turbolinks:load', ()=> {
       })
       .done(function(children){
         console.log(children)
+        $('.toppage-childcategory').remove(); //親が変更された時、子以下を削除する        
         var insertHTML = '';
         children.forEach(function(child){
           insertHTML += appendList(child);
