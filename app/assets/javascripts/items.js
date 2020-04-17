@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', ()=> {
-  console.log("出品ページです")
+
   // 編集ページ用のフォームクリア
   $('.js-file_group_wrapper').remove()
 
