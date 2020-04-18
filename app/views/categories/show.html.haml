@@ -1,11 +1,11 @@
 %p カテゴリーのshow
 
 
-%p 子カテゴリがある場合こっからさらにリンク飛ばす
+%p 孫カテゴリがある場合こっからさらにリンク飛ばす
 - @categories.each do |category|
  = category.name
 
-%p 商品一覧（子カテゴリ選択時）
+%p 商品一覧
 - @childitems.each do |item|
  = item.name
  = image_tag item.images.first.image.url
