@@ -1,17 +1,20 @@
 = stylesheet_link_tag 'categories_index'
 
-%h1 Categories#index
+Categories#index
 
 -# 全カテゴリ
 -# - @categories.each do |category|
 -#  = category.name
 
 
-
-- @parentcategories.each do |parentcategory|
- %p 親カテゴリ
- = parentcategory.name 
- %p 子カテゴリ
- - parentcategory.children.each do |childcategory|
-  =childcategory.name
-  %br
+.parent
+  - @parentcategories.each do |parentcategory|
+    = parentcategory.name 
+    .child 
+      - @childrencategories = parentcategory.children
+      - @childrencategories.each do |childcategory|
+        =childcategory.name
+        .grandchild
+          - @grandchildrencategories = childcategory.children
+          - @grandchildrencategories.each do |grandchildcategory|  
+            =grandchildcategory.name
