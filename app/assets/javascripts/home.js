@@ -3,9 +3,10 @@ $(document).on('turbolinks:load', ()=> {
 
 
   function appendList(category){
-    var html = `<li class="toppage-childcategory toppage-grandchildcategory" data-category="${category.id}"><a href="categories/${category.id}">${category.name}</a></li>`;
+    var html = `<li class="toppage-childcategory" data-category="${category.id}"><a href="categories/${category.id}">${category.name}</a></li>`;
     return html;
   }
+  
 
   function appendChildrenList(insertHTML){
   var childListHtml = '';
@@ -48,7 +49,8 @@ $(document).on('turbolinks:load', ()=> {
       })
       .done(function(children){
         console.log(children)
-        $('.toppage-childcategory').remove(); //親が変更された時、子以下を削除する        
+        $('.toppage-childcategory').remove(); //親が変更された時、子以下を削除する
+        $('.toppage-grandchildcategory').remove(); //親が変更された時、子以下を削除する        
         var insertHTML = '';
         children.forEach(function(child){
           insertHTML += appendList(child);
@@ -60,6 +62,15 @@ $(document).on('turbolinks:load', ()=> {
       })
     
   });
+
+
+  // 子カテゴリー選択後のイベント
+  $('.childrenul').on('mouseenter', function(){
+    $('.toppage-childcategory').on('mouseenter', function(){
+      console.log("あああ")
+    });    
+  });
+
 
 
   // 大外
