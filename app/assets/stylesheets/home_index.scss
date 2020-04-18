@@ -1,5 +1,4 @@
 
-
 // 大枠
 .pagecontainer{
   padding:50px;
@@ -23,6 +22,10 @@
           .categorylist-wrapper{
             display:flex;
             background-color: purple;
+            .parentul{
+              background-color: white;
+              visibility: hidden;
+            }
           }
           
         }
