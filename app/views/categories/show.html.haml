@@ -8,3 +8,4 @@
 %p 商品一覧（子カテゴリ選択時）
 - @items.each do |item|
  = item.name
+ = image_tag item.images.first.image.url
