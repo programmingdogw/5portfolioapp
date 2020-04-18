@@ -14,6 +14,7 @@ Categories#index
       - @childrencategories = parentcategory.children
       - @childrencategories.each do |childcategory|
         =childcategory.name
+        = link_to "リンクだよ", category_path(childcategory.id)
         .grandchild
           - @grandchildrencategories = childcategory.children
           - @grandchildrencategories.each do |grandchildcategory|  
