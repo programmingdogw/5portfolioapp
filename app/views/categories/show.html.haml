@@ -6,6 +6,10 @@
  = category.name
 
 %p 商品一覧（子カテゴリ選択時）
-- @items.each do |item|
+- @childitems.each do |item|
+ = item.name
+ = image_tag item.images.first.image.url
+
+- @grandchilditems.each do |item|
  = item.name
  = image_tag item.images.first.image.url

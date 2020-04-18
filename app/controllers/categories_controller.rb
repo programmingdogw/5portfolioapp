@@ -8,7 +8,8 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @categories = @category.children
-    @items = Item.where(childcategory:@category.id)
+    @childitems = Item.where(childcategory:@category.id)
+    @grandchilditems = Item.where(category_id:@category.id)
   end
 
 end
