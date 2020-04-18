@@ -13,10 +13,8 @@ Categories#index
     .child 
       - @childrencategories = parentcategory.children
       - @childrencategories.each do |childcategory|
-        =childcategory.name
-        = link_to "子リンクだよ", category_path(childcategory.id)
+        = link_to "#{childcategory.name}", category_path(childcategory.id)
         .grandchild
           - @grandchildrencategories = childcategory.children
           - @grandchildrencategories.each do |grandchildcategory|  
-            =grandchildcategory.name
-            = link_to  "孫リンクだよ", category_path(grandchildcategory.id)
+            = link_to  "#{grandchildcategory.name}", category_path(grandchildcategory.id)
