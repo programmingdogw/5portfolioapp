@@ -1,1 +1,15 @@
-カテゴリーのshow
+%p カテゴリーのshow
+
+
+%p 孫カテゴリがある場合こっからさらにリンク飛ばす
+- @categories.each do |category|
+ = category.name
+
+%p 商品一覧
+- @childitems.each do |item|
+ = item.name
+ = image_tag item.images.first.image.url
+
+- @grandchilditems.each do |item|
+ = item.name
+ = image_tag item.images.first.image.url

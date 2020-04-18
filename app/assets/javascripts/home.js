@@ -1,7 +1,9 @@
 $(document).on('turbolinks:load', ()=> {
+// 大外
+
 
   function appendList(category){
-    var html = `<li class="toppage-childcategory toppage-grandchildcategory" data-category="${category.id}"><a href="#">${category.name}</a></li>`;
+    var html = `<li class="toppage-childcategory toppage-grandchildcategory" data-category="${category.id}"><a href="categories/${category.id}">${category.name}</a></li>`;
     return html;
   }
 
@@ -13,9 +15,29 @@ $(document).on('turbolinks:load', ()=> {
   $('.childrenul').append(childListHtml);
   }
   
-  
+
+  // マウスエンターで見えるように
+  $('.topmenu').on('mouseenter', function(){
+    $('.parentul').css('visibility','visible');
+  });
+
+  $('.parentul').on('mouseenter', function(){
+    $('.childrenul').css('visibility','visible');
+  });
+
+  $('.childrenul').on('mouseenter', function(){
+    $('.grandchildrenul').css('visibility','visible');
+  });
+
+  // カーソルが外に出た時のイベント
+  $('.categorylist-wrapper').on('mouseleave', function(){
+    $('.parentul').css('visibility','hidden');
+    $('.childrenul').css('visibility','hidden');
+    $('.grandchildrentul').css('visibility','hidden');
+  });
+
   // 親カテゴリー選択後のイベント
-  $('.toppage-parentcategory').on('click', function(){
+  $('.toppage-parentcategory').on('mouseenter', function(){
     var parentCategory = $(this).data('parentname')
 
       $.ajax({
@@ -40,6 +62,7 @@ $(document).on('turbolinks:load', ()=> {
   });
 
 
+  // 大外
 });
 
 
@@ -60,3 +83,5 @@ $(document).on('turbolinks:load', ()=> {
 //                     </div>`;
 //   $('.listing-product-detail__category').append(childSelectHtml);
 // }
+
+// $('要素').css('プロパティ','値');
