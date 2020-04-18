@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
  
 
+  
 
-
+  
   devise_for :users, controllers: {
     registrations: 'users/registrations',
   }
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
 
     get '/users/sign_out', to: 'devise/sessions#destroy'
   end
+
+  
 
   resources :users, except: [:index, :new] 
   
@@ -36,16 +39,14 @@ Rails.application.routes.draw do
   
  
 
-  resources :home, only: [:index] do
-    #Ajaxで動くアクションのルートを作成
-    collection do
-      get 'get_category_children', defaults: { format: 'json' }
-      get 'get_category_grandchildren', defaults: { format: 'json' }
-    end
-  end
+  resources :home, only: [:index] 
 
   
   get 'unexpectederrors', to: 'home#unexpectederrors'
   root 'home#index'
 
+  # homeコントローラーのajax通信
+  get 'get_category_children', to: 'home#get_category_children'
+  
+  resources :categories, only: [:index, :show]
 end

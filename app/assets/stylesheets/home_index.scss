@@ -1,0 +1,57 @@
+
+
+// 大枠
+.pagecontainer{
+  padding:50px;
+  background-color:lightblue;
+  
+  // ヘッダー
+    &__header{
+      text-align: center;
+      .firststage{
+        background-color: pink;
+      }
+      .secondstage{
+        display:flex;
+        justify-content: space-between;
+        background-color: lightgreen;
+        &__left{
+          background-color: blue;
+          .topmenu{
+            color: red;
+          }
+          .categorylist-wrapper{
+            display:flex;
+            background-color: purple;
+          }
+          
+        }
+        &__right{
+          display:flex;
+          background-color: red;
+        }
+      }
+    }
+
+
+
+
+    // フッター
+    &__footer{
+      text-align: center;
+      .footerbox{
+        padding-top: 20px;
+        margin:20px;
+        &__abouts{
+          margin-left: 10px;
+          font-size: 12px;
+        }
+      }
+      .footerlogo{
+        width:250px;
+        height: 100px;
+      }
+    }
+}
+
+
