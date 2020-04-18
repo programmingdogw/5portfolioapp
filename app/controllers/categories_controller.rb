@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @categories = @category.children
+    @items = Item.where(childcategory:@category.id)
   end
 
 end
