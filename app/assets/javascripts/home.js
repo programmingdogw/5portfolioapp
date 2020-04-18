@@ -15,7 +15,7 @@ $(document).on('turbolinks:load', ()=> {
   
   
   // 親カテゴリー選択後のイベント
-  $('.toppage-parentcategory').on('click', function(){
+  $('.toppage-parentcategory').on('mouseenter', function(){
     var parentCategory = $(this).data('parentname')
 
       $.ajax({
