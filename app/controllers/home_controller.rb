@@ -1,5 +1,9 @@
 class HomeController < ApplicationController
 
+  def search
+    
+  end
+
   def index
     @user = current_user
     
