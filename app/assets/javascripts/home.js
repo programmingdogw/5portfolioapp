@@ -51,7 +51,7 @@ $(document).on('turbolinks:load', ()=> {
   $('.categorylist-wrapper').on('mouseleave', function(){
     $('.parentul').css('visibility','hidden');
     $('.childrenul').css('visibility','hidden');
-    $('.grandchildrentul').css('visibility','hidden');
+    $('.grandchildrenul').css('visibility','hidden');
   });
 
   // 親カテゴリー選択後のイベント
