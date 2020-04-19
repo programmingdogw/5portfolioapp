@@ -2,11 +2,19 @@ $(document).on('turbolinks:load', ()=> {
 // 大外
 
 
+  // 子カテゴリのリンク作成
   function appendList(category){
-    var html = `<li class="toppage-childcategory toppage-grandchildcategory" data-category="${category.id}"><a href="categories/${category.id}">${category.name}</a></li>`;
+    var html = `<li class="toppage-childcategory" data-category="${category.id}"><a href="categories/${category.id}">${category.name}</a></li>`;
+    return html;
+  }
+  
+  // 孫カテゴリのリンク作成
+  function appendgrandchildList(category){
+    var html = `<li class="toppage-grandchildcategory" data-category="${category.id}"><a href="categories/${category.id}">${category.name}</a></li>`;
     return html;
   }
 
+  // 子カテゴリのアペンド
   function appendChildrenList(insertHTML){
   var childListHtml = '';
   childListHtml = `
@@ -14,6 +22,16 @@ $(document).on('turbolinks:load', ()=> {
                   `;
   $('.childrenul').append(childListHtml);
   }
+
+
+  // 孫カテゴリのアペンド
+  function appendgrandChildrenList(insertHTML){
+    var grandchildListHtml = '';
+    grandchildListHtml = `
+                    ${insertHTML}                                                 
+                    `;
+    $('.grandchildrenul').append(grandchildListHtml);
+    }
   
 
   // マウスエンターで見えるように
@@ -33,7 +51,7 @@ $(document).on('turbolinks:load', ()=> {
   $('.categorylist-wrapper').on('mouseleave', function(){
     $('.parentul').css('visibility','hidden');
     $('.childrenul').css('visibility','hidden');
-    $('.grandchildrentul').css('visibility','hidden');
+    $('.grandchildrenul').css('visibility','hidden');
   });
 
   // 親カテゴリー選択後のイベント
@@ -48,7 +66,8 @@ $(document).on('turbolinks:load', ()=> {
       })
       .done(function(children){
         console.log(children)
-        $('.toppage-childcategory').remove(); //親が変更された時、子以下を削除する        
+        $('.toppage-childcategory').remove(); //親が変更された時、子以下を削除する
+        $('.toppage-grandchildcategory').remove(); //親が変更された時、子以下を削除する        
         var insertHTML = '';
         children.forEach(function(child){
           insertHTML += appendList(child);
@@ -60,6 +79,37 @@ $(document).on('turbolinks:load', ()=> {
       })
     
   });
+
+
+  // 子カテゴリー選択後のイベント
+  $('.childrenul').on('mouseenter', function(){
+    $('.toppage-childcategory').on('mouseenter', function(){
+      var childId = $(this).data('category'); //選択された子カテゴリーのidを取得
+      $.ajax({
+        url: 'get_category_grandchildren',
+        type: 'GET',
+        data: { child_id: childId },
+        dataType: 'json'
+      })
+      .done(function(grandchildren){
+        
+          $('.toppage-grandchildcategory').remove(); //子が変更された時、孫以下を削除する
+          var insertHTML = '';
+          grandchildren.forEach(function(grandchild){
+            insertHTML += appendgrandchildList(grandchild);
+          });
+          appendgrandChildrenList(insertHTML);
+        
+      })
+      .fail(function(){
+        alert('カテゴリー取得に失敗しました');
+      })
+    
+
+
+    });    
+  });
+
 
 
   // 大外
@@ -85,3 +135,28 @@ $(document).on('turbolinks:load', ()=> {
 // }
 
 // $('要素').css('プロパティ','値');
+
+// var childId = $('#child_category option:selected').data('category'); //選択された子カテゴリーのidを取得
+//     if (childId != "---"){ //子カテゴリーが初期値でないことを確認
+//       $.ajax({
+//         url: 'get_category_grandchildren',
+//         type: 'GET',
+//         data: { child_id: childId },
+//         dataType: 'json'
+//       })
+//       .done(function(grandchildren){
+//         if (grandchildren.length != 0) {
+//           $('#grandchildren_wrapper').remove(); //子が変更された時、孫以下を削除する
+//           var insertHTML = '';
+//           grandchildren.forEach(function(grandchild){
+//             insertHTML += appendOption(grandchild);
+//           });
+//           appendGrandchidrenBox(insertHTML);
+//         }
+//       })
+//       .fail(function(){
+//         alert('カテゴリー取得に失敗しました');
+//       })
+//     }else{
+//       $('#grandchildren_wrapper').remove(); //子カテゴリーが初期値になった時、孫以下を削除する
+//     }
