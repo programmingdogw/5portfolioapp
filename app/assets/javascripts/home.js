@@ -84,7 +84,7 @@ $(document).on('turbolinks:load', ()=> {
   // 子カテゴリー選択後のイベント
   $('.childrenul').on('mouseenter', function(){
     $('.toppage-childcategory').on('mouseenter', function(){
-      var childId = $('.toppage-childcategory').data('category'); //選択された子カテゴリーのidを取得
+      var childId = $(this).data('category'); //選択された子カテゴリーのidを取得
       $.ajax({
         url: 'get_category_grandchildren',
         type: 'GET',
