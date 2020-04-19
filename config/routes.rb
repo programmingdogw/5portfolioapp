@@ -40,10 +40,9 @@ Rails.application.routes.draw do
  
 
   resources :home, only: [:index] 
-
-  
   get 'unexpectederrors', to: 'home#unexpectederrors'
   root 'home#index'
+  get 'search', to: 'home#search'
 
   # homeコントローラーのajax通信
   get 'get_category_children', to: 'home#get_category_children'
