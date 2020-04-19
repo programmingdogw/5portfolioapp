@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def search
-    
+    @items = Item.all
   end
 
   def index
