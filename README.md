@@ -1,24 +1,12 @@
-# README
+# 何故今この形で残しているか（自分宛てメモ）
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+*１商品を出品するような機能を持つアプリの雛形で使ってもいいから。
 
-Things you may want to cover:
+*２現在チーム開発中。サーバーサイドはデプロイ以外全部やることになるだろうな、と腹を括っていたが、流石に他のメンバーも機能作らなければならないということなので残りの必須機能を書けなくなった。
 
-* Ruby version
+商品の一覧表示機能は必須機能であるためメンバーが作れなかった場合の保険で作って置いてある状態。
 
-* System dependencies
+移植し易いようにマークアップや余計な機能をなるべくつけない状態の物を残して置きたかったのでこの状態で置いている。
 
-* Configuration
+*3都合上まだメルカリライクな感じを強く残しているので、開発が終わった後に、雛形として使うならメルカリ色を排してマークアップし易い形に整形した方が良いだろう。
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
