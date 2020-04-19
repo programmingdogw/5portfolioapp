@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def search
-    @items = Item.all
+    @items = Item.search(params[:search])
   end
 
   def index
