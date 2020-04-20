@@ -53,13 +53,7 @@ class Item < ApplicationRecord
     end
   end
 
-  def self.detailsearch(detailsearch)
-    if detailsearch
-      Item.where(['name LIKE ?', "%#{detailsearch}%"])
-    else
-      Item.all
-    end
-  end
+  
 
   
 end
