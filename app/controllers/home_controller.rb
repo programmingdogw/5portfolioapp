@@ -9,7 +9,6 @@ class HomeController < ApplicationController
   end
 
   def detailsearch
-    @items = Item.search(params[:search])
     
     @search = Item.ransack(params[:q])  #追加
     @result = @search.result           #追加
@@ -17,8 +16,8 @@ class HomeController < ApplicationController
   end
 
 
-
   
+
   def index
     @user = current_user
     
