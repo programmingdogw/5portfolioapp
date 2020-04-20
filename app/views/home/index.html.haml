@@ -4,37 +4,37 @@
   -# ヘッダー
   = render 'topheader'
 
-  -# メイン部分まだ整形は手付かず ヘッダーのメニューからカテゴリ出す部分作ってるので、見辛いから一旦コメントアウト
-  -# .tempdiv
-  -#   -if @item1 != nil
-  -#     = link_to item_path(@item1), class: "" do
-  -#       = image_tag @item1.images.first.image.url,  alt: '商品が投稿されていません'
-  -#       %br
-  -#       = "商品名#{@item1.name}"
-  -#       %br 
-  -#       = "価格#{@item1.price}"
-  -#   -else
-  -#     = image_tag 'noimage.png', class: 'product-image', :size =>'100x100'
-  -# .tempdiv
-  -#   -if @item2 != nil
-  -#     = link_to item_path(@item2), class: "" do
-  -#       = image_tag @item2.images.first.image.url,  alt: '商品が投稿されていません'
-  -#       %br  
-  -#       = "商品名#{@item2.name}"
-  -#       %br 
-  -#       = "価格#{@item2.price}"      
-  -#   -else
-  -#     = image_tag 'noimage.png', class: 'product-image', :size =>'100x100'
-  -# .temdiv
-  -#   -if @item3 != nil
-  -#     = link_to item_path(@item3), class: "" do
-  -#       = image_tag @item3.images.first.image.url,  alt: '商品が投稿されていません' 
-  -#       %br  
-  -#       = "商品名#{@item3.name}"
-  -#       %br 
-  -#       = "価格#{@item3.price}"
-  -#   -else
-  -#     = image_tag 'noimage.png', class: 'product-image', :size =>'100x100'
+
+  .tempdiv
+    -if @item1 != nil
+      = link_to item_path(@item1), class: "" do
+        = image_tag @item1.images.first.image.url,  alt: '商品が投稿されていません'
+        %br
+        = "商品名#{@item1.name}"
+        %br 
+        = "価格#{@item1.price}"
+    -else
+      = image_tag 'noimage.png', class: 'product-image', :size =>'100x100'
+  .tempdiv
+    -if @item2 != nil
+      = link_to item_path(@item2), class: "" do
+        = image_tag @item2.images.first.image.url,  alt: '商品が投稿されていません'
+        %br  
+        = "商品名#{@item2.name}"
+        %br 
+        = "価格#{@item2.price}"      
+    -else
+      = image_tag 'noimage.png', class: 'product-image', :size =>'100x100'
+  .temdiv
+    -if @item3 != nil
+      = link_to item_path(@item3), class: "" do
+        = image_tag @item3.images.first.image.url,  alt: '商品が投稿されていません' 
+        %br  
+        = "商品名#{@item3.name}"
+        %br 
+        = "価格#{@item3.price}"
+    -else
+      = image_tag 'noimage.png', class: 'product-image', :size =>'100x100'
 
   -# フッター
   = render 'topfooter'
