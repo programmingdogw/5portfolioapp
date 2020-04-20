@@ -1,9 +1,32 @@
-検索フィールドから飛んできた。後でパーシャルにするかも
-%br
-- @items.each do |item|
- =item.name
- =image_tag item.images.first.image.url
- = "#{item.price}円"
- = link_to "詳細へ", category_path(item)
 
- %br
+
+.pagecontainer
+  .mainpart
+    %p 検索フィールドから飛んできた。後でパーシャルにするかも
+
+    %br
+    - @items.each do |item|
+      =item.name
+      =image_tag item.images.first.image.url
+      = "#{item.price}円"
+      = link_to "詳細へ", category_path(item)
+
+    
+
+  .narrowing-down
+
+  = form_tag(detailsearch_path,:method => 'get') do
+    = text_field_tag :detailsearch
+    = submit_tag '詳細検索', :name => nil
+
+    %select{class: 'sort_order'}
+      %option{value: "first-option"}
+        並び替え
+      %option{value: "price_asc"}
+        価格の安い順
+      %option{value: "price_desc"}
+        価格の高い順
+      %option{value: "created_at_asc"}
+        出品の古い順
+      %option{value: "created_at_desc"}
+        出品の新しい順
