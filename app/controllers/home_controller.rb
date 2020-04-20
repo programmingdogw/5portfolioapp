@@ -1,5 +1,9 @@
 class HomeController < ApplicationController
 
+  def search
+    @items = Item.search(params[:search])
+  end
+
   def index
     @user = current_user
     
