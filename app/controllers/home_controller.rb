@@ -5,6 +5,7 @@ class HomeController < ApplicationController
   end
 
   def detailsearch
+    @items = Item.search(params[:search])
   end
 
   def index
