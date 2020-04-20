@@ -9,24 +9,39 @@
       =item.name
       =image_tag item.images.first.image.url
       = "#{item.price}円"
-      = link_to "詳細へ", category_path(item)
+      = link_to "詳細へ", item_path(item)
 
     
 
   .narrowing-down
+    = form_tag(detailsearch_path,:method => 'get') do
+      = search_form_for @search  do |f|
+        .form-group
+          = f.label :name_cont, "キーワード検索"
+          = f.text_field :name_cont, class: "form-control"
+        .form-group
+          = f.label :parentcategory_eq, '親カテゴリ'
+          - @allparentcategories.each do |parentcategory|
+            = parentcategory.name
+            = f.radio_button :parentcategory_eq, parentcategory.name
 
-  = form_tag(detailsearch_path,:method => 'get') do
-    = text_field_tag :detailsearch
-    = submit_tag '詳細検索', :name => nil
+        .actions= f.submit "Search"
+      
 
-    %select{class: 'sort_order'}
-      %option{value: "first-option"}
-        並び替え
-      %option{value: "price_asc"}
-        価格の安い順
-      %option{value: "price_desc"}
-        価格の高い順
-      %option{value: "created_at_asc"}
-        出品の古い順
-      %option{value: "created_at_desc"}
-        出品の新しい順
+
+
+  -# = form_tag(detailsearch_path,:method => 'get') do
+  -#   = text_field_tag :detailsearch
+  -#   = submit_tag '詳細検索', :name => nil
+
+  -#   %select{class: 'sort_order'}
+  -#     %option{value: "first-option"}
+  -#       並び替え
+  -#     %option{value: "price_asc"}
+  -#       価格の安い順
+  -#     %option{value: "price_desc"}
+  -#       価格の高い順
+  -#     %option{value: "created_at_asc"}
+  -#       出品の古い順
+  -#     %option{value: "created_at_desc"}
+  -#       出品の新しい順
