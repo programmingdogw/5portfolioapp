@@ -14,20 +14,38 @@
       }
       .secondstage{
         display:flex;
-        justify-content: space-around;
+        justify-content: space-between;
         background-color: orange;
         height: 35px;
         &__left{
           background-color: blue;
+          position: relative;
           .topmenu{
-            color: red;
+            position: absolute;
+            left: 0;
+            top:0;
+            width: 200px;
+            .categorytoplink{
+              color:white;
+            }
           }
           .categorylist-wrapper{
+            position: absolute;
+            left: 0;
+            top:35px;
             display:flex;
-            background-color: purple;
             .parentul{
               background-color: white;
               visibility: hidden;
+              width: 200px;
+            }
+            .childrenul{
+              background-color: white;
+              width: 200px;
+            }
+            .grandchildrenul{
+              background-color: white;
+              width: 200px;
             }
           }
           
