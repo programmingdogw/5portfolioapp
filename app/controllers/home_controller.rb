@@ -9,10 +9,10 @@ class HomeController < ApplicationController
   end
 
   def detailsearch
-    
+    @allparentcategories = Category.where(ancestry: nil)
     @search = Item.ransack(params[:q])  #追加
     @result = @search.result           #追加
-    binding.pry
+  
   end
 
 
