@@ -42,10 +42,12 @@
             }
             .childrenul{
               background-color: white;
+              visibility: hidden;
               width: 200px;
             }
             .grandchildrenul{
               background-color: white;
+              visibility: hidden;
               width: 200px;
             }
           }
@@ -57,6 +59,13 @@
         }
       }
     }
+
+    // メイン
+    .jsevacuation-space{
+      background-color: lime;
+      height:500px;
+    }
+
 
 
 
