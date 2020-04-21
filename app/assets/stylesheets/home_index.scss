@@ -1,19 +1,22 @@
 
 // 大枠
 .pagecontainer{
-  padding:50px;
-  background-color:lightblue;
-  
+  background-color:rgb(243, 240, 240);
+  padding: 50px;
   // ヘッダー
     &__header{
       text-align: center;
       .firststage{
-        background-color: pink;
+        .search-field{
+          width: 50%;
+          margin:20px 3px;
+        }
       }
       .secondstage{
         display:flex;
-        justify-content: space-between;
-        background-color: lightgreen;
+        justify-content: space-around;
+        background-color: orange;
+        height: 35px;
         &__left{
           background-color: blue;
           .topmenu{
