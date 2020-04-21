@@ -19,11 +19,33 @@
         .form-group
           = f.label :name_cont, "キーワード検索"
           = f.text_field :name_cont, class: "form-control"
+        %br
         .form-group
           = f.label :parentcategory_eq, '親カテゴリ'
           - @allparentcategories.each do |parentcategory|
             = parentcategory.name
             = f.radio_button :parentcategory_eq, parentcategory.name
+        %br
+        .form-group
+          = f.label :size_id_eq, '商品のサイズ'
+          - @allsizes.each do |size|
+            = size.name
+            = f.radio_button :size_id_eq, size.id
+        %br
+        .form-group
+          = f.label :condition_id_eq, '商品の状態'
+          - @allconditions.each do |condition|
+            = condition.name
+            = f.radio_button :condition_id_eq, condition.id
+        %br
+        .form-group
+          = f.label :deliverycost_id_eq, '運送料の負担'
+          - @alldeliverycosts.each do |deliverycost|
+            = deliverycost.name
+            = f.radio_button :deliverycost_id_eq, deliverycost.id
+        %br
+
+
 
         .actions= f.submit "Search"
       

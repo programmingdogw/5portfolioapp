@@ -3,16 +3,17 @@
 - if @result.any?
   = render @result
 
-.narrowing-down
-  = form_tag(detailsearch_path,:method => 'get') do
-    = search_form_for @search  do |f|
-      .form-group
-        = f.label :name_cont, "キーワード検索"
-        = f.text_field :name_cont, class: "form-control"
-      .form-group
-        = f.label :parentcategory_eq, '親カテゴリ'
-        - @allparentcategories.each do |parentcategory|
-          = parentcategory.name
-          = f.radio_button :parentcategory_eq, parentcategory.name
+-# searchの方で作ったやつをそのまま持ってくる予定。とりあえず最初の方の絞り込みのフォーム置いてる
+-# .narrowing-down
+-#   = form_tag(detailsearch_path,:method => 'get') do
+-#     = search_form_for @search  do |f|
+-#       .form-group
+-#         = f.label :name_cont, "キーワード検索"
+-#         = f.text_field :name_cont, class: "form-control"
+-#       .form-group
+-#         = f.label :parentcategory_eq, '親カテゴリ'
+-#         - @allparentcategories.each do |parentcategory|
+-#           = parentcategory.name
+-#           = f.radio_button :parentcategory_eq, parentcategory.name
 
-      .actions= f.submit "Search"
+-#       .actions= f.submit "Search"
