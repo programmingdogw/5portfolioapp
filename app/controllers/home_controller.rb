@@ -3,16 +3,35 @@ class HomeController < ApplicationController
   def search
     @items = Item.firstsearch(params[:search])
   
+    
+    @search = Item.ransack(params[:q])  #ransack
+    @result = @search.result           #ransack
+
     @allparentcategories = Category.where(ancestry: nil)
-    @search = Item.ransack(params[:q])  #追加
-    @result = @search.result           #追加
+    
+    @category_parent_array = []
+      Category.where(ancestry: nil).each do |parent|
+        @category_parent_array << parent.name
+      end
+
+
+
+    @allsizes = Size.all
+    @allconditions = Condition.all
+    @alldeliverycosts = Deliverycost.all
+    @alldeliveryways = Deliveryway.all
+    @alldeliverytimes = Deliverytime.all
+    @alldelivery_froms = Item.delivery_froms
+
   end
 
   def detailsearch
-    @allparentcategories = Category.where(ancestry: nil)
-    @search = Item.ransack(params[:q])  #追加
-    @result = @search.result           #追加
+    
+    @search = Item.ransack(params[:q])  #ransack
+    @result = @search.result           #ransack
   
+    @allparentcategories = Category.where(ancestry: nil)
+
   end
 
 
