@@ -11,7 +11,9 @@ class HomeController < ApplicationController
     @allsizes = Size.all
     @allconditions = Condition.all
     @alldeliverycosts = Deliverycost.all
+    @alldeliveryways = Deliveryway.all
     @alldeliverytimes = Deliverytime.all
+    @alldelivery_froms = Item.delivery_froms
 
   end
 
@@ -21,7 +23,6 @@ class HomeController < ApplicationController
     @result = @search.result           #ransack
   
     @allparentcategories = Category.where(ancestry: nil)
-
 
   end
 

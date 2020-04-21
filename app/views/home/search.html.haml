@@ -44,6 +44,23 @@
             = deliverycost.name
             = f.radio_button :deliverycost_id_eq, deliverycost.id
         %br
+        .form-group
+          = f.label :deliveryway_id_eq, '運送の方法'
+          - @alldeliveryways.each do |deliveryway|
+            = deliveryway.name
+            = f.radio_button :deliveryway_id_eq, deliveryway.id
+        %br
+        .form-group
+          = f.label :deliverytime_id_eq, '運送の方法'
+          - @alldeliverytimes.each do |deliverytime|
+            = deliverytime.name
+            = f.radio_button :deliverytime_id_eq, deliverytime.id
+        %br
+        .form-group
+          = f.label :delivery_from_eq, '運送の方法'
+          - @alldelivery_froms.each do |delivery_from|
+            = delivery_from[0]
+            = f.radio_button :delivery_from_eq, delivery_from[1]
 
 
 
