@@ -8,6 +8,15 @@ class HomeController < ApplicationController
     @result = @search.result           #ransack
 
     @allparentcategories = Category.where(ancestry: nil)
+    
+    @category_parent_array = []
+    @category_parent_array = ["---"]
+      Category.where(ancestry: nil).each do |parent|
+        @category_parent_array << parent.name
+      end
+
+
+
     @allsizes = Size.all
     @allconditions = Condition.all
     @alldeliverycosts = Deliverycost.all
