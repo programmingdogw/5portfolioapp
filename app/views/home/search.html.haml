@@ -38,7 +38,7 @@
         .form-group
           = f.label :parentcategory_eq, '親カテゴリセレクトボックス'
           %br
-          = f.select :parentcategory_eq, @category_parent_array, {}, {class: 'hoge', id: 'hogehoge'}
+          = f.select :parentcategory_eq, @category_parent_array, {prompt: "---"}, {class: 'hoge', id: 'hogehoge'}
         %br
 
         .form-group
@@ -77,10 +77,14 @@
         %br
 
         .form-group
-          = f.label :delivery_from_eq, '運送の方法'
+          = f.label :delivery_from_eq, '発送元'
           - @alldelivery_froms.each do |delivery_from|
             = delivery_from[0]
             = f.radio_button :delivery_from_eq, delivery_from[1]
+
+        .form-group
+          = f.label :delivery_from_eq, '発送元'
+          = f.select :delivery_from_eq, @alldelivery_froms, {prompt: "---"}, {class: 'hoge', id: 'hogehoge'}
 
 
 
