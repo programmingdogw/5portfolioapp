@@ -1,8 +1,7 @@
 %header.pagecontainer__header
 
   .firststage
-    %p 仮置き。一段目にはよくありがちなロゴと検索フィールドの予定
-    %p 検索
+    =link_to image_tag('logo.png', alt: "ロゴ画像", class:"headerlogo"), root_path
     = form_tag(search_path,:method => 'get') do
       = text_field_tag :search
       = submit_tag '検索', :name => nil
