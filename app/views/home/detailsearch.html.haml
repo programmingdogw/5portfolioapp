@@ -1,7 +1,18 @@
 詳細検索実行後
 %br
-- @items.each do |item|
-      =item.name
-      =image_tag item.images.first.image.url
-      = "#{item.price}円"
-      = link_to "詳細へ", category_path(item)
+- if @result.any?
+  = render @result
+
+.narrowing-down
+  = form_tag(detailsearch_path,:method => 'get') do
+    = search_form_for @search  do |f|
+      .form-group
+        = f.label :name_cont, "キーワード検索"
+        = f.text_field :name_cont, class: "form-control"
+      .form-group
+        = f.label :parentcategory_eq, '親カテゴリ'
+        - @allparentcategories.each do |parentcategory|
+          = parentcategory.name
+          = f.radio_button :parentcategory_eq, parentcategory.name
+
+      .actions= f.submit "Search"

@@ -45,7 +45,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :deliverytime
 
 
-  def self.search(search)
+  def self.firstsearch(search)
     if search
       Item.where(['name LIKE ?', "%#{search}%"])
     else
@@ -53,13 +53,7 @@ class Item < ApplicationRecord
     end
   end
 
-  def self.detailsearch(detailsearch)
-    if detailsearch
-      Item.where(['name LIKE ?', "%#{detailsearch}%"])
-    else
-      Item.all
-    end
-  end
+  
 
   
 end

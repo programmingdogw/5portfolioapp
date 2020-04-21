@@ -1,12 +1,22 @@
 class HomeController < ApplicationController
 
   def search
-    @items = Item.search(params[:search])
+    @items = Item.firstsearch(params[:search])
+  
+    @allparentcategories = Category.where(ancestry: nil)
+    @search = Item.ransack(params[:q])  #追加
+    @result = @search.result           #追加
   end
 
   def detailsearch
-    @items = Item.search(params[:search])
+    @allparentcategories = Category.where(ancestry: nil)
+    @search = Item.ransack(params[:q])  #追加
+    @result = @search.result           #追加
+  
   end
+
+
+  
 
   def index
     @user = current_user
