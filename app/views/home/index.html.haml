@@ -23,9 +23,12 @@
           %br おまけに仕入れも安くできて一石二鳥
 
 
+
     .contentsborder
       .contentsborder__declare 新着商品
       .simplebar
+
+
     .contentswrapper
       .contentswrapper__item
         -if @item1 != nil
@@ -92,17 +95,22 @@
         -else
           = image_tag 'noimage.png', class: 'product-image', :size =>'300x300'
 
+
     .contentsborder
       .contentsborder__declare ピックアップカテゴリ
       .simplebar
+
     .contentswrapper
+      ここはちょいレイアウト変えるか
+      = image_tag 'roundbaby.png', class: 'product-image', :size =>'190x190'
 
   
     -if user_signed_in?
       .putitemlogo
         = link_to new_item_path, class: "" do
-          = image_tag 'putitemlogo.png', class: 'product-image', :size =>'100x100'
+          = image_tag 'putitemlogo.png', class: 'product-image', :size =>'125x125'
 
   -# フッター
   = render 'topfooter'
+    
 
