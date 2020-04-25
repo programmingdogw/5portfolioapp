@@ -4,57 +4,65 @@
   -# ヘッダー
   = render 'topheader'
 
-  .jsevacuation-space
-    .evacuationcontent
-      = image_tag "businessman2.jpeg", size: "300x300"
-      .evacutationcontent__text
-        在庫が多くて困ってしまう
-        %br これだど倉庫の維持費の方が高くつくよ
-    .evacuationcontent
-      = image_tag "businesswoman.jpeg", size: "300x300"
-      .evacutationcontent__text
-        これからは在庫もネットで出品
-        %br 仕入れも条件検索で最安に
-    .evacuationcontent
-      = image_tag "businessman3.jpeg", size: "300x300"
-      .evacutationcontent__text
-        在庫が綺麗に片付いた
-        %br おまけに仕入れも安くできて一石二鳥
+  .pagecontainer__main
+    .jsevacuation-space
+      .evacuationcontent
+        = image_tag "businessman2.jpeg", size: "300x300"
+        .evacutationcontent__text
+          在庫が多くて困ってしまう
+          %br これだど倉庫の維持費の方が高くつくよ
+      .evacuationcontent
+        = image_tag "businesswoman.jpeg", size: "300x300"
+        .evacutationcontent__text
+          これからは在庫もネットで出品
+          %br 仕入れも条件検索で最安に
+      .evacuationcontent
+        = image_tag "businessman3.jpeg", size: "300x300"
+        .evacutationcontent__text
+          在庫が綺麗に片付いた
+          %br おまけに仕入れも安くできて一石二鳥
 
-  .tempdiv
-    -if @item1 != nil
-      = link_to item_path(@item1), class: "" do
-        = image_tag @item1.images.first.image.url,  alt: '商品が投稿されていません'
-        %br
-        = "商品名#{@item1.name}"
-        %br 
-        = "価格#{@item1.price}"
-    -else
-      = image_tag 'noimage.png', class: 'product-image', :size =>'100x100'
-  .tempdiv
-    -if @item2 != nil
-      = link_to item_path(@item2), class: "" do
-        = image_tag @item2.images.first.image.url,  alt: '商品が投稿されていません'
-        %br  
-        = "商品名#{@item2.name}"
-        %br 
-        = "価格#{@item2.price}"      
-    -else
-      = image_tag 'noimage.png', class: 'product-image', :size =>'100x100'
-  .temdiv
-    -if @item3 != nil
-      = link_to item_path(@item3), class: "" do
-        = image_tag @item3.images.first.image.url,  alt: '商品が投稿されていません' 
-        %br  
-        = "商品名#{@item3.name}"
-        %br 
-        = "価格#{@item3.price}"
-    -else
-      = image_tag 'noimage.png', class: 'product-image', :size =>'100x100'
+
+    .contentsborder
+      .contentsborder__declare 新着商品
+      .simplebar
+    .contentswrapper
+      .contentswrapper__item
+        -if @item1 != nil
+          = link_to item_path(@item1), class: "" do
+            = image_tag @item1.images.first.image.url,  alt: '商品が投稿されていません', :size =>'300x300'
+            %br
+            = "商品名#{@item1.name}"
+            %br 
+            = "価格#{@item1.price}"
+        -else
+          = image_tag 'noimage.png', class: 'product-image', :size =>'300x300'
+      .contentswrapper__item
+        -if @item2 != nil
+          = link_to item_path(@item2), class: "" do
+            = image_tag @item2.images.first.image.url,  alt: '商品が投稿されていません', :size =>'300x300'
+            %br  
+            = "商品名#{@item2.name}"
+            %br 
+            = "価格#{@item2.price}"      
+        -else
+          = image_tag 'noimage.png', class: 'product-image', :size =>'300x300'
+      .contentswrapper__item
+        -if @item3 != nil
+          = link_to item_path(@item3), class: "" do
+            = image_tag @item3.images.first.image.url,  alt: '商品が投稿されていません' , :size =>'300x300'
+            %br  
+            = "商品名#{@item3.name}"
+            %br 
+            = "価格#{@item3.price}"
+        -else
+          = image_tag 'noimage.png', class: 'product-image', :size =>'300x300'
+
   
-  .putitemlogo
-    = link_to new_item_path, class: "" do
-      = image_tag 'putitemlogo.png', class: 'product-image', :size =>'100x100'
+    -if user_signed_in?
+      .putitemlogo
+        = link_to new_item_path, class: "" do
+          = image_tag 'putitemlogo.png', class: 'product-image', :size =>'100x100'
 
   -# フッター
   = render 'topfooter'
