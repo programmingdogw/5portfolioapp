@@ -5,8 +5,21 @@
   = render 'topheader'
 
   .jsevacuation-space
-    %p カテゴリメニュー被った時にリンク効かなくなるので回避用にサイトの説明入れる
-
+    .evacuationcontent
+      = image_tag "businessman2.jpeg", size: "300x300"
+      .evacutationcontent__text
+        在庫が多くて困ってしまう
+        %br これだど倉庫の維持費の方が高くつくよ
+    .evacuationcontent
+      = image_tag "businesswoman.jpeg", size: "300x300"
+      .evacutationcontent__text
+        これからは在庫もネットで出品
+        %br 仕入れも条件検索で最安に
+    .evacuationcontent
+      = image_tag "businessman3.jpeg", size: "300x300"
+      .evacutationcontent__text
+        在庫が綺麗に片付いた
+        %br おまけに仕入れも安くできて一石二鳥
 
   .tempdiv
     -if @item1 != nil

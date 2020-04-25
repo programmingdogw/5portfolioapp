@@ -10,7 +10,7 @@
   .secondstage
     .secondstage__left
       .topmenu 
-        = link_to "カテゴリの一覧ページへ", categories_path, class: "categorytoplink"
+        = link_to "カテゴリの一覧", categories_path, class: "categorytoplink"
       .categorylist-wrapper
         %ul.parentul
           - @category_parent_array.each do |parentcategory|
@@ -21,14 +21,14 @@
 
     .secondstage__right
       - if user_signed_in?
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
-        = link_to "マイページへ", user_path(@user), class: ""
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "headerlink"
+        = link_to "マイページへ", user_path(@user), class: "headerlink"
         %br
-        = link_to "商品出品ページへ", new_item_path, class: ""
+        = link_to "商品出品ページへ", new_item_path, class: "headerlink"
         %br
-        = link_to "商品一覧ページへ", items_path, class: ""
+        = link_to "商品一覧ページへ", items_path, class: "headerlink"
         %br
       - else
-        = link_to "新規登録", new_user_registration_path
-        = link_to "ログイン", new_user_session_path
+        = link_to "新規登録", new_user_registration_path, class: "headerlink"
+        = link_to "ログイン", new_user_session_path, class: "headerlink"
         

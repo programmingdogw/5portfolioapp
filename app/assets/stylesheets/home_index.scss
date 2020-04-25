@@ -15,7 +15,7 @@
       .secondstage{
         display:flex;
         justify-content: space-between;
-        background-color: orange;
+        background: rgba(10,10,10,0.95);
         height: 35px;
         &__left{
           background-color: blue;
@@ -55,15 +55,29 @@
         }
         &__right{
           display:flex;
-          background-color: red;
+          .headerlink{
+            color:white;
+            text-decoration: none;
+            line-height: 35px;
+            margin-right: 10px;
+          }
         }
       }
     }
 
     // メイン
     .jsevacuation-space{
-      background-color: lime;
+      background-color: rgb(248, 253, 235);
       height:500px;
+      display: flex;
+      justify-content: space-around;
+      .evacuationcontent{
+        margin-top:100px ;
+        text-align: center;
+        &__text{
+          margin: auto;
+        }
+      }
     }
 
 
