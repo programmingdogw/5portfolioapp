@@ -48,6 +48,10 @@ class HomeController < ApplicationController
     @item5 = @pickupitems[4]
     @item6 = @pickupitems[5]
 
+    @ladiescategory = Category.find(1)
+    @babykidscategory = Category.find(346)
+    @bookstoysgamescategory = Category.find(625)
+    
     #  不要と判断削除予定#リンクボックスの初期値設定
     #  @category_parent_array = ["---"]
     @category_parent_array = []

@@ -5,17 +5,21 @@
   = render 'topheader'
 
   .pagecontainer__main
+    .contentsborder
+      .contentsborder__declare サイト紹介
+      .simplebar
+
     .jsevacuation-space
       .evacuationcontent
         = image_tag "businessman2.jpeg", size: "300x300"
         .evacutationcontent__text
           在庫が多くて困ってしまう
-          %br これだど倉庫の維持費の方が高くつくよ
+          %br 維持費の方が高くつく
       .evacuationcontent
         = image_tag "businesswoman.jpeg", size: "300x300"
         .evacutationcontent__text
-          これからは在庫もネットで出品
-          %br 仕入れも条件検索で最安に
+          無在庫王ならネットで出品するだけ
+          %br 足を使わなくても在庫が捌ける
       .evacuationcontent
         = image_tag "businessman3.jpeg", size: "300x300"
         .evacutationcontent__text
@@ -101,9 +105,18 @@
       .simplebar
 
     .contentswrapper
-      ここはちょいレイアウト変えるか
-      = image_tag 'roundbaby.png', class: 'product-image', :size =>'190x190'
-
+      .contenswrapper__categoy
+        = link_to category_path(@babykidscategory), class: "" do
+          = image_tag 'roundedbaby.png', class: 'product-image', :size =>'190x190'
+          = @babykidscategory.name 
+      .contenswrapper__category
+        = link_to category_path(@ladiescategory), class: "" do
+          = image_tag 'roundedladies.png', class: 'product-image', :size =>'190x190'
+          = @ladiescategory.name 
+      .contenswrapper__category
+        = link_to category_path(@bookstoysgamescategory), class: "" do
+          = image_tag 'roundedbookstoysgames.png', class: 'product-image', :size =>'190x190'
+          = @bookstoysgamescategory.name 
   
     -if user_signed_in?
       .putitemlogo
