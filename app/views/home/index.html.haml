@@ -38,6 +38,10 @@
         = "価格#{@item3.price}"
     -else
       = image_tag 'noimage.png', class: 'product-image', :size =>'100x100'
+  
+  .putitemlogo
+    = link_to new_item_path, class: "" do
+      = image_tag 'putitemlogo.png', class: 'product-image', :size =>'100x100'
 
   -# フッター
   = render 'topfooter'
