@@ -37,19 +37,47 @@
             top:35px;
             display:flex;
             .parentul{
-              background-color: white;
               visibility: hidden;
               width: 200px;
+              .toppage-parentcategory{
+                color: white;
+                background: rgba(10,10,10,0.8);
+              }
+              .toppage-parentcategory:hover{
+                background-color: pink;
+              }
             }
             .childrenul{
-              background-color: white;
               visibility: hidden;
               width: 200px;
+              .toppage-childcategory{
+                text-decoration: none;
+                background: rgba(10,10,10,0.8);
+                color: white;
+                .listmodify{
+                  text-decoration: none;
+                  color:white;
+                }
+              }
+              .toppage-childcategory:hover{
+                background-color: pink;
+              }
             }
             .grandchildrenul{
-              background-color: white;
               visibility: hidden;
               width: 200px;
+              .toppage-grandchildcategory{
+                text-decoration: none;
+                background: rgba(10,10,10,0.8);
+                color: white;
+                .listmodify{
+                  text-decoration: none;
+                  color:white;
+                }
+              }
+              .toppage-grandchildcategory:hover{
+                background-color: pink;
+              }
             }
           }
           
