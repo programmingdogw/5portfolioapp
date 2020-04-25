@@ -40,11 +40,18 @@ class HomeController < ApplicationController
   def index
     @user = current_user
     
-    @pickupitems = Item.includes(:images).last(3)
+    @pickupitems = Item.includes(:images).last(6)
     @item1 = @pickupitems[0]
     @item2 = @pickupitems[1] 
     @item3 = @pickupitems[2]
+    @item4 = @pickupitems[3]
+    @item5 = @pickupitems[4]
+    @item6 = @pickupitems[5]
 
+    @ladiescategory = Category.find(1)
+    @babykidscategory = Category.find(346)
+    @bookstoysgamescategory = Category.find(625)
+    
     #  不要と判断削除予定#リンクボックスの初期値設定
     #  @category_parent_array = ["---"]
     @category_parent_array = []

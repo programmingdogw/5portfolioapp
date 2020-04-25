@@ -4,13 +4,13 @@ $(document).on('turbolinks:load', ()=> {
 
   // 子カテゴリのリンク作成
   function appendList(category){
-    var html = `<li class="toppage-childcategory" data-category="${category.id}"><a href="categories/${category.id}">${category.name}</a></li>`;
+    var html = `<li class="toppage-childcategory" data-category="${category.id}"><a class="listmodify" href="categories/${category.id}">${category.name}</a></li>`;
     return html;
   }
   
   // 孫カテゴリのリンク作成
   function appendgrandchildList(category){
-    var html = `<li class="toppage-grandchildcategory" data-category="${category.id}"><a href="categories/${category.id}">${category.name}</a></li>`;
+    var html = `<li class="toppage-grandchildcategory" data-category="${category.id}"><a class="listmodify" href="categories/${category.id}">${category.name}</a></li>`;
     return html;
   }
 
