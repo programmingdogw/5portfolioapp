@@ -26,7 +26,7 @@ class HomeController < ApplicationController
   end
 
   def detailsearch
-    
+    # 多分このアクション自体消す。その時にパスとビューも消す
     @search = Item.ransack(params[:q])  #ransack
     @result = @search.result           #ransack
   
@@ -38,6 +38,11 @@ class HomeController < ApplicationController
   
 
   def index
+    @items = Item.firstsearch(params[:search])
+    @search = Item.ransack(params[:q])  #ransack
+    @result = @search.result           #ransack
+
+  
     @user = current_user
     
     @pickupitems = Item.includes(:images).last(6)

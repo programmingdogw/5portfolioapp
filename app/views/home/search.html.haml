@@ -2,10 +2,10 @@
 
 .pagecontainer
   .mainpart
-    %p 検索フィールドから飛んできた。後でパーシャルにするかも
+    %p 検索結果ページ。
 
     %br
-    - @items.each do |item|
+    - @result.each do |item|
       =item.name
       =image_tag item.images.first.image.url
       = "#{item.price}円"
@@ -14,7 +14,7 @@
     
 
   .narrowing-down
-    = form_tag(detailsearch_path,:method => 'get') do
+    = form_tag(search_path,:method => 'get') do
       = search_form_for @search  do |f|
 
         .form-group
@@ -25,14 +25,6 @@
         .form-group
           = f.label :brand_cont, "ブランド検索"
           = f.text_field :brand_cont, class: ""
-        %br
-
-        .form-group
-          = f.label :parentcategory_eq, '親カテゴリチェックボックス'
-          %br
-          - @allparentcategories.each do |parentcategory|
-            = parentcategory.name
-            = f.radio_button :parentcategory_eq, parentcategory.name
         %br
 
         .form-group
@@ -75,12 +67,6 @@
             = deliverytime.name
             = f.radio_button :deliverytime_id_eq, deliverytime.id
         %br
-
-        .form-group
-          = f.label :delivery_from_eq, '発送元'
-          - @alldelivery_froms.each do |delivery_from|
-            = delivery_from[0]
-            = f.radio_button :delivery_from_eq, delivery_from[1]
 
         .form-group
           = f.label :delivery_from_eq, '発送元'

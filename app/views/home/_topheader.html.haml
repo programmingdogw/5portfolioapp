@@ -3,8 +3,9 @@
   .firststage
     =link_to image_tag('logo.png', alt: "ロゴ画像", class:"headerlogo"), root_path
     = form_tag(search_path,:method => 'get') do
-      = text_field_tag :search, "",{class: "search-field"}
-      = submit_tag '商品のキーワード検索', :name => nil
+      = search_form_for @search  do |f|
+        = text_field_tag :search, "",{class: "search-field"}
+        = submit_tag '商品のキーワード検索', :name => nil
 
 
   .secondstage
