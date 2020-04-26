@@ -18,6 +18,10 @@
       = search_form_for @search  do |f|
 
         .form-group
+          = f.select :order, {価格高い順: 1, 価格安い順: 2}, {prompt: '---'}
+        %br
+
+        .form-group
           = f.label :name_cont, "キーワード検索"
           = f.text_field :name_cont, class: ""
         %br

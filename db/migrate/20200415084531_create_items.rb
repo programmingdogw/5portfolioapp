@@ -17,6 +17,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.boolean :auction
       t.boolean :dealing
       t.boolean :sold
+      t.integer :order
 
       t.text :parentcategory,   null: false
       t.integer :childcategory,   null: false
