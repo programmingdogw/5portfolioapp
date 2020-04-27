@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   
     
     @search = Item.ransack(params[:q])  #ransack
-    @result = @search.result           #ransack
+    @result = @search.result        #ransack
 
     @allparentcategories = Category.where(ancestry: nil)
     
@@ -24,6 +24,26 @@ class HomeController < ApplicationController
     @alldeliverytimes = Deliverytime.all
     @alldelivery_froms = Item.delivery_froms
 
+    # 要らんやつ後で消す
+    # if params[:change] == "1"
+    #   @result = @result.order(price: "DESC")
+    # elsif params[:change] == "2"
+    #   @result = @result.order(price: "ASC")
+    # else 
+    #   @result 
+    # end
+
+    if params[:q].present?
+      @hoge = "hoge"
+    else
+        params[:q] = { sorts: 'id desc' }
+        @search = Item.ransack()
+        @items = Item.all
+    end
+
+
+    
+
   end
 
   def detailsearch
@@ -34,6 +54,7 @@ class HomeController < ApplicationController
     @allparentcategories = Category.where(ancestry: nil)
 
   end
+
 
 
   
@@ -89,5 +110,5 @@ class HomeController < ApplicationController
     # エラーハンドリングの遷移先として置いてる
   end
 
-  
+
 end
