@@ -7,13 +7,6 @@
   .pagecontainer__searchcontents 
     .narrowing-down-part
 
-      -# 要らんやつ後で消す
-      -# .changediv 並べ替え
-      -# = link_to '価格高い順', controller: "home", action: "search", change: 1
-      -# = link_to '価格安い順', controller: "home", action: "search", change: 2
-
-
-
       = form_tag(search_path,:method => 'get') do
 
         = search_form_for @search  do |f|
@@ -86,12 +79,22 @@
       %p 検索結果ページ。
 
       %br
-      - @result.each do |item|
-        .changewrapper{"data-price": "#{item.price}"}
-          =item.name
-          =image_tag item.images.first.image.url
-          = "#{item.price}円"
-          = link_to "詳細へ", item_path(item)
+
+      -if @firstitems.present?
+        - @firstitems.each do |item|
+          .changewrapper{"data-price": "#{item.price}"}
+            =item.name
+            =image_tag item.images.first.image.url
+            = "#{item.price}円"
+            = link_to "詳細へ", item_path(item)
+ 
+      -else
+        - @result.each do |item|
+          .changewrapper{"data-price": "#{item.price}"}
+            =item.name
+            =image_tag item.images.first.image.url
+            = "#{item.price}円"
+            = link_to "詳細へ", item_path(item)
 
 
 

@@ -43,7 +43,7 @@ Rails.application.routes.draw do
   get 'unexpectederrors', to: 'home#unexpectederrors'
   root 'home#index'
   get 'search', to: 'home#search'
-  get 'detailsearch', to: 'home#detailsearch'
+  
 
 
   # homeコントローラーのajax通信
