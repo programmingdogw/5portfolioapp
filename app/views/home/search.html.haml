@@ -1,110 +1,115 @@
-
+= stylesheet_link_tag 'search'
 
 .pagecontainer
-  .mainpart
-    %p 検索フィールドから飛んできた。後でパーシャルにするかも
 
-    %br
-    - @items.each do |item|
-      =item.name
-      =image_tag item.images.first.image.url
-      = "#{item.price}円"
-      = link_to "詳細へ", item_path(item)
+  .pagecontainer__searchheader
 
-    
+  .pagecontainer__searchcontents 
+    .narrowing-down-part
 
-  .narrowing-down
-    = form_tag(detailsearch_path,:method => 'get') do
-      = search_form_for @search  do |f|
+      -# 要らんやつ後で消す
+      -# .changediv 並べ替え
+      -# = link_to '価格高い順', controller: "home", action: "search", change: 1
+      -# = link_to '価格安い順', controller: "home", action: "search", change: 2
 
-        .form-group
-          = f.label :name_cont, "キーワード検索"
-          = f.text_field :name_cont, class: ""
-        %br
 
-        .form-group
-          = f.label :brand_cont, "ブランド検索"
-          = f.text_field :brand_cont, class: ""
-        %br
 
-        .form-group
-          = f.label :parentcategory_eq, '親カテゴリチェックボックス'
+      = form_tag(search_path,:method => 'get') do
+
+        = search_form_for @search  do |f|
+
+          
+          = f.select( :sorts, { '並び替え': 'id desc', '価格の安い順': 'price asc', '価格の高い順': 'price desc', '出品の古い順': 'updated_at asc', '出品の新しい順': 'updated_at desc' } , { selected: params[:q][:sorts] }, { onchange: 'this.form.submit()'} )
+
+
+          .form-group
+            = f.label :name_cont, "キーワード検索"
+            = f.text_field :name_cont, class: ""
           %br
-          - @allparentcategories.each do |parentcategory|
-            = parentcategory.name
-            = f.radio_button :parentcategory_eq, parentcategory.name
-        %br
 
-        .form-group
-          = f.label :parentcategory_eq, '親カテゴリセレクトボックス'
+          .form-group
+            = f.label :brand_cont, "ブランド検索"
+            = f.text_field :brand_cont, class: ""
           %br
-          = f.select :parentcategory_eq, @category_parent_array, {prompt: "---"}, {class: '', id: ''}
-        %br
 
-        .form-group
-          = f.label :size_id_eq, '商品のサイズ'
-          - @allsizes.each do |size|
-            = size.name
-            = f.radio_button :size_id_eq, size.id
-        %br
+          .form-group
+            = f.label :parentcategory_eq, '親カテゴリセレクトボックス'
+            %br
+            = f.select :parentcategory_eq, @category_parent_array, {prompt: "---"}, {class: '', id: ''}
+          %br
 
-        .form-group
-          = f.label :condition_id_eq, '商品の状態'
-          - @allconditions.each do |condition|
-            = condition.name
-            = f.radio_button :condition_id_eq, condition.id
+          .form-group
+            = f.label :size_id_eq, '商品のサイズ'
+            - @allsizes.each do |size|
+              = size.name
+              = f.radio_button :size_id_eq, size.id
+          %br
 
-        %br
-        .form-group
-          = f.label :deliverycost_id_eq, '運送料の負担'
-          - @alldeliverycosts.each do |deliverycost|
-            = deliverycost.name
-            = f.radio_button :deliverycost_id_eq, deliverycost.id
-        %br
+          .form-group
+            = f.label :condition_id_eq, '商品の状態'
+            - @allconditions.each do |condition|
+              = condition.name
+              = f.radio_button :condition_id_eq, condition.id
 
-        .form-group
-          = f.label :deliveryway_id_eq, '運送の方法'
-          - @alldeliveryways.each do |deliveryway|
-            = deliveryway.name
-            = f.radio_button :deliveryway_id_eq, deliveryway.id
-        %br
+          %br
+          .form-group
+            = f.label :deliverycost_id_eq, '運送料の負担'
+            - @alldeliverycosts.each do |deliverycost|
+              = deliverycost.name
+              = f.radio_button :deliverycost_id_eq, deliverycost.id
+          %br
 
-        .form-group
-          = f.label :deliverytime_id_eq, '運送の方法'
-          - @alldeliverytimes.each do |deliverytime|
-            = deliverytime.name
-            = f.radio_button :deliverytime_id_eq, deliverytime.id
-        %br
+          .form-group
+            = f.label :deliveryway_id_eq, '運送の方法'
+            - @alldeliveryways.each do |deliveryway|
+              = deliveryway.name
+              = f.radio_button :deliveryway_id_eq, deliveryway.id
+          %br
 
-        .form-group
-          = f.label :delivery_from_eq, '発送元'
-          - @alldelivery_froms.each do |delivery_from|
-            = delivery_from[0]
-            = f.radio_button :delivery_from_eq, delivery_from[1]
+          .form-group
+            = f.label :deliverytime_id_eq, '運送の方法'
+            - @alldeliverytimes.each do |deliverytime|
+              = deliverytime.name
+              = f.radio_button :deliverytime_id_eq, deliverytime.id
+          %br
 
-        .form-group
-          = f.label :delivery_from_eq, '発送元'
-          = f.select :delivery_from_eq, @alldelivery_froms, {prompt: "---"}, {class: 'hoge', id: 'hogehoge'}
+          .form-group
+            = f.label :delivery_from_eq, '発送元'
+            = f.select :delivery_from_eq, @alldelivery_froms, {prompt: "---"}, {class: 'hoge', id: 'hogehoge'}
 
 
 
-        .actions= f.submit "Search"
-      
+          .actions= f.submit "Search"
+        
+
+    .contentspart
+      %p 検索結果ページ。
+
+      %br
+      - @result.each do |item|
+        .changewrapper{"data-price": "#{item.price}"}
+          =item.name
+          =image_tag item.images.first.image.url
+          = "#{item.price}円"
+          = link_to "詳細へ", item_path(item)
 
 
 
-  -# = form_tag(detailsearch_path,:method => 'get') do
-  -#   = text_field_tag :detailsearch
-  -#   = submit_tag '詳細検索', :name => nil
 
-  -#   %select{class: 'sort_order'}
-  -#     %option{value: "first-option"}
-  -#       並び替え
-  -#     %option{value: "price_asc"}
-  -#       価格の安い順
-  -#     %option{value: "price_desc"}
-  -#       価格の高い順
-  -#     %option{value: "created_at_asc"}
-  -#       出品の古い順
-  -#     %option{value: "created_at_desc"}
-  -#       出品の新しい順
+
+
+
+-# 一度作ったが不要になったもの（倉庫感覚）。こっから先は全てコメントアウトゾーンにすること
+-#         .form-group
+-#           = f.label :parentcategory_eq, '親カテゴリチェックボックス'
+-#           %br
+-#           - @allparentcategories.each do |parentcategory|
+-#             = parentcategory.name
+-#             = f.radio_button :parentcategory_eq, parentcategory.name
+-#         %br
+
+-#         .form-group
+-#           = f.label :delivery_from_eq, '発送元'
+-#           - @alldelivery_froms.each do |delivery_from|
+-#             = delivery_from[0]
+-#             = f.radio_button :delivery_from_eq, delivery_from[1]

@@ -1,11 +1,12 @@
 class HomeController < ApplicationController
 
   def search
+    @user = current_user
     @items = Item.firstsearch(params[:search])
   
     
     @search = Item.ransack(params[:q])  #ransack
-    @result = @search.result           #ransack
+    @result = @search.result        #ransack
 
     @allparentcategories = Category.where(ancestry: nil)
     
@@ -23,10 +24,30 @@ class HomeController < ApplicationController
     @alldeliverytimes = Deliverytime.all
     @alldelivery_froms = Item.delivery_froms
 
+    # 要らんやつ後で消す
+    # if params[:change] == "1"
+    #   @result = @result.order(price: "DESC")
+    # elsif params[:change] == "2"
+    #   @result = @result.order(price: "ASC")
+    # else 
+    #   @result 
+    # end
+
+    if params[:q].present?
+      @hoge = "hoge"
+    else
+        params[:q] = { sorts: 'id desc' }
+        @search = Item.ransack()
+        @items = Item.all
+    end
+
+
+    
+
   end
 
   def detailsearch
-    
+    # 多分このアクション自体消す。その時にパスとビューも消す
     @search = Item.ransack(params[:q])  #ransack
     @result = @search.result           #ransack
   
@@ -35,9 +56,15 @@ class HomeController < ApplicationController
   end
 
 
+
   
 
   def index
+    @items = Item.firstsearch(params[:search])
+    @search = Item.ransack(params[:q])  #ransack
+    @result = @search.result           #ransack
+
+  
     @user = current_user
     
     @pickupitems = Item.includes(:images).last(6)
@@ -61,24 +88,27 @@ class HomeController < ApplicationController
        @category_parent_array << parent.name
      end
      
-    # 親カテゴリーが選択された後に動くアクション
-    def get_category_children
-      #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
-      @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
-    end
-
-    # 子カテゴリーが選択された後に動くアクション
-    def get_category_grandchildren
-      #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
-      @category_grandchildren = Category.find("#{params[:child_id]}").children
-    end
-
   end
 
+
+
+  # 親カテゴリーが選択された後に動くアクション
+  def get_category_children
+    #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+  # 子カテゴリーが選択された後に動くアクション
+  def get_category_grandchildren
+    #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
+
+  
   def unexpectederrors
     # 予期せぬ動作が起きた場合に飛ぶページ用
     # エラーハンドリングの遷移先として置いてる
   end
 
-  
+
 end

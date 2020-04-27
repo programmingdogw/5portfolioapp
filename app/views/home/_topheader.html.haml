@@ -3,8 +3,9 @@
   .firststage
     =link_to image_tag('logo.png', alt: "ロゴ画像", class:"headerlogo"), root_path
     = form_tag(search_path,:method => 'get') do
-      = text_field_tag :search, "",{class: "search-field"}
-      = submit_tag '商品のキーワード検索', :name => nil
+      = search_form_for @search  do |f|
+        = text_field_tag :search, "",{class: "search-field"}
+        = submit_tag '商品のキーワード検索', :name => nil
 
 
   .secondstage
@@ -23,8 +24,6 @@
       - if user_signed_in?
         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "headerlink"
         = link_to "マイページへ", user_path(@user), class: "headerlink"
-        %br
-        = link_to "商品出品ページへ", new_item_path, class: "headerlink"
         %br
         = link_to "商品一覧ページへ", items_path, class: "headerlink"
         %br

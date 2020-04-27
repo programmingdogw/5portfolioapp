@@ -1,7 +1,13 @@
 
-%p ニックネーム
-= @user.nickname
-%p 生年月日
-= @user.birthdate
-%p メールアドレス
-= @user.email
+.pagecontainer
+
+  .pagecontainer__mypageheader
+    = image_tag('changedforest.jpg', alt: "画像", class:"miniimagelogo")
+
+  .pagecontainer__mypagecontents 
+    %p ニックネーム
+    = @user.nickname
+    %p 生年月日
+    = @user.birthdate
+    %p メールアドレス
+    = @user.email
