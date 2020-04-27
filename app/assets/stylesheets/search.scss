@@ -1,0 +1,25 @@
+.pagecontainer{
+  background-color: blue;
+  &__searchheader{
+    width:100%;
+    height: 250px;
+    background-image: image_url("changedforest.jpg");
+    background-size: cover;
+    
+  }
+
+  &__searchcontents{
+    display:flex;
+    background-color: green;
+    .narrowing-down-part{
+      background-color: red;
+      width: 400px;
+    }
+
+    .contentspart{
+      width: calc(100% - 400px);
+      background-color: lime;
+    }
+
+  }
+}

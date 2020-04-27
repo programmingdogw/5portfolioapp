@@ -2,79 +2,82 @@
 
 .pagecontainer
 
-  .narrowing-down-part
-    = form_tag(search_path,:method => 'get') do
-      = search_form_for @search  do |f|
+  .pagecontainer__searchheader
 
-        .form-group
-          = f.label :name_cont, "キーワード検索"
-          = f.text_field :name_cont, class: ""
-        %br
+  .pagecontainer__searchcontents 
+    .narrowing-down-part
+      = form_tag(search_path,:method => 'get') do
+        = search_form_for @search  do |f|
 
-        .form-group
-          = f.label :brand_cont, "ブランド検索"
-          = f.text_field :brand_cont, class: ""
-        %br
-
-        .form-group
-          = f.label :parentcategory_eq, '親カテゴリセレクトボックス'
+          .form-group
+            = f.label :name_cont, "キーワード検索"
+            = f.text_field :name_cont, class: ""
           %br
-          = f.select :parentcategory_eq, @category_parent_array, {prompt: "---"}, {class: '', id: ''}
-        %br
 
-        .form-group
-          = f.label :size_id_eq, '商品のサイズ'
-          - @allsizes.each do |size|
-            = size.name
-            = f.radio_button :size_id_eq, size.id
-        %br
+          .form-group
+            = f.label :brand_cont, "ブランド検索"
+            = f.text_field :brand_cont, class: ""
+          %br
 
-        .form-group
-          = f.label :condition_id_eq, '商品の状態'
-          - @allconditions.each do |condition|
-            = condition.name
-            = f.radio_button :condition_id_eq, condition.id
+          .form-group
+            = f.label :parentcategory_eq, '親カテゴリセレクトボックス'
+            %br
+            = f.select :parentcategory_eq, @category_parent_array, {prompt: "---"}, {class: '', id: ''}
+          %br
 
-        %br
-        .form-group
-          = f.label :deliverycost_id_eq, '運送料の負担'
-          - @alldeliverycosts.each do |deliverycost|
-            = deliverycost.name
-            = f.radio_button :deliverycost_id_eq, deliverycost.id
-        %br
+          .form-group
+            = f.label :size_id_eq, '商品のサイズ'
+            - @allsizes.each do |size|
+              = size.name
+              = f.radio_button :size_id_eq, size.id
+          %br
 
-        .form-group
-          = f.label :deliveryway_id_eq, '運送の方法'
-          - @alldeliveryways.each do |deliveryway|
-            = deliveryway.name
-            = f.radio_button :deliveryway_id_eq, deliveryway.id
-        %br
+          .form-group
+            = f.label :condition_id_eq, '商品の状態'
+            - @allconditions.each do |condition|
+              = condition.name
+              = f.radio_button :condition_id_eq, condition.id
 
-        .form-group
-          = f.label :deliverytime_id_eq, '運送の方法'
-          - @alldeliverytimes.each do |deliverytime|
-            = deliverytime.name
-            = f.radio_button :deliverytime_id_eq, deliverytime.id
-        %br
+          %br
+          .form-group
+            = f.label :deliverycost_id_eq, '運送料の負担'
+            - @alldeliverycosts.each do |deliverycost|
+              = deliverycost.name
+              = f.radio_button :deliverycost_id_eq, deliverycost.id
+          %br
 
-        .form-group
-          = f.label :delivery_from_eq, '発送元'
-          = f.select :delivery_from_eq, @alldelivery_froms, {prompt: "---"}, {class: 'hoge', id: 'hogehoge'}
+          .form-group
+            = f.label :deliveryway_id_eq, '運送の方法'
+            - @alldeliveryways.each do |deliveryway|
+              = deliveryway.name
+              = f.radio_button :deliveryway_id_eq, deliveryway.id
+          %br
+
+          .form-group
+            = f.label :deliverytime_id_eq, '運送の方法'
+            - @alldeliverytimes.each do |deliverytime|
+              = deliverytime.name
+              = f.radio_button :deliverytime_id_eq, deliverytime.id
+          %br
+
+          .form-group
+            = f.label :delivery_from_eq, '発送元'
+            = f.select :delivery_from_eq, @alldelivery_froms, {prompt: "---"}, {class: 'hoge', id: 'hogehoge'}
 
 
 
-        .actions= f.submit "Search"
-      
+          .actions= f.submit "Search"
+        
 
     .contentspart
-    %p 検索結果ページ。
+      %p 検索結果ページ。
 
-    %br
-    - @result.each do |item|
-      =item.name
-      =image_tag item.images.first.image.url
-      = "#{item.price}円"
-      = link_to "詳細へ", item_path(item)
+      %br
+      - @result.each do |item|
+        =item.name
+        =image_tag item.images.first.image.url
+        = "#{item.price}円"
+        = link_to "詳細へ", item_path(item)
 
 
 
