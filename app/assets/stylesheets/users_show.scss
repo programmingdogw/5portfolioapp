@@ -7,14 +7,17 @@
 
     // ここから先はハンバーガーメニュー部分（パーシャル部分）
     .humburgermenu-wrapper{
+      position: fixed;
+      top: 30px;
+      right: 30px;
       // 基準の位置
-      .nav_toggle {
+      .navtoggle {
         display: block;
         position: relative;
         width: 1.75rem;
         height: 1.5rem;
           // 三本線クリック前
-        .toggle-i{
+        &__i{
           display: block;
           width: 100%;
           height: 2px;
@@ -22,28 +25,28 @@
           position: absolute;
           transition: transform .5s, opacity .5s;
         }
-        .toggle-i:nth-child(1) {
+        &__i:nth-child(1) {
           top: 0;
         }
-        .toggle-i:nth-child(2) {
+        &__i:nth-child(2) {
           top: 0;
           bottom: 0;
           margin: auto;
         }
-        .toggle-i:nth-child(3) {
+        &__i:nth-child(3) {
           bottom: 0;
         }
       }
 
         // 三本線クリック後
-      .nav_toggle.show{
-        .toggle-i:nth-child(1) {
+      .navtoggle.show{
+        &__i:nth-child(1) {
           transform: translateY(10px) rotate(-45deg);
         }
-        .toggle-i:nth-child(2) {
+        &__i:nth-child(2) {
           opacity: 0;
         }
-        .toggle-i:nth-child(3) {
+        &__i:nth-child(3) {
           transform: translateY(-12px) rotate(45deg);
         }
       }
@@ -51,12 +54,6 @@
       
       // メニューリストクリック前
       .nav {
-        position: fixed;
-        top: 3rem;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        padding: 1rem;
         opacity: 0;
         visibility: hidden;
         transition: opacity .5s, visibility .5s;
@@ -66,6 +63,16 @@
       .nav.show {
         opacity: 1;
         visibility: visible;
+        background-color:lightgray;
+        .nav__menuul{
+          .nav-menu-li{
+            .nav-menu-link{
+              text-decoration: none;
+              color:black;
+              background-color: lime;
+            }
+          }
+        }
       }
 
       // ハンバーガメニューはここまで
