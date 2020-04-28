@@ -55,10 +55,8 @@
       // メニューリストクリック前
       .nav {
         position: fixed;
-        top: 3rem;
         top: 50px;
         right: 50px;
-        bottom: 0;
         padding: 1rem;
         opacity: 0;
         visibility: hidden;
@@ -69,6 +67,21 @@
       .nav.show {
         opacity: 1;
         visibility: visible;
+        background-color: lightgray;
+        border-radius: 15px;
+        .nav_menu_li{
+          padding: 5px;
+          border-radius: 10px;
+          .humburgerlink{
+            text-decoration: none;
+            color: black;
+          }
+        }
+
+        .nav_menu_li:hover{
+          background-color: rgb(230, 241, 167);
+        }
+        
       }
 
       // ハンバーガメニューはここまで
