@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', ()=> {
 
-  $('.navtoggle').on('click', function () {
-    $('.navtoggle, .nav').toggleClass('show');
+  $('.nav_toggle').on('click', function () {
+    $('.nav_toggle, .nav').toggleClass('show');
   });
 
 });
