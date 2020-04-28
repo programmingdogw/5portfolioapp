@@ -1,8 +1,10 @@
+= stylesheet_link_tag 'users_show'
 
 .pagecontainer
 
   .pagecontainer__mypageheader
-    = image_tag('changedforest.jpg', alt: "画像", class:"miniimagelogo")
+    = render 'home/humburger'
+    -# = image_tag('changedforest.jpg', alt: "画像", class:"miniimagelogo")
 
   .pagecontainer__mypagecontents 
     %p ニックネーム
