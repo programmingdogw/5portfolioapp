@@ -7,6 +7,9 @@
 
     // ここから先はハンバーガーメニュー部分（パーシャル部分）
     .humburgermenu-wrapper{
+      position: fixed;
+      top: 30px;
+      right: 30px;
       // 基準の位置
       .nav_toggle {
         display: block;
@@ -53,8 +56,8 @@
       .nav {
         position: fixed;
         top: 3rem;
-        left: 0;
-        right: 0;
+        top: 50px;
+        right: 50px;
         bottom: 0;
         padding: 1rem;
         opacity: 0;
