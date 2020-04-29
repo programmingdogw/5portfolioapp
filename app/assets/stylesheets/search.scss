@@ -93,7 +93,7 @@
   &__searchcontents{
     display:flex;
     .narrowing-down-part{
-      width: 400px;
+      width: 300px;
       .orderselect{
         background-color:lightyellow;
         padding: 10px;
@@ -103,8 +103,7 @@
           -webkit-appearance: none;
           -moz-appearance: none;
           appearance: none;
-          width: 46%;
-          height:43px;
+          width: 200px;
           margin-top: 5px;
           border-radius: 4%;
           background-color: white;
@@ -129,8 +128,7 @@
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
-            width: 46%;
-            height:43px;
+            width: 200px;
             margin-top: 5px;
             border-radius: 4%;
             background-color: white;
