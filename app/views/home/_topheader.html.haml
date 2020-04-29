@@ -12,7 +12,7 @@
   .secondstage
     .secondstage__left
       .topmenu 
-        = link_to "カテゴリの一覧", categories_path, class: "categorytoplink"
+        = link_to "カテゴリで絞り込む", categories_path, class: "categorytoplink"
       .categorylist-wrapper
         %ul.parentul
           - @category_parent_array.each do |parentcategory|
