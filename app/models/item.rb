@@ -49,7 +49,7 @@ class Item < ApplicationRecord
     if search
       Item.where(['name LIKE ?', "%#{search}%"])
     else
-      Item.all
+      
     end
   end
 

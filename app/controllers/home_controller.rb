@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   def search
     @user = current_user
-    @items = Item.firstsearch(params[:search])
+    @firstitems = Item.firstsearch(params[:firstsearch])
   
     
     @search = Item.ransack(params[:q])  #ransack
@@ -24,14 +24,6 @@ class HomeController < ApplicationController
     @alldeliverytimes = Deliverytime.all
     @alldelivery_froms = Item.delivery_froms
 
-    # 要らんやつ後で消す
-    # if params[:change] == "1"
-    #   @result = @result.order(price: "DESC")
-    # elsif params[:change] == "2"
-    #   @result = @result.order(price: "ASC")
-    # else 
-    #   @result 
-    # end
 
     if params[:q].present?
       @hoge = "hoge"
@@ -46,14 +38,7 @@ class HomeController < ApplicationController
 
   end
 
-  def detailsearch
-    # 多分このアクション自体消す。その時にパスとビューも消す
-    @search = Item.ransack(params[:q])  #ransack
-    @result = @search.result           #ransack
   
-    @allparentcategories = Category.where(ancestry: nil)
-
-  end
 
 
 

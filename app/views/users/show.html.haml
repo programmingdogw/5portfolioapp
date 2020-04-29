@@ -1,9 +1,14 @@
+= stylesheet_link_tag 'users_show'
 
 .pagecontainer
 
+  -# ヘッダー
   .pagecontainer__mypageheader
-    = image_tag('changedforest.jpg', alt: "画像", class:"miniimagelogo")
+    = render 'home/humburger'
+    .firststage
+    =link_to image_tag('logo.png', alt: "ロゴ画像", class:"headerlogo"), root_path
 
+  -# メイン  
   .pagecontainer__mypagecontents 
     %p ニックネーム
     = @user.nickname
@@ -11,3 +16,8 @@
     = @user.birthdate
     %p メールアドレス
     = @user.email
+  
+
+  -# フッター
+  = render 'home/topfooter'
+  

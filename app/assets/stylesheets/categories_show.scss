@@ -3,7 +3,7 @@
   padding: 50px;
 
   // ヘッダー
-  &__categoryheader{
+  &__categoryshowheader{
     text-align: center;
     
       // ここから先はハンバーガーメニュー部分（パーシャル部分）
@@ -89,57 +89,9 @@
     
   }
 
-
   // メイン
-  &__categorymain{
-    background-color: rgb(248, 253, 235);
-    .parent{
-      width: 100%;
-      text-align: center;
-      padding: 1px;
-      &__categoryname{
-        font-size: 27px;
-        margin-top: 20px;
-      }
-      .simplebar{
-        margin: auto;
-        width:90%;
-        background: lightgray;
-        height:1px;
-        margin-top:30px;
-      }
-      .child{
-        &__categoryname{
-          background-color: skyblue;
-          border-radius: 30px;
-          width: 90%;
-          margin: auto;
-          margin-top: 20px;
-          .categorylinks{
-            text-decoration: none;
-            color:black;
-          }
-        }
-        .grandchild{
-          display: inline-block;
-          display: flex;
-          flex-wrap: wrap;
-          width: 90%;
-          margin: auto;
-          &__categoryname{
-            background-color:rgb(226, 230, 231);
-            padding:5px;
-            margin: 10px;
-            border-radius: 5px;
-            width: auto;
-            .categorylinks{
-              text-decoration: none;
-              color: black;
-            }
-          }
-        }
-      }
-    }
+  &__categoryshowmain{
+    background-color: red;
   }
 
 
@@ -159,6 +111,4 @@
       height: 50px;
     }
   }
-
-
 }

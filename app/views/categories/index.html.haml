@@ -1,20 +1,32 @@
 = stylesheet_link_tag 'categories_index'
 
-カテゴリ一覧ページ
 
--# 全カテゴリ
--# - @categories.each do |category|
--#  = category.name
+.pagecontainer
+  .pagecontainer__categoryheader
+    = render 'home/humburger'
+    .firststage
+    =link_to image_tag('logo.png', alt: "ロゴ画像", class:"headerlogo"), root_path
 
 
-.parent
-  - @parentcategories.each do |parentcategory|
-    = parentcategory.name 
-    .child 
-      - @childrencategories = parentcategory.children
-      - @childrencategories.each do |childcategory|
-        = link_to "#{childcategory.name}", category_path(childcategory.id)
-        .grandchild
-          - @grandchildrencategories = childcategory.children
-          - @grandchildrencategories.each do |grandchildcategory|  
-            = link_to  "#{grandchildcategory.name}", category_path(grandchildcategory.id)
+  .pagecontainer__categorymain
+    .parent
+      - @parentcategories.each do |parentcategory|
+        .parent__categoryname
+          = parentcategory.name
+        .simplebar
+ 
+
+        .child
+          - @childrencategories = parentcategory.children
+          - @childrencategories.each do |childcategory|
+            .child__categoryname
+              = link_to "#{childcategory.name}", category_path(childcategory.id), class:"categorylinks"
+            .grandchild
+              - @grandchildrencategories = childcategory.children
+              - @grandchildrencategories.each do |grandchildcategory|
+                .grandchild__categoryname  
+                  = link_to  "#{grandchildcategory.name}", category_path(grandchildcategory.id), class:"categorylinks"
+    
+  
+  = render 'home/topfooter'
+  

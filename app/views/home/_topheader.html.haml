@@ -1,17 +1,18 @@
 %header.pagecontainer__header
 
+  = render "humburger" 
+
   .firststage
     =link_to image_tag('logo.png', alt: "ロゴ画像", class:"headerlogo"), root_path
-    = form_tag(search_path,:method => 'get') do
-      = search_form_for @search  do |f|
-        = text_field_tag :search, "",{class: "search-field"}
-        = submit_tag '商品のキーワード検索', :name => nil
+    = form_tag(search_path,:method => 'get') do  
+      = text_field_tag :firstsearch, "",{class: "search-field"}
+      = submit_tag '商品名で検索', :name => nil
 
 
   .secondstage
     .secondstage__left
       .topmenu 
-        = link_to "カテゴリの一覧", categories_path, class: "categorytoplink"
+        = link_to "カテゴリで絞り込む", categories_path, class: "categorytoplink"
       .categorylist-wrapper
         %ul.parentul
           - @category_parent_array.each do |parentcategory|
