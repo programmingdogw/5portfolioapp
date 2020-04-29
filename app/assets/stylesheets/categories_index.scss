@@ -111,6 +111,10 @@
       .child{
         &__categoryname{
           background-color: skyblue;
+          border-radius: 30px;
+          width: 90%;
+          margin: auto;
+          margin-top: 20px;
           .categorylinks{
             text-decoration: none;
             color:black;
@@ -120,8 +124,10 @@
           display: inline-block;
           display: flex;
           flex-wrap: wrap;
+          width: 90%;
+          margin: auto;
           &__categoryname{
-            background-color:rgb(233, 230, 230);
+            background-color:rgb(226, 230, 231);
             padding:5px;
             margin: 10px;
             border-radius: 5px;
