@@ -32,8 +32,7 @@
             %br
 
             .form-group
-              = f.label :parentcategory_eq, '親カテゴリセレクトボックス'
-              %br
+              %p カテゴリ
               = f.select :parentcategory_eq, @category_parent_array, {prompt: "---"}, {class: 'decoratedselect', id: ''}
               %i.fas.fa-chevron-down.decoratedchevron
             %br
