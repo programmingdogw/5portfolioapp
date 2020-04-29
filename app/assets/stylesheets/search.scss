@@ -103,4 +103,23 @@
     }
 
   }
+
+
+  // フッター
+  &__footer{
+    text-align: center;
+    .footerbox{
+      padding-top: 20px;
+      margin:20px;
+      &__abouts{
+        margin-left: 10px;
+        font-size: 12px;
+      }
+    }
+    .footerlogo{
+      width:200px;
+      height: 50px;
+    }
+  }
+
 }
