@@ -1,11 +1,13 @@
 = stylesheet_link_tag 'categories_show'
 
 .pagecontainer
+  -# ヘッダー
   .pagecontainer__categoryshowheader
     = render 'home/humburger'
     .firststage
     =link_to image_tag('logo.png', alt: "ロゴ画像", class:"headerlogo"), root_path
 
+  -# メイン
   .pagecontainer__categoryshowmain
     %p カテゴリーのshow
     -# 孫カテゴリがある場合はリンク孫に飛ぶためのリンク作ってあげる
@@ -20,4 +22,9 @@
     - @grandchilditems.each do |item|
       = item.name
       = image_tag item.images.first.image.url
+
+
+  -# フッター
+  = render 'home/topfooter'
+  
 

@@ -7,6 +7,7 @@
     .firststage
     =link_to image_tag('logo.png', alt: "ロゴ画像", class:"headerlogo"), root_path
 
+
   .pagecontainer__categorymain
     .parent
       - @parentcategories.each do |parentcategory|
@@ -19,3 +20,7 @@
               - @grandchildrencategories = childcategory.children
               - @grandchildrencategories.each do |grandchildcategory|  
                 = link_to  "#{grandchildcategory.name}", category_path(grandchildcategory.id)
+  
+  
+  = render 'home/topfooter'
+  

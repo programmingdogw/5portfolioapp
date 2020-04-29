@@ -2,10 +2,13 @@
 
 .pagecontainer
 
+  -# ヘッダー
   .pagecontainer__mypageheader
     = render 'home/humburger'
-    -# = image_tag('changedforest.jpg', alt: "画像", class:"miniimagelogo")
+    .firststage
+    =link_to image_tag('logo.png', alt: "ロゴ画像", class:"headerlogo"), root_path
 
+  -# メイン  
   .pagecontainer__mypagecontents 
     %p ニックネーム
     = @user.nickname
@@ -13,3 +16,8 @@
     = @user.birthdate
     %p メールアドレス
     = @user.email
+  
+
+  -# フッター
+  = render 'home/topfooter'
+  
