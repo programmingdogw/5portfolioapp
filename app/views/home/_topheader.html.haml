@@ -1,5 +1,7 @@
 %header.pagecontainer__header
 
+  = render "humburger" 
+
   .firststage
     =link_to image_tag('logo.png', alt: "ロゴ画像", class:"headerlogo"), root_path
     = form_tag(search_path,:method => 'get') do  
