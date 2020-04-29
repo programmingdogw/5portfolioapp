@@ -1,10 +1,11 @@
 .pagecontainer{
-  background-color: blue;
+  background-color:rgb(243, 240, 240);
+  padding: 50px;
+
+  // ヘッダー
   &__searchheader{
-    width:100%;
-    height: 250px;
-    background-image: image_url("changedforest.jpg");
-    background-size: cover;
+    text-align: center;
+    
       // ここから先はハンバーガーメニュー部分（パーシャル部分）
       .humburgermenu-wrapper{
         position: fixed;
@@ -90,7 +91,6 @@
 
   &__searchcontents{
     display:flex;
-    background-color: green;
     .narrowing-down-part{
       background-color: red;
       width: 400px;
