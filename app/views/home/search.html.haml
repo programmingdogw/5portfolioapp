@@ -22,12 +22,12 @@
 
           .searchselect
             .form-group
-              = f.label :name_cont, "キーワード検索"
+              %p キーワード検索
               = f.text_field :name_cont, class: "decoratedselect"
             %br
 
             .form-group
-              = f.label :brand_cont, "ブランド検索"
+              %p ブランド検索 
               = f.text_field :brand_cont, class: ""
             %br
 
@@ -39,43 +39,43 @@
             %br
 
             .form-group
-              = f.label :size_id_eq, '商品のサイズ'
+              %p 商品のサイズ
               - @allsizes.each do |size|
                 = size.name
                 = f.radio_button :size_id_eq, size.id
             %br
 
             .form-group
-              = f.label :condition_id_eq, '商品の状態'
+              %p 商品の状態
               - @allconditions.each do |condition|
                 = condition.name
                 = f.radio_button :condition_id_eq, condition.id
 
             %br
             .form-group
-              = f.label :deliverycost_id_eq, '運送料の負担'
+              %p 運送料の負担
               - @alldeliverycosts.each do |deliverycost|
                 = deliverycost.name
                 = f.radio_button :deliverycost_id_eq, deliverycost.id
             %br
 
             .form-group
-              = f.label :deliveryway_id_eq, '運送の方法'
+              %p 運送の方法
               - @alldeliveryways.each do |deliveryway|
                 = deliveryway.name
                 = f.radio_button :deliveryway_id_eq, deliveryway.id
             %br
 
             .form-group
-              = f.label :deliverytime_id_eq, '運送の方法'
+              %p 運送の方法
               - @alldeliverytimes.each do |deliverytime|
                 = deliverytime.name
                 = f.radio_button :deliverytime_id_eq, deliverytime.id
             %br
 
             .form-group
-              = f.label :delivery_from_eq, '発送元'
-              = f.select :delivery_from_eq, @alldelivery_froms, {prompt: "---"}, {class: 'hoge', id: 'hogehoge'}
+              %p 発送元
+              = f.select :delivery_from_eq, @alldelivery_froms, {prompt: "---"}, {class: 'decoratedselect', id: 'hogehoge'}
 
 
 
