@@ -110,12 +110,7 @@ $(document).on('turbolinks:load', ()=> {
     });    
   });
 
-  // 並べ変えのロジック作る予定
-  $('.changediv').on('mouseenter', function(){
-    $('.changewrapper').each(function(i, item){
-      console.log($(item).data('price'));
-    }); 
-  });
+  
 
 
   // 大外
