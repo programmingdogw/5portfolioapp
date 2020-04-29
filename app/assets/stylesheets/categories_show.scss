@@ -1,3 +1,95 @@
-p{
-  color:red;
+.pagecontainer{
+  background-color:rgb(243, 240, 240);
+  padding: 50px;
+
+  // ヘッダー
+  &__categoryshowheader{
+    text-align: center;
+    
+      // ここから先はハンバーガーメニュー部分（パーシャル部分）
+      .humburgermenu-wrapper{
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        // 基準の位置
+        .nav_toggle {
+          display: block;
+          position: relative;
+          width: 1.75rem;
+          height: 1.5rem;
+            // 三本線クリック前
+          .toggle-i{
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #333;
+            position: absolute;
+            transition: transform .5s, opacity .5s;
+          }
+          .toggle-i:nth-child(1) {
+            top: 0;
+          }
+          .toggle-i:nth-child(2) {
+            top: 0;
+            bottom: 0;
+            margin: auto;
+          }
+          .toggle-i:nth-child(3) {
+            bottom: 0;
+          }
+        }
+  
+          // 三本線クリック後
+        .nav_toggle.show{
+          .toggle-i:nth-child(1) {
+            transform: translateY(10px) rotate(-45deg);
+          }
+          .toggle-i:nth-child(2) {
+            opacity: 0;
+          }
+          .toggle-i:nth-child(3) {
+            transform: translateY(-12px) rotate(45deg);
+          }
+        }
+  
+        
+        // メニューリストクリック前
+        .nav {
+          position: fixed;
+          top: 50px;
+          right: 50px;
+          padding: 1rem;
+          opacity: 0;
+          visibility: hidden;
+        }
+  
+        // メニューリストクリック後
+        .nav.show {
+          opacity: 1;
+          visibility: visible;
+          background-color: lightgray;
+          border-radius: 15px;
+          .nav_menu_li{
+            padding: 5px;
+            border-radius: 10px;
+            .humburgerlink{
+              text-decoration: none;
+              color: black;
+            }
+          }
+  
+          .nav_menu_li:hover{
+            background-color: rgb(230, 241, 167);
+          }
+          
+        }
+  
+        // ハンバーガメニューはここまで
+      }
+    
+  }
+
+  &__categoryshowmain{
+    background-color: red;
+  }
 }

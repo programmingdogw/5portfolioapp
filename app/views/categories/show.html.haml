@@ -1,17 +1,23 @@
 = stylesheet_link_tag 'categories_show'
 
-%p カテゴリーのshow
+.pagecontainer
+  .pagecontainer__categoryshowheader
+    = render 'home/humburger'
+    .firststage
+    =link_to image_tag('logo.png', alt: "ロゴ画像", class:"headerlogo"), root_path
 
+  .pagecontainer__categoryshowmain
+    %p カテゴリーのshow
+    -# 孫カテゴリがある場合はリンク孫に飛ぶためのリンク作ってあげる
+    - @categories.each do |category|
+      = link_to "#{category.name}", category_path(category)
 
--# 孫カテゴリがある場合はリンク孫に飛ぶためのリンク作ってあげる
-- @categories.each do |category|
- = link_to "#{category.name}", category_path(category)
+    %p 商品一覧
+    - @childitems.each do |item|
+      = item.name
+      = image_tag item.images.first.image.url
 
-%p 商品一覧
-- @childitems.each do |item|
- = item.name
- = image_tag item.images.first.image.url
+    - @grandchilditems.each do |item|
+      = item.name
+      = image_tag item.images.first.image.url
 
-- @grandchilditems.each do |item|
- = item.name
- = image_tag item.images.first.image.url
