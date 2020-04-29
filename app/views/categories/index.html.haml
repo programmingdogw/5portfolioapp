@@ -11,16 +11,22 @@
   .pagecontainer__categorymain
     .parent
       - @parentcategories.each do |parentcategory|
-        = parentcategory.name 
-        .child 
+        .parent__categoryname
+          = parentcategory.name
+        .simplebar
+ 
+
+        .child
           - @childrencategories = parentcategory.children
           - @childrencategories.each do |childcategory|
-            = link_to "#{childcategory.name}", category_path(childcategory.id)
+            .child__categoryname
+              = link_to "#{childcategory.name}", category_path(childcategory.id), class:"categorylinks"
             .grandchild
               - @grandchildrencategories = childcategory.children
-              - @grandchildrencategories.each do |grandchildcategory|  
-                = link_to  "#{grandchildcategory.name}", category_path(grandchildcategory.id)
-  
+              - @grandchildrencategories.each do |grandchildcategory|
+                .grandchild__categoryname  
+                  = link_to  "#{grandchildcategory.name}", category_path(grandchildcategory.id), class:"categorylinks"
+    
   
   = render 'home/topfooter'
   
