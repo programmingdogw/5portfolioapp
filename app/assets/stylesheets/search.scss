@@ -94,6 +94,7 @@
     display:flex;
     .narrowing-down-part{
       width: 300px;
+      margin-right: 10px;
       .orderselect{
         background-color:lightyellow;
         padding: 10px;
@@ -122,7 +123,6 @@
         background-color:lightyellow;
         padding: 10px;
         border-radius: 10px;
-        margin-bottom: 40px;
         .form-group{
           .decoratedselect{          
             -webkit-appearance: none;
@@ -147,7 +147,15 @@
 
     .contentspart{
       width: calc(100% - 400px);
-      background-color: lime;
+      margin-left: 10px;
+      background-color:lightyellow;
+      border-radius: 10px;
+      padding: 10px;
+      .searchresult{
+        text-align: center;
+        background-color: pink;
+        border-radius: 10px;
+      }
     }
 
   }
