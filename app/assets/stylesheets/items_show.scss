@@ -105,6 +105,7 @@
       display: flex;
       &__image{
         width: 50%;
+        text-align: center;
         background-color: purple;
       }
 
@@ -114,14 +115,27 @@
           background-color: red;
           display: flex;
           &__left{
+            width: 30%;
             background-color: silver;
           }
           &__right{
+            width: 70%;
             background-color: steelblue;
           }
         }
       }
     }
+
+    .itemcost{
+      background-color: yellowgreen;
+    }
+
+    .purchase-or-edit-delete{
+      background-color: violet;
+    }
+
+
+
   }
 
   // フッター

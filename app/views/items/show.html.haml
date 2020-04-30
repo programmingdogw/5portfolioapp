@@ -15,6 +15,10 @@
     .iteminfo
       .iteminfo__image
         = image_tag @item.images.first.image.url,  alt: '商品が投稿されていません', :size =>'300x300'
+        %P 画像一覧
+        - @item.images.each do |images|
+          = image_tag images.image.url, size:"100x100" 
+
         
       .iteminfo__text
         .textinfowrapper
@@ -26,7 +30,7 @@
           -if @item.brand != nil
             .textinfowrapper__right
               = @item.brand
-          %else
+          -else
             .textinfowrapper__right
               = ""
         .textinfowrapper
@@ -49,42 +53,49 @@
           .textinfowrapper__left 発送日の目安
           .textinfowrapper__right
             = @deliverytime.name
+        .textinfowrapper
+          .textinfowrapper__left 親カテゴリ
+          .textinfowrapper__right
+            = @item.parentcategory
+        .textinfowrapper
+          .textinfowrapper__left 子カテゴリ
+          .textinfowrapper__right
+            = @child.name
+        .textinfowrapper
+          .textinfowrapper__left 孫カテゴリ
+          .textinfowrapper__right
+            = @grandchild.name
         
+      
     .itemcost
       ="値段#{@item.price}円"
+
+
+    .purchase-or-edit-delete
+      - if user_signed_in?
+        - if @user == current_user
+          %p 編集リンクが表示される
+          = link_to '商品編集ページへ', edit_item_path(@item)
+          %p 削除リンクが表示される
+          = link_to '削除', item_path(@item), method: :delete
+        - elsif @user != current_user
+          %p 購入リンクが表示される
+          = link_to '商品購入へ(購入機能はまだ作ってないのでpathは仮置き)', '#'
+        - else
+          %p これが表示されることはないはず
+      - else
+        %p 購入はログインしてから
+        = link_to 'ログインへ', '#'
+
     .itemexplanation
 
-    -# - if user_signed_in?
-    -#   - if @user == current_user
-    -#     %p 編集リンクが表示される
-    -#     = link_to '商品編集ページへ', edit_item_path(@item)
-    -#     %p 削除リンクが表示される
-    -#     = link_to '削除', item_path(@item), method: :delete
-    -#   - elsif @user != current_user
-    -#     %p 購入リンクが表示される
-    -#     = link_to '商品購入へ(購入機能はまだ作ってないのでpathは仮置き)', '#'
-    -#   - else
-    -#     %p これが表示されることはないはず
-    -# - else
-    -#   %p 購入リンクが表示される
-    -#   = link_to '商品購入へ(購入機能はまだ作ってないのでpathは仮置き)', '#'
+    
 
 
-
-    -# %p 価格
-    -# = @item.price
-    -# %p 親カテゴリ
-    -# = @item.parentcategory
-    -# %p 子カテゴリ
-    -# = @child.name
-    -# %p 孫カテゴリ
-    -# = @grandchild.name
+    
 
 
-    -# %p 画像一覧
-    -# - @item.images.each do |images|
-    -#   = image_tag images.image.url 
-
+ 
 
 
   
