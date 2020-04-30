@@ -101,31 +101,46 @@
       font-size: 26px;
     }
     .iteminfo{
-      background-color: pink;
-      display: flex;
-      &__image{
-        width: 50%;
-        text-align: center;
-        background-color: purple;
-      }
+      @media screen and (min-width: 769px){
+        display: flex;
+      
+        &__image{
+          width: 50%;
+          text-align: center;
+          margin: 20px;
+          background-color: white;
+        }
 
-      &__text{
-        width: 50%;
-        .textinfowrapper{
-          background-color: red;
-          display: flex;
-          &__left{
-            width: 30%;
-            background-color: silver;
-          }
-          &__right{
-            width: 70%;
-            background-color: steelblue;
+        &__text{
+          width: 50%;
+          .textinfowrapper{
+            display: flex;
+            &__left{
+              width: 30%;
+              height:50px;
+              background-color: rgb(230, 223, 223);
+              border: 1px solid rgb(209, 202, 202);
+              line-height: 50px;
+              padding: 5px;
+            }
+            &__right{
+              width: 70%;
+              padding: 5px;
+              line-height: 50px;
+              background-color: white;
+              border: 1px solid rgb(209, 202, 202);
+            }
           }
         }
       }
-    }
 
+      @media screen and (max-width: 768px){ 
+        width:100%;
+        text-align: center;
+        // スマホのレイアウトは後でかく
+      }
+
+    }
     .itemcost{
       background-color: yellowgreen;
     }
