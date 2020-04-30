@@ -69,24 +69,26 @@
         
       
     .itemcost
-      ="値段#{@price}円"
+      ="商品代金    #{@price}円"
 
 
     .purchase-or-edit-delete
+
       - if user_signed_in?
         - if @user == current_user
-          %p 編集リンクが表示される
-          = link_to '商品編集ページへ', edit_item_path(@item)
-          %p 削除リンクが表示される
-          = link_to '削除', item_path(@item), method: :delete
+          .editdiv
+            = link_to '商品情報編集', edit_item_path(@item), class: "btnlink"
+          .deletediv
+            = link_to '商品削除', item_path(@item), method: :delete, class: "btnlink"
         - elsif @user != current_user
-          %p 購入リンクが表示される
-          = link_to '商品購入へ(購入機能はまだ作ってないのでpathは仮置き)', '#'
+          .purchaediv
+            = link_to '商品購入', '#', class: "btnlink"
         - else
-          %p これが表示されることはないはず
+          .extradiv
+            %p これが表示されることはないはず
       - else
-        %p 購入はログインしてから
-        = link_to 'ログインへ', '#'
+        %p 購入はログインしている方のみ行えます
+        = link_to 'ログインへ', '#', class: "btnlink"
 
     .itemexplanation
 
