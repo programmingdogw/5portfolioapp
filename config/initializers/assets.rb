@@ -17,18 +17,23 @@ Rails.application.config.assets.precompile += %w( new_address.scss )
 Rails.application.config.assets.precompile += %w( create_address.scss )
 Rails.application.config.assets.precompile += %w( sessions_new.scss )
 
+
 Rails.application.config.assets.precompile += %w( home_index.scss )
+Rails.application.config.assets.precompile += %w( search.scss )
+
 
 Rails.application.config.assets.precompile += %w( users.scss )
+Rails.application.config.assets.precompile += %w( users_show.scss )
+
 
 Rails.application.config.assets.precompile += %w( items_new.scss )
-
 Rails.application.config.assets.precompile += %w( items_edit.scss )
+Rails.application.config.assets.precompile += %w( items_show.scss )
+
 
 Rails.application.config.assets.precompile += %w( categories_index.scss )
 Rails.application.config.assets.precompile += %w( categories_show.scss )
 
 
-Rails.application.config.assets.precompile += %w( search.scss )
 
-Rails.application.config.assets.precompile += %w( users_show.scss )
+
