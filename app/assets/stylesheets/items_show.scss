@@ -99,15 +99,14 @@
     .itemname{
       text-align: center;
       font-size: 26px;
+      margin-bottom: 20px;
     }
     .iteminfo{
       @media screen and (min-width: 769px){
-        display: flex;
-      
+        display: flex;      
         &__image{
           width: 50%;
           text-align: center;
-          margin: 20px;
           background-color: white;
         }
 
@@ -142,6 +141,8 @@
 
     }
     .itemcost{
+      text-align: center;
+      font-size: 30px;
       background-color: yellowgreen;
     }
 

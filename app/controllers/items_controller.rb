@@ -56,6 +56,7 @@ class ItemsController < ApplicationController
       @deliverytime = Deliverytime.find(@item.deliverytime_id)
       @child = Category.find(@item.childcategory)
       @grandchild = Category.find(@item.category_id)
+      @price = @item.price.to_s(:delimited, delimiter: ',')
     end
   
   
