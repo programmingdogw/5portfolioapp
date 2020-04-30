@@ -96,6 +96,14 @@
   // メイン部分
   &__itemshowcontents{
     background-color: rgb(248, 253, 235);
+    .itemname{
+      text-align: center;
+      font-size: 26px;
+    }
+    .iteminfo{
+      background-color: pink;
+      display: flex;
+    }
   }
 
   // フッター
