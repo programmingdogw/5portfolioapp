@@ -1,58 +1,70 @@
 = stylesheet_link_tag 'items_show'
 
-- if user_signed_in?
-  - if @user == current_user
-    %p 編集リンクが表示される
-    = link_to '商品編集ページへ', edit_item_path(@item)
-    %p 削除リンクが表示される
-    = link_to '削除', item_path(@item), method: :delete
-  - elsif @user != current_user
-    %p 購入リンクが表示される
-    = link_to '商品購入へ(購入機能はまだ作ってないのでpathは仮置き)', '#'
-  - else
-    %p これが表示されることはないはず
-- else
-  %p 購入リンクが表示される
-  = link_to '商品購入へ(購入機能はまだ作ってないのでpathは仮置き)', '#'
+.pagecontainer
+
+  -# ヘッダー
+  .pagecontainer__itemshowheader
+    = render 'home/humburger'
+    .firststage
+    =link_to image_tag('logo.png', alt: "ロゴ画像", class:"headerlogo"), root_path
+
+  -# メイン
+  .pagecontainer__itemshowcontents
+    - if user_signed_in?
+      - if @user == current_user
+        %p 編集リンクが表示される
+        = link_to '商品編集ページへ', edit_item_path(@item)
+        %p 削除リンクが表示される
+        = link_to '削除', item_path(@item), method: :delete
+      - elsif @user != current_user
+        %p 購入リンクが表示される
+        = link_to '商品購入へ(購入機能はまだ作ってないのでpathは仮置き)', '#'
+      - else
+        %p これが表示されることはないはず
+    - else
+      %p 購入リンクが表示される
+      = link_to '商品購入へ(購入機能はまだ作ってないのでpathは仮置き)', '#'
 
 
-%p id
-= @item.id
-%p 商品名
-= @item.name
-%p 価格
-= @item.price
-%p 親カテゴリ
-= @item.parentcategory
-%p 子カテゴリ
-= @child.name
-%p 孫カテゴリ
-= @grandchild.name
+    %p id
+    = @item.id
+    %p 商品名
+    = @item.name
+    %p 価格
+    = @item.price
+    %p 親カテゴリ
+    = @item.parentcategory
+    %p 子カテゴリ
+    = @child.name
+    %p 孫カテゴリ
+    = @grandchild.name
+
+
+    %p 画像一覧
+    - @item.images.each do |images|
+      = image_tag images.image.url 
 
 
 
-%p 画像一覧
-- @item.images.each do |images|
-  = image_tag images.image.url 
-
-
-
-
-
-%p 出品者
-= @user.nickname
-%p ブランド
--if @item.brand != nil
-  = @item.brand
-%else
-  = ""
-%p 商品サイズ
-= @size.name
-%p 商品の状態
-= @condition.name
-%p 配送料の負担
-= @deliverycost.name
-%p 発送元の地域
-= @item.delivery_from
-%p 発送日の目安
-= @deliverytime.name
+    %p 出品者
+    = @user.nickname
+    %p ブランド
+    -if @item.brand != nil
+      = @item.brand
+    %else
+      = ""
+    %p 商品サイズ
+    = @size.name
+    %p 商品の状態
+    = @condition.name
+    %p 配送料の負担
+    = @deliverycost.name
+    %p 発送元の地域
+    = @item.delivery_from
+    %p 発送日の目安
+    = @deliverytime.name
+  
+  
+  -# フッター
+  = render 'home/topfooter'
+  
