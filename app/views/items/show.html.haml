@@ -17,24 +17,39 @@
         = image_tag @item.images.first.image.url,  alt: '商品が投稿されていません', :size =>'300x300'
         
       .iteminfo__text
-        %p 出品者
-        = @user.nickname
-        %p ブランド
-        -if @item.brand != nil
-          = @item.brand
-        %else
-          = ""
-        %p 商品サイズ
-        = @size.name
-        %p 商品の状態
-        = @condition.name
-        %p 配送料の負担
-        = @deliverycost.name
-        %p 発送元の地域
-        = @item.delivery_from
-        %p 発送日の目安
-        = @deliverytime.name
-      
+        .textinfowrapper
+          .textinfowrapper__left 出品者
+          .textinfowrapper__right
+            = @user.nickname
+        .textinfowrapper
+          .textinfowrapper__left ブランド
+          -if @item.brand != nil
+            .textinfowrapper__right
+              = @item.brand
+          %else
+            .textinfowrapper__right
+              = ""
+        .textinfowrapper
+          .textinfowrapper__left 商品サイズ
+          .textinfowrapper__right
+            = @size.name
+        .textinfowrapper
+          .textinfowrapper__left 商品の状態
+          .textinfowrapper__right
+            = @condition.name
+        .textinfowrapper
+          .textinfowrapper__left 配送料の負担
+          .textinfowrapper__right
+            = @deliverycost.name
+        .textinfowrapper
+          .textinfowrapper__left 発送元の地域
+          .textinfowrapper__right
+            = @item.delivery_from
+        .textinfowrapper
+          .textinfowrapper__left 発送日の目安
+          .textinfowrapper__right
+            = @deliverytime.name
+        
     .itemcost
       ="値段#{@item.price}円"
     .itemexplanation

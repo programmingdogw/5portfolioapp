@@ -103,6 +103,24 @@
     .iteminfo{
       background-color: pink;
       display: flex;
+      &__image{
+        width: 50%;
+        background-color: purple;
+      }
+
+      &__text{
+        width: 50%;
+        .textinfowrapper{
+          background-color: red;
+          display: flex;
+          &__left{
+            background-color: silver;
+          }
+          &__right{
+            background-color: steelblue;
+          }
+        }
+      }
     }
   }
 
