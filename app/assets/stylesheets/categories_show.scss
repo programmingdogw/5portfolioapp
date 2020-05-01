@@ -91,7 +91,32 @@
 
   // メイン
   &__categoryshowmain{
-    background-color: red;
+    background-color:lightyellow;
+    padding: 20px;
+    border-radius:10px ;
+    .titlebar{
+      text-align: center;
+      background-color: pink;
+      border-radius: 10px;
+    }
+    .detailsearch{
+      display: inline-block;
+      display: flex;
+      flex-wrap: wrap;
+      width: 90%;
+      margin: auto;
+      &__name{
+        background-color:rgb(226, 230, 231);
+        padding:5px;
+        margin: 5px;
+        border-radius: 5px;
+        width: auto;
+        .categorylinks{
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
   }
 
 

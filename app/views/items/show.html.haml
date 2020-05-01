@@ -1,56 +1,108 @@
-- if user_signed_in?
-  - if @user == current_user
-    %p 編集リンクが表示される
-    = link_to '商品編集ページへ', edit_item_path(@item)
-    %p 削除リンクが表示される
-    = link_to '削除', item_path(@item), method: :delete
-  - elsif @user != current_user
-    %p 購入リンクが表示される
-    = link_to '商品購入へ(購入機能はまだ作ってないのでpathは仮置き)', '#'
-  - else
-    %p これが表示されることはないはず
-- else
-  %p 購入リンクが表示される
-  = link_to '商品購入へ(購入機能はまだ作ってないのでpathは仮置き)', '#'
+= stylesheet_link_tag 'items_show'
+
+.pagecontainer
+
+  -# ヘッダー
+  .pagecontainer__itemshowheader
+    = render 'home/humburger'
+    .firststage
+    =link_to image_tag('logo.png', alt: "ロゴ画像", class:"headerlogo"), root_path
+
+  -# メイン
+  .pagecontainer__itemshowcontents
+    .itemname 
+      ="商品名  #{@item.name}"
+    .iteminfo
+      .iteminfo__image
+        = image_tag @item.images.first.image.url,  alt: '商品が投稿されていません', :size =>'350x350'
+        %P 画像一覧
+        - @item.images.each do |images|
+          = image_tag images.image.url, size:"100x100" 
+
+        
+      .iteminfo__text
+        .textinfowrapper
+          .textinfowrapper__left 出品者
+          .textinfowrapper__right
+            = @user.nickname
+        .textinfowrapper
+          .textinfowrapper__left 親カテゴリ
+          .textinfowrapper__right
+            = @item.parentcategory
+        .textinfowrapper
+          .textinfowrapper__left 子カテゴリ
+          .textinfowrapper__right
+            = @child.name
+        .textinfowrapper
+          .textinfowrapper__left 孫カテゴリ
+          .textinfowrapper__right
+            = @grandchild.name
+        .textinfowrapper
+          .textinfowrapper__left ブランド
+          -if @item.brand != nil
+            .textinfowrapper__right
+              = @item.brand
+          -else
+            .textinfowrapper__right
+              = ""
+        .textinfowrapper
+          .textinfowrapper__left 商品サイズ
+          .textinfowrapper__right
+            = @size.name
+        .textinfowrapper
+          .textinfowrapper__left 商品の状態
+          .textinfowrapper__right
+            = @condition.name
+        .textinfowrapper
+          .textinfowrapper__left 配送料の負担
+          .textinfowrapper__right
+            = @deliverycost.name
+        .textinfowrapper
+          .textinfowrapper__left 発送元の地域
+          .textinfowrapper__right
+            = @item.delivery_from
+        .textinfowrapper
+          .textinfowrapper__left 発送日の目安
+          .textinfowrapper__right
+            = @deliverytime.name
+        
+        
+      
+    .itemcost
+      ="商品代金    #{@price}円"
 
 
-%p id
-= @item.id
-%p 商品名
-= @item.name
-%p 価格
-= @item.price
-%p 親カテゴリ
-= @item.parentcategory
-%p 子カテゴリ
-= @child.name
-%p 孫カテゴリ
-= @grandchild.name
+    .purchase-or-edit-delete
+
+      - if user_signed_in?
+        - if @user == current_user
+          .editdiv
+            = link_to '商品情報編集', edit_item_path(@item), class: "btnlink"
+          .deletediv
+            = link_to '商品削除', item_path(@item), method: :delete, class: "btnlink"
+        - elsif @user != current_user
+          .purchaediv
+            = link_to '商品購入', '#', class: "btnlink"
+        - else
+          .extradiv
+            %p これが表示されることはないはず
+      - else
+        %p 購入はログインしている方のみ行えます
+        = link_to 'ログインへ', '#', class: "btnlink"
+
+    .itemexplanation
+
+    
 
 
-
-%p 画像一覧
-- @item.images.each do |images|
-  = image_tag images.image.url 
+    
 
 
+ 
 
 
-
-%p 出品者
-= @user.nickname
-%p ブランド
--if @item.brand != nil
-  = @item.brand
-%else
-  = ""
-%p 商品サイズ
-= @size.name
-%p 商品の状態
-= @condition.name
-%p 配送料の負担
-= @deliverycost.name
-%p 発送元の地域
-= @item.delivery_from
-%p 発送日の目安
-= @deliverytime.name
+  
+  
+  -# フッター
+  = render 'home/topfooter'
+  

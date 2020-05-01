@@ -9,12 +9,17 @@
 
   -# メイン
   .pagecontainer__categoryshowmain
-    %p カテゴリーのshow
     -# 孫カテゴリがある場合はリンク孫に飛ぶためのリンク作ってあげる
-    - @categories.each do |category|
-      = link_to "#{category.name}", category_path(category)
+    -if @categories != []
+      %p.titlebar さらに絞り込む
+      .detailsearch
+        - @categories.each do |category|
+          .detailsearch__name
+            = link_to "#{category.name}", category_path(category), class:"categorylinks"
 
-    %p 商品一覧
+        
+
+    %p.titlebar 商品一覧
     - @childitems.each do |item|
       = item.name
       = image_tag item.images.first.image.url
