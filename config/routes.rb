@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
  
-
+  root 'home#index'
   
 
   
@@ -41,7 +41,6 @@ Rails.application.routes.draw do
 
   resources :home, only: [:index] 
   get 'unexpectederrors', to: 'home#unexpectederrors'
-  root 'home#index'
   get 'search', to: 'home#search'
   
 
