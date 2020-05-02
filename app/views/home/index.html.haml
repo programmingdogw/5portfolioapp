@@ -1,129 +1,129 @@
-= stylesheet_link_tag 'home_index'
+-# = stylesheet_link_tag 'home_index'
 
-.pagecontainer
-  -# ヘッダー
-  = render 'topheader'
+-# .pagecontainer
+-#   -# ヘッダー
+-#   = render 'topheader'
 
-  .pagecontainer__main
-    .contentsborder
-      .contentsborder__declare サイト紹介
-      .simplebar
+-#   .pagecontainer__main
+-#     .contentsborder
+-#       .contentsborder__declare サイト紹介
+-#       .simplebar
 
-    .jsevacuation-space
-      .evacuationcontent
-        = image_tag "businessman2.jpeg", size: "300x300"
-        .evacutationcontent__text
-          在庫が多くて困ってしまう
-          %br 維持費の方が高くつく
-      .evacuationcontent
-        = image_tag "businesswoman.jpeg", size: "300x300"
-        .evacutationcontent__text
-          無在庫王ならネットで出品するだけ
-          %br 足を使わなくても在庫が捌ける
-      .evacuationcontent
-        = image_tag "businessman3.jpeg", size: "300x300"
-        .evacutationcontent__text
-          在庫が綺麗に片付いた
-          %br おまけに仕入れも安くできて一石二鳥
-
-
-
-    .contentsborder
-      .contentsborder__declare 新着商品
-      .simplebar
-
-
-    .contentswrapper
-      .contentswrapper__item
-        -if @item1 != nil
-          = link_to item_path(@item1), class: "" do
-            = image_tag @item1.images.first.image.url,  alt: '商品が投稿されていません', :size =>'300x300'
-            %br
-            = "商品名#{@item1.name}"
-            %br 
-            = "価格#{@item1.price}"
-        -else
-          = image_tag 'noimage.png', class: 'product-image', :size =>'300x300'
-      .contentswrapper__item
-        -if @item2 != nil
-          = link_to item_path(@item2), class: "" do
-            = image_tag @item2.images.first.image.url,  alt: '商品が投稿されていません', :size =>'300x300'
-            %br  
-            = "商品名#{@item2.name}"
-            %br 
-            = "価格#{@item2.price}"      
-        -else
-          = image_tag 'noimage.png', class: 'product-image', :size =>'300x300'
-      .contentswrapper__item
-        -if @item3 != nil
-          = link_to item_path(@item3), class: "" do
-            = image_tag @item3.images.first.image.url,  alt: '商品が投稿されていません' , :size =>'300x300'
-            %br  
-            = "商品名#{@item3.name}"
-            %br 
-            = "価格#{@item3.price}"
-        -else
-          = image_tag 'noimage.png', class: 'product-image', :size =>'300x300'
+-#     .jsevacuation-space
+-#       .evacuationcontent
+-#         = image_tag "businessman2.jpeg", size: "300x300"
+-#         .evacutationcontent__text
+-#           在庫が多くて困ってしまう
+-#           %br 維持費の方が高くつく
+-#       .evacuationcontent
+-#         = image_tag "businesswoman.jpeg", size: "300x300"
+-#         .evacutationcontent__text
+-#           無在庫王ならネットで出品するだけ
+-#           %br 足を使わなくても在庫が捌ける
+-#       .evacuationcontent
+-#         = image_tag "businessman3.jpeg", size: "300x300"
+-#         .evacutationcontent__text
+-#           在庫が綺麗に片付いた
+-#           %br おまけに仕入れも安くできて一石二鳥
 
 
 
-    .contentswrapper
-      .contentswrapper__item
-        -if @item4 != nil
-          = link_to item_path(@item4), class: "" do
-            = image_tag @item4.images.first.image.url,  alt: '商品が投稿されていません', :size =>'300x300'
-            %br
-            = "商品名#{@item4.name}"
-            %br 
-            = "価格#{@item4.price}"
-        -else
-          = image_tag 'noimage.png', class: 'product-image', :size =>'300x300'
-      .contentswrapper__item
-        -if @item5 != nil
-          = link_to item_path(@item5), class: "" do
-            = image_tag @item5.images.first.image.url,  alt: '商品が投稿されていません', :size =>'300x300'
-            %br  
-            = "商品名#{@item5.name}"
-            %br 
-            = "価格#{@item5.price}"      
-        -else
-          = image_tag 'noimage.png', class: 'product-image', :size =>'300x300'
-      .contentswrapper__item
-        -if @item6 != nil
-          = link_to item_path(@item6), class: "" do
-            = image_tag @item6.images.first.image.url,  alt: '商品が投稿されていません' , :size =>'300x300'
-            %br  
-            = "商品名#{@item6.name}"
-            %br 
-            = "価格#{@item6.price}"
-        -else
-          = image_tag 'noimage.png', class: 'product-image', :size =>'300x300'
+-#     .contentsborder
+-#       .contentsborder__declare 新着商品
+-#       .simplebar
 
 
-    .contentsborder
-      .contentsborder__declare ピックアップカテゴリ
-      .simplebar
+-#     .contentswrapper
+-#       .contentswrapper__item
+-#         -if @item1 != nil
+-#           = link_to item_path(@item1), class: "" do
+-#             = image_tag @item1.images.first.image.url,  alt: '商品が投稿されていません', :size =>'300x300'
+-#             %br
+-#             = "商品名#{@item1.name}"
+-#             %br 
+-#             = "価格#{@item1.price}"
+-#         -else
+-#           = image_tag 'noimage.png', class: 'product-image', :size =>'300x300'
+-#       .contentswrapper__item
+-#         -if @item2 != nil
+-#           = link_to item_path(@item2), class: "" do
+-#             = image_tag @item2.images.first.image.url,  alt: '商品が投稿されていません', :size =>'300x300'
+-#             %br  
+-#             = "商品名#{@item2.name}"
+-#             %br 
+-#             = "価格#{@item2.price}"      
+-#         -else
+-#           = image_tag 'noimage.png', class: 'product-image', :size =>'300x300'
+-#       .contentswrapper__item
+-#         -if @item3 != nil
+-#           = link_to item_path(@item3), class: "" do
+-#             = image_tag @item3.images.first.image.url,  alt: '商品が投稿されていません' , :size =>'300x300'
+-#             %br  
+-#             = "商品名#{@item3.name}"
+-#             %br 
+-#             = "価格#{@item3.price}"
+-#         -else
+-#           = image_tag 'noimage.png', class: 'product-image', :size =>'300x300'
 
-    .contentswrapper
-      .contenswrapper__categoy
-        = link_to category_path(@babykidscategory), class: "" do
-          = image_tag 'roundedbaby.png', class: 'product-image', :size =>'190x190'
-          = @babykidscategory.name 
-      .contenswrapper__category
-        = link_to category_path(@ladiescategory), class: "" do
-          = image_tag 'roundedladies.png', class: 'product-image', :size =>'190x190'
-          = @ladiescategory.name 
-      .contenswrapper__category
-        = link_to category_path(@bookstoysgamescategory), class: "" do
-          = image_tag 'roundedbookstoysgames.png', class: 'product-image', :size =>'190x190'
-          = @bookstoysgamescategory.name 
+
+
+-#     .contentswrapper
+-#       .contentswrapper__item
+-#         -if @item4 != nil
+-#           = link_to item_path(@item4), class: "" do
+-#             = image_tag @item4.images.first.image.url,  alt: '商品が投稿されていません', :size =>'300x300'
+-#             %br
+-#             = "商品名#{@item4.name}"
+-#             %br 
+-#             = "価格#{@item4.price}"
+-#         -else
+-#           = image_tag 'noimage.png', class: 'product-image', :size =>'300x300'
+-#       .contentswrapper__item
+-#         -if @item5 != nil
+-#           = link_to item_path(@item5), class: "" do
+-#             = image_tag @item5.images.first.image.url,  alt: '商品が投稿されていません', :size =>'300x300'
+-#             %br  
+-#             = "商品名#{@item5.name}"
+-#             %br 
+-#             = "価格#{@item5.price}"      
+-#         -else
+-#           = image_tag 'noimage.png', class: 'product-image', :size =>'300x300'
+-#       .contentswrapper__item
+-#         -if @item6 != nil
+-#           = link_to item_path(@item6), class: "" do
+-#             = image_tag @item6.images.first.image.url,  alt: '商品が投稿されていません' , :size =>'300x300'
+-#             %br  
+-#             = "商品名#{@item6.name}"
+-#             %br 
+-#             = "価格#{@item6.price}"
+-#         -else
+-#           = image_tag 'noimage.png', class: 'product-image', :size =>'300x300'
+
+
+-#     .contentsborder
+-#       .contentsborder__declare ピックアップカテゴリ
+-#       .simplebar
+
+-#     .contentswrapper
+-#       .contenswrapper__categoy
+-#         = link_to category_path(@babykidscategory), class: "" do
+-#           = image_tag 'roundedbaby.png', class: 'product-image', :size =>'190x190'
+-#           = @babykidscategory.name 
+-#       .contenswrapper__category
+-#         = link_to category_path(@ladiescategory), class: "" do
+-#           = image_tag 'roundedladies.png', class: 'product-image', :size =>'190x190'
+-#           = @ladiescategory.name 
+-#       .contenswrapper__category
+-#         = link_to category_path(@bookstoysgamescategory), class: "" do
+-#           = image_tag 'roundedbookstoysgames.png', class: 'product-image', :size =>'190x190'
+-#           = @bookstoysgamescategory.name 
   
-    -if user_signed_in?
-      .putitemlogo
-        = link_to new_item_path, class: "" do
-          = image_tag 'putitemlogo.png', class: 'product-image', :size =>'125x125'
+-#     -if user_signed_in?
+-#       .putitemlogo
+-#         = link_to new_item_path, class: "" do
+-#           = image_tag 'putitemlogo.png', class: 'product-image', :size =>'125x125'
 
-  -# フッター
-  = render 'topfooter'
+-#   -# フッター
+-#   = render 'topfooter'
     
 
