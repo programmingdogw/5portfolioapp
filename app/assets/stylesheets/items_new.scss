@@ -123,23 +123,29 @@
       .field{
         width: 100%;
         padding-top:30px ;
-        position: relative;
-        min-width: 768px;
         #image-box{
           #previews{
             background: rgba(166, 173, 231, 0.1);
-            width: 540px;
             margin: auto;
           }
+          @media screen and (min-width: 769px){
           .js-file_group{
-            width: 46%;
-            min-width: 540px;
-            height:25px;
+            width: 70%;
             border-radius: 2%;
             border: solid 1px lightgray;
             background-color: rgb(220, 240, 253);
             margin: auto;
             margin-top:4px ;
+          }
+          }
+          @media screen and (max-width: 768px){
+            .js-file_group{
+              border-radius: 2%;
+              border: solid 1px lightgray;
+              background-color: rgb(220, 240, 253);
+              margin: auto;
+              margin-top:4px ;
+            }
           }
     
         }
@@ -195,7 +201,6 @@
         width: 100%;
         padding-top:30px ;
         position: relative;
-        min-width: 768px;
         .listing-default__label{
           position: absolute;
           left: 28%;
