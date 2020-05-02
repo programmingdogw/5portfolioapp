@@ -41,15 +41,12 @@
         %br/
         = f.email_field :email,  autocomplete: "email", class:"field__forminput"
       .field
-        = f.label :password, class:"field__formlabel"
-        - if @minimum_password_length
-          %em
-            (#{@minimum_password_length} characters minimum)
+        = f.label :パスワード（６字以上）, class:"field__formlabel"
         %span.field__formspan 必須
         %br/
         = f.password_field :password, autocomplete: "new-password", class:"field__forminput"
       .field
-        = f.label :password_confirmation, class:"field__formlabel"
+        = f.label :パスワード確認, class:"field__formlabel"
         %span.field__formspan 必須
         %br/
         = f.password_field :password_confirmation, autocomplete: "new-password", class:"field__forminput"
