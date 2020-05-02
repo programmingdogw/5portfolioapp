@@ -34,7 +34,6 @@ Rails.application.config.assets.precompile += %w( items_show.scss )
 Rails.application.config.assets.precompile += %w( categories_index.scss )
 Rails.application.config.assets.precompile += %w( categories_show.scss )
 
-Rails.application.config.assets.precompile += %w( public/images/* )
 
 
 
