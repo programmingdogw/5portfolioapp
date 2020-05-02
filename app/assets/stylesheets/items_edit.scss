@@ -120,8 +120,11 @@
       // 保存済み画像一覧部分
       .preservedimages{
         background-color:  rgb(220, 240, 253);
-        width: 540px;
         margin: auto;
+        display: inline-block;
+        flex-wrap: auto;
+        width: 50%;
+
         .preserved-image{
           margin-right: 20px;
         }
@@ -135,28 +138,37 @@
       }
 
 
+
       // フォーム部分
       .field{
         width: 100%;
         padding-top:30px ;
         position: relative;
-        min-width: 768px;
         #image-box{
           #previews{
+            width: 50%;
             background: rgba(166, 173, 231, 0.1);
-            width: 540px;
             margin: auto;
           }
-          .js-file_group{
-            width: 46%;
-            min-width: 540px;
-            height:25px;
-            border-radius: 2%;
-            border: solid 1px lightgray;
-            background-color: rgb(220, 240, 253);
-            margin: auto;
-            margin-top:4px ;
-          }
+          @media screen and (min-width: 769px){
+            .js-file_group{
+              width: 50%;
+              border-radius: 2%;
+              border: solid 1px lightgray;
+              background-color: rgb(220, 240, 253);
+              margin: auto;
+              margin-top:4px ;
+            }
+            }
+            @media screen and (max-width: 768px){
+              .js-file_group{
+                border-radius: 2%;
+                border: solid 1px lightgray;
+                background-color: rgb(220, 240, 253);
+                margin: auto;
+                margin-top:4px ;
+              }
+            }
     
         }
         
@@ -211,7 +223,6 @@
         width: 100%;
         padding-top:30px ;
         position: relative;
-        min-width: 768px;
         .listing-default__label{
           position: absolute;
           left: 28%;

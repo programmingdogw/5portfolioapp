@@ -59,6 +59,7 @@
       .listing-form-box
         .listing-product-detail__category
           = f.label 'カテゴリー', class: 'listing-default__label'
+          %br/
           %span.listing-default--require 必須
           .listing-select-wrapper            
             = f.select :parentcategory, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
@@ -71,6 +72,7 @@
       
       .field
         = f.label :発送元の地域, class:"field__formlabel"
+        %br/
         = f.select :delivery_from, Item.delivery_froms.keys, prompt: '---', class:"decoratedselect"
         %span.field__formspan 必須
         %br/
