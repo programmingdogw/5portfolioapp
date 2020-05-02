@@ -130,7 +130,7 @@
           }
           @media screen and (min-width: 769px){
           .js-file_group{
-            width: 70%;
+            width: 50%;
             border-radius: 2%;
             border: solid 1px lightgray;
             background-color: rgb(220, 240, 253);
@@ -163,14 +163,14 @@
           border-radius: 10%;
         }
         &__forminput{
-          width: 46%;
+          width: 50%;
           height:43px;
           border-radius: 4%;
           border: solid 2px lightgray;
           margin-top:5px ;
         }
         &__textarea{
-          width: 46%;
+          width: 50%;
           height:143px;
           margin-top:5px ;
         }
@@ -180,7 +180,7 @@
           -webkit-appearance: none;
           -moz-appearance: none;
           appearance: none;
-          width: 46%;
+          width: 50%;
           height:43px;
           margin-top: 5px;
           border-radius: 4%;
