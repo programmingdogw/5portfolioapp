@@ -137,6 +137,9 @@
             background-color: rgb(220, 240, 253);
             margin: auto;
             margin-top:4px ;
+            .js-remove{
+              display: inline-block;
+            }
           }
           }
           @media screen and (max-width: 768px){
@@ -146,6 +149,9 @@
               background-color: rgb(220, 240, 253);
               margin: auto;
               margin-top:4px ;
+            }
+            .js-remove{
+              display: inline-block;
             }
           }
     

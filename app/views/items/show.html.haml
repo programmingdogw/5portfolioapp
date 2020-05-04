@@ -81,14 +81,15 @@
           .delete-div
             = link_to '商品削除', item_path(@item), method: :delete, class: "btnlink"
         - elsif @user != current_user
-          .purchae-div
+          .purchase-div
             = link_to '商品購入', '#', class: "btnlink"
         - else
           .extra-div
             %p これが表示されることはないはず
       - else
-        %p 購入はログインしている方のみ行えます
-        = link_to '購入（ログイン）', new_user_session_path, class: "btnlink"
+        %p.purchase-p 購入はログインしている方のみ行えます
+        .purchase-login
+          = link_to '購入（ログイン）', new_user_session_path, class: "btnlink"
 
     .itemexplanation
 
