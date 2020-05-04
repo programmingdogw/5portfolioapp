@@ -56,18 +56,20 @@
         = f.text_field :brand, class:"field__forminput", :placeholder => "例)シャネル"
 
 
-      .listing-form-box
+      .field
         .listing-product-detail__category
-          = f.label 'カテゴリー', class: 'listing-default__label'
-          %br/
-          %span.listing-default--require 必須
-          .listing-select-wrapper            
+          %p.category-p カテゴリー
+          = f.label :parentcategory, class: 'listing-default__label' do
             = f.select :parentcategory, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+          %span.listing-default--require 必須
+          %i.fas.fa-chevron-down.decoratedchevron
           #children_wrapper.listing-select-wrapper__added
-            = f.collection_select :childcategory, @editpage_category_children, :id, :name, {}, {class: 'special-class-for-reset', id: 'child_category'}
+            = f.label :childcategory, class: 'listing-default__label' do
+              = f.collection_select :childcategory, @editpage_category_children, :id, :name, {}, {class: 'special-class-for-reset listing-select-wrapper__box--select', id: 'child_category'}
+            %i.fas.fa-chevron-down.decoratedchevron
           #grandchildren_wrapper.listing-select-wrapper__added
-            = f.collection_select :category_id, @editpage_category_grandchildren, :id, :name
-        
+            = f.collection_select :category_id, @editpage_category_grandchildren, :id, :name, {}, {class: 'listing-select-wrapper__box--select'}
+            %i.fas.fa-chevron-down.decoratedchevron  
           
       
       .field
