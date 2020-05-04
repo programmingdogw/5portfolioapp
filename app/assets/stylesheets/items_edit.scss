@@ -174,7 +174,7 @@
         
         &__formlabel{
           position: absolute;
-          left: 28%;
+          left: 26%;
         }
         &__formlabel-deliveryfrom{
           .decoratedselect-from{
@@ -194,7 +194,7 @@
           }
         }
         &__formspan{
-          background-color:lightblue;
+          background-color:lightskyblue;
           color: white;
           position: absolute;
           width: 40px;
@@ -207,24 +207,27 @@
           width: 50%;
           margin: auto;
           text-align: left;
+          .deliveryfrom-p{
+            margin-left:10px ;
+          }
           .formspan-deliveryfrom{
             background-color:lightskyblue;
             color: white;
             width: 40px;
-            right: 28%;
+            margin-right: 6%;
             text-align: center;
             border-radius: 10%;
           }
         }
         &__forminput{
-          width: 46%;
+          width: 50%;
           height:43px;
           border-radius: 4%;
           border: solid 2px lightgray;
           margin-top:5px ;
         }
         &__textarea{
-          width: 46%;
+          width: 50%;
           height:143px;
           margin-top:5px ;
         }
@@ -234,7 +237,7 @@
           -webkit-appearance: none;
           -moz-appearance: none;
           appearance: none;
-          width: 46%;
+          width: 50%;
           height:43px;
           margin-top: 5px;
           border-radius: 4%;
@@ -265,7 +268,7 @@
               -webkit-appearance: none;
               -moz-appearance: none;
               appearance: none;
-              width: 46%;
+              width: 50%;
               height:43px;
               margin-top: 5px;
               border-radius: 4%;
@@ -293,7 +296,7 @@
               -webkit-appearance: none;
               -moz-appearance: none;
               appearance: none;
-              width: 46%;
+              width: 50%;
               height:43px;
               margin-top: 5px;
               border-radius: 4%;
@@ -315,7 +318,7 @@
       
       .nextbtn{
         margin-top: 30px;
-        background-color: skyblue;
+        background-color: lightskyblue;
         color: white;
         width:130px;
         height: 50px;
@@ -323,7 +326,7 @@
       }
       #itembtn{
         margin-top: 30px;
-        background-color: skyblue;
+        background-color: lightskyblue;
         color: white;
         width:130px;
         height: 50px;
