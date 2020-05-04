@@ -10,13 +10,45 @@
 
   -# メイン  
   .pagecontainer__mypagecontents 
-    %p ニックネーム
-    = @user.nickname
-    %p 生年月日
-    = @user.birthdate
-    %p メールアドレス
-    = @user.email
-  
+    -# %p ニックネーム
+    -# = @user.nickname
+    -# %p 生年月日
+    -# = @user.birthdate
+    -# %p メールアドレス
+    -# = @user.email
+    %ul.menu
+      %li.menu__item
+        %a.menu__item__link.js-menu__item__link{:href => ""} メニュー1（クリックで開く）
+        %ul.submenu
+          %li.submenu__item
+            %a{:href => ""} サブメニュー1
+          %li.submenu__item
+            %a{:href => ""} サブメニュー2
+          %li.submenu__item
+            %a{:href => ""} サブメニュー3
+          %li.submenu__item
+            %a{:href => ""} サブメニュー4
+        %a.menu__item__link.js-menu__item__link{:href => ""} メニュー2（クリックで開く）
+        %ul.submenu
+          %li.submenu__item
+            %a{:href => ""} サブメニュー1
+          %li.submenu__item
+            %a{:href => ""} サブメニュー2
+          %li.submenu__item
+            %a{:href => ""} サブメニュー3
+          %li.submenu__item
+            %a{:href => ""} サブメニュー4
+        %a.menu__item__link.js-menu__item__link{:href => ""} メニュー3（クリックで開く）
+        %ul.submenu
+          %li.submenu__item
+            %a{:href => ""} サブメニュー1
+          %li.submenu__item
+            %a{:href => ""} サブメニュー2
+          %li.submenu__item
+            %a{:href => ""} サブメニュー3
+          %li.submenu__item
+            %a{:href => ""} サブメニュー4
+
 
   -# フッター
   = render 'home/topfooter'
