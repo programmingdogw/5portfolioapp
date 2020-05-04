@@ -81,7 +81,6 @@
           %span.formspan-deliveryfrom 必須
         = f.label :delivery_from, class:"field__formlabel-deliveryfrom" do
           = f.select :delivery_from, Item.delivery_froms.keys,  {include_blank: true}, {class: 'decoratedselect-from'}
-        
         %i.fas.fa-chevron-down.decoratedchevron
       
 

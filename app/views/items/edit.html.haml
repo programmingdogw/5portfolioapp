@@ -71,11 +71,13 @@
           
       
       .field
-        = f.label :発送元の地域, class:"field__formlabel"
-        %br/
-        = f.select :delivery_from, Item.delivery_froms.keys, prompt: '---', class:"decoratedselect"
-        %span.field__formspan 必須
-        %br/
+        .deliveryfrom-wrapper
+          %p.deliveryfrom-p 発送元
+          %span.formspan-deliveryfrom 必須
+        = f.label :delivery_from, class:"field__formlabel-deliveryfrom" do
+          = f.select :delivery_from, Item.delivery_froms.keys,  {include_blank: true}, {class: 'decoratedselect-from'}
+        %i.fas.fa-chevron-down.decoratedchevron
+      
         
 
       .field
