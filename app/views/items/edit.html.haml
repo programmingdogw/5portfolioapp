@@ -53,27 +53,33 @@
         = f.label :ブランド, class:"field__formlabel"
         %span.field__formspan 任意
         %br/
-        = f.text_field :brand, class:"field__forminput", :placeholder => "例)シャネル"
+        = f.text_field :brand, class:"field__forminput notselect", :placeholder => "例)シャネル"
 
 
-      .listing-form-box
+      .field
         .listing-product-detail__category
-          = f.label 'カテゴリー', class: 'listing-default__label'
-          %span.listing-default--require 必須
-          .listing-select-wrapper            
+          %p.category-p カテゴリー
+          = f.label :parentcategory, class: 'listing-default__label' do
             = f.select :parentcategory, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+          %span.listing-default--require 必須
+          %i.fas.fa-chevron-down.decoratedchevron
           #children_wrapper.listing-select-wrapper__added
-            = f.collection_select :childcategory, @editpage_category_children, :id, :name, {}, {class: 'special-class-for-reset', id: 'child_category'}
+            = f.label :childcategory, class: 'listing-default__label' do
+              = f.collection_select :childcategory, @editpage_category_children, :id, :name, {}, {class: 'special-class-for-reset listing-select-wrapper__box--select', id: 'child_category'}
+            %i.fas.fa-chevron-down.decoratedchevron
           #grandchildren_wrapper.listing-select-wrapper__added
-            = f.collection_select :category_id, @editpage_category_grandchildren, :id, :name
-        
+            = f.collection_select :category_id, @editpage_category_grandchildren, :id, :name, {}, {class: 'listing-select-wrapper__box--select'}
+            %i.fas.fa-chevron-down.decoratedchevron  
           
       
       .field
-        = f.label :発送元の地域, class:"field__formlabel"
-        = f.select :delivery_from, Item.delivery_froms.keys, prompt: '---', class:"decoratedselect"
-        %span.field__formspan 必須
-        %br/
+        .deliveryfrom-wrapper
+          %p.deliveryfrom-p 発送元
+          %span.formspan-deliveryfrom 必須
+        = f.label :delivery_from, class:"field__formlabel-deliveryfrom" do
+          = f.select :delivery_from, Item.delivery_froms.keys,  {include_blank: true}, {class: 'decoratedselect-from'}
+        %i.fas.fa-chevron-down.decoratedchevron
+      
         
 
       .field
@@ -115,7 +121,7 @@
         = f.label :販売価格（３００円〜９９９万９９９９円）, class:"field__formlabel"
         %span.field__formspan 必須
         %br/
-        = f.number_field :price, class:"field__forminput"
+        = f.number_field :price, class:"field__forminput notselect"
       
       .field
         = f.hidden_field :user_id, :value => current_user.id

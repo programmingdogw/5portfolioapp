@@ -5,6 +5,9 @@
   // ヘッダー
   &__categoryheader{
     text-align: center;
+    .headerlogo{
+      width: 66%;
+    }
     
       // ここから先はハンバーガーメニュー部分（パーシャル部分）
       .humburgermenu-wrapper{

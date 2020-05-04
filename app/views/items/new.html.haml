@@ -25,8 +25,9 @@
                 = image_tag images.image.url, data: { index: i }, width: "100", height: '100'
           = f.fields_for :images do |image|
             .js-file_group{"data-index" => "#{image.index}"}
-              %i.fas.fa-camera 画像
-              = image.file_field :image, class:"js-file"
+              = f.label :image, class: "hoge" do
+                %i.fas.fa-camera 画像
+                = image.file_field :image, class:"js-file"
               %strong.js-remove 削除 
               - if @item.persisted?
                 = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
@@ -54,24 +55,28 @@
         = f.label :ブランド, class:"field__formlabel"
         %span.field__formspan 任意
         %br/
-        = f.text_field :brand, class:"field__forminput", :placeholder => "例)シャネル"
-
-
-      .listing-form-box
-        .listing-product-detail__category
-          = f.label 'カテゴリー', class: 'listing-default__label'
-          %span.listing-default--require 必須
-          .listing-select-wrapper            
-            = f.select :parentcategory, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-              
-  
+        = f.text_field :brand, class:"field__forminput notselect", :placeholder => "例)シャネル"
 
 
       .field
-        = f.label :発送元の地域, class:"field__formlabel"
-        = f.select :delivery_from, Item.delivery_froms.keys, prompt: '---', class:"decoratedselect"
-        %span.field__formspan 必須
-        %br/
+        .listing-product-detail__category
+          %p.category-p カテゴリー
+          = f.label :parentcategory, class: 'listing-default__label' do           
+            = f.select :parentcategory, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+          %span.listing-default--require 必須  
+          %i.fas.fa-chevron-down.decoratedchevron        
+
+ 
+  
+      .field
+        .deliveryfrom-wrapper
+          %p.deliveryfrom-p 発送元
+          %span.formspan-deliveryfrom 必須
+        = f.label :delivery_from, class:"field__formlabel-deliveryfrom" do
+          = f.select :delivery_from, Item.delivery_froms.keys,  {include_blank: true}, {class: 'decoratedselect-from'}
+        %i.fas.fa-chevron-down.decoratedchevron
+      
+
         
 
       .field
@@ -113,7 +118,7 @@
         = f.label :販売価格（３００円〜９９９万９９９９円）, class:"field__formlabel"
         %span.field__formspan 必須
         %br/
-        = f.number_field :price, class:"field__forminput"
+        = f.number_field :price, class:"field__forminput notselect"
       
       .field
         = f.hidden_field :user_id, :value => current_user.id

@@ -123,58 +123,128 @@
       .field{
         width: 100%;
         padding-top:30px ;
-        position: relative;
-        min-width: 768px;
         #image-box{
           #previews{
             background: rgba(166, 173, 231, 0.1);
-            width: 540px;
             margin: auto;
           }
+          @media screen and (min-width: 769px){
           .js-file_group{
-            width: 46%;
-            min-width: 540px;
-            height:25px;
+            width: 50%;
             border-radius: 2%;
             border: solid 1px lightgray;
             background-color: rgb(220, 240, 253);
             margin: auto;
             margin-top:4px ;
           }
+          }
+          @media screen and (max-width: 768px){
+            .js-file_group{
+              border-radius: 2%;
+              border: solid 1px lightgray;
+              background-color: rgb(220, 240, 253);
+              margin: auto;
+              margin-top:4px ;
+            }
+          }
     
         }
+
+        
         
         &__formlabel{
           position: absolute;
-          left: 28%;
+          left: 30%;
         }
-        &__formspan{
-          background-color:lightblue;
-          color: white;
-          position: absolute;
-          width: 40px;
-          right: 28%;
-          border-radius: 10%;
+        
+        &__formlabel-deliveryfrom{
+          .decoratedselect-from{
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 50%;
+            height:43px;
+            margin-top: 5px;
+            border-radius: 4%;
+            background-color: white;
+            border: solid 2px lightgray;
+            background-image: url(./images/icon_arrow.svg);
+            background-repeat: no-repeat;
+            background-size: 12px 10px;
+            background-position: right 10px center;          
+          }
+        }
+        @media screen and (min-width: 769px){
+          &__formspan{
+            background-color:lightskyblue;
+            color: white;
+            position: absolute;
+            width: 40px;
+            right: 30%;
+            border-radius: 10%;
+          }
+        }
+        @media screen and (max-width: 768px){
+          &__formspan{
+            background-color:red;
+            color: white;
+            position: absolute;
+            width: 40px;
+            right: 30%;
+            opacity: 0.3;
+            border-radius: 10%;
+          }
+        }
+        .deliveryfrom-wrapper{
+          display: flex;
+          justify-content: space-between;
+          width: 50%;
+          margin: auto;
+          text-align: left;
+          @media screen and (min-width: 769px){        
+            .formspan-deliveryfrom{
+              background-color:lightskyblue;
+              color: white;
+              width: 40px;
+              right: 30%;
+              text-align: center;
+              border-radius: 10%;
+            }
+          }
+          @media screen and (max-width: 768px){        
+            .formspan-deliveryfrom{
+              background-color:red;
+              color: white;
+              width: 40px;
+              right: 30%;
+              text-align: center;
+              border-radius: 10%;
+              opacity: 0.3;
+            }
+          }
         }
         &__forminput{
-          width: 46%;
+          width: 50%;
           height:43px;
           border-radius: 4%;
           border: solid 2px lightgray;
           margin-top:5px ;
         }
+        .notselect{
+          margin-left: 1.5%;
+        }
         &__textarea{
-          width: 46%;
+          width: 50%;
           height:143px;
           margin-top:5px ;
         }
-
+  
         // セレクトフォーム部分
         .decoratedselect{          
           -webkit-appearance: none;
           -moz-appearance: none;
           appearance: none;
-          width: 46%;
+          width: 50%;
           height:43px;
           margin-top: 5px;
           border-radius: 4%;
@@ -191,23 +261,63 @@
       }
 
       // カテゴリ部分
-      .listing-form-box{
-        width: 100%;
-        padding-top:30px ;
-        position: relative;
-        min-width: 768px;
-        .listing-default__label{
-          position: absolute;
-          left: 28%;
-        }
-        .listing-default--require{
-          color:red;
-          background-color:lightblue;
-          color: white;
-          position: absolute;
-          width: 40px;
-          right: 28%;
-          border-radius: 10%;
+      .field{
+        .listing-product-detail__category{
+
+          width: 100%;
+          padding-top:30px ;
+          position: relative;
+          .category-p{
+            width: 50%;
+            margin: auto;
+            text-align: left;
+          }
+          .listing-default__label{
+            .listing-select-wrapper__box--select{
+              -webkit-appearance: none;
+              -moz-appearance: none;
+              appearance: none;
+              width: 50%;
+              height:43px;
+              margin-top: 5px;
+              border-radius: 4%;
+              background-color: white;
+              border: solid 2px lightgray;
+              background-image: url(./images/icon_arrow.svg);
+              background-repeat: no-repeat;
+              background-size: 12px 10px;
+              background-position: right 10px center;
+            }
+          }
+          @media screen and (min-width: 769px){
+            .listing-default--require{
+              background-color:lightskyblue;
+              color: white;
+              position: absolute;
+              width: 40px;
+              right: 25%;
+              top:30px;
+              border-radius: 10%;
+            }
+            .decoratedchevron{
+              margin-left: -30px;            
+            }
+          }
+          @media screen and (max-width: 768px){
+            .listing-default--require{
+              background-color:red;
+              color: white;
+              position: absolute;
+              width: 40px;
+              right: 25%;
+              top:30px;
+              border-radius: 10%;
+              opacity:0.3;
+            }
+            .decoratedchevron{
+              margin-left: -30px;            
+            }
+          }
         }
       }
       
