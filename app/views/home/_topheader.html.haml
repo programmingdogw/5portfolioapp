@@ -26,7 +26,7 @@
         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "headerlink"
         = link_to "マイページへ", user_path(@user), class: "headerlink"
         %br
-        = link_to "商品一覧ページへ", items_path, class: "headerlink"
+        = link_to "商品一覧ページへ(テスト用あとで外す)", items_path, class: "headerlink"
         %br
       - else
         = link_to "新規登録", new_user_registration_path, class: "headerlink"
