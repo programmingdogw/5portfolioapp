@@ -151,30 +151,28 @@ $(document).on('turbolinks:load', ()=> {
   function appendChildrenBox(insertHTML){
     var childSelectHtml = '';
     childSelectHtml = `<div class='listing-select-wrapper__added' id= 'children_wrapper'>
-                          <label class="listing-default__label" for="item_childcategory">                        
-                            <select class="listing-select-wrapper__box--select" id="child_category" name="item[childcategory]">
-                              <option value="---" data-category="---">---</option>
-                              ${insertHTML}
-                            <select>
-                          </label>
-                          <i class="fas fa-chevron-down decoratedchevron"></i>                                                 
-                      </div>
-                      `;
+                        <label class="listing-default__label" for="item_childcategory">                        
+                          <select class="listing-select-wrapper__box--select" id="child_category" name="item[childcategory]">
+                            <option value="---" data-category="---">---</option>
+                            ${insertHTML}
+                          <select>
+                        </label>
+                        <i class="fas fa-chevron-down decoratedchevron"></i>                                                 
+                      </div>`;
     $('.listing-product-detail__category').append(childSelectHtml);
   }
   // 孫カテゴリーの表示作成 
   function appendGrandchidrenBox(insertHTML){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class='listing-select-wrapper__added' id= 'grandchildren_wrapper'>
-                                <label class="listing-default__label" for="item_category_id">                            
-                                  <select class="listing-select-wrapper__box--select" id="grandchild_category" name="item[category_id]">
-                                    <option value="---" data-category="---">---</option>
-                                    ${insertHTML}
-                                  </select>
-                                </label>
-                                <i class="fas fa-chevron-down decoratedchevron"></i>                                                           
-                            </div>
-                            `;
+                              <label class="listing-default__label" for="item_category_id">                            
+                                <select class="listing-select-wrapper__box--select" id="grandchild_category" name="item[category_id]">
+                                  <option value="---" data-category="---">---</option>
+                                  ${insertHTML}
+                                </select>
+                              </label>
+                              <i class="fas fa-chevron-down decoratedchevron"></i>                                                           
+                            </div>`;
     $('.listing-product-detail__category').append(grandchildSelectHtml);
   }
   // 親カテゴリー選択後のイベント
