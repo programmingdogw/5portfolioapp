@@ -76,19 +76,19 @@
 
       - if user_signed_in?
         - if @user == current_user
-          .editdiv
+          .edit-div
             = link_to '商品情報編集', edit_item_path(@item), class: "btnlink"
-          .deletediv
+          .delete-div
             = link_to '商品削除', item_path(@item), method: :delete, class: "btnlink"
         - elsif @user != current_user
-          .purchaediv
+          .purchae-div
             = link_to '商品購入', '#', class: "btnlink"
         - else
-          .extradiv
+          .extra-div
             %p これが表示されることはないはず
       - else
         %p 購入はログインしている方のみ行えます
-        = link_to 'ログインへ', '#', class: "btnlink"
+        = link_to '購入（ログイン）', new_user_session_path, class: "btnlink"
 
     .itemexplanation
 
