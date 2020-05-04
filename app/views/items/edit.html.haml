@@ -53,7 +53,7 @@
         = f.label :ブランド, class:"field__formlabel"
         %span.field__formspan 任意
         %br/
-        = f.text_field :brand, class:"field__forminput", :placeholder => "例)シャネル"
+        = f.text_field :brand, class:"field__forminput notselect", :placeholder => "例)シャネル"
 
 
       .field
@@ -121,7 +121,7 @@
         = f.label :販売価格（３００円〜９９９万９９９９円）, class:"field__formlabel"
         %span.field__formspan 必須
         %br/
-        = f.number_field :price, class:"field__forminput"
+        = f.number_field :price, class:"field__forminput notselect"
       
       .field
         = f.hidden_field :user_id, :value => current_user.id
