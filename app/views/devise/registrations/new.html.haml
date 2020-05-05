@@ -11,7 +11,7 @@
       = render "devise/shared/error_messages", resource: @user
       
       .field
-        = f.label :ニックネーム, class:"field__formlabel"
+        = f.label :ユーザーネーム, class:"field__formlabel"
         %span.field__formspan 必須
         %br/
         = f.text_field :nickname, autofocus: true, class:"field__forminput"
@@ -35,6 +35,11 @@
         %span.field__formspan 必須
         %br/
         = f.text_field :firstname_kana, class:"field__forminput"
+      .field
+        = f.label :会社名, class:"field__formlabel"
+        %span.field__formspan-optional 任意
+        %br/
+        = f.text_field :company_name, class:"field__forminput"
       .field
         = f.label :email, class:"field__formlabel"
         %span.field__formspan 必須
