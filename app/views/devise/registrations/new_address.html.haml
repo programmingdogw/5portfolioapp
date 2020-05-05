@@ -35,12 +35,16 @@
         %span.field__formspan 必須
         %br/
         = f.text_field :postal_code, class:"field__forminput"
+     
       .field
-        = f.label :県, class:"field__formlabel"
-        %span.field__formspan 必須
-        %br/
-        .field__formprefecture
-          = f.select :prefecture, Address.prefectures.keys, prompt: '選択してください'
+        .prefecture-wrapper
+          %p.prefecture-p 県
+          %span.formspan-prefecture 必須
+        = f.label :prefecture, class:"field__formlabel-prefecture" do
+          = f.select :prefecture, Address.prefectures.keys,  {include_blank: true}, {class: 'decoratedselect-from'}
+        %i.fas.fa-chevron-down.decoratedchevron
+      
+
       .field
         = f.label :市区町村, class:"field__formlabel"
         %span.field__formspan 必須
@@ -53,12 +57,12 @@
         = f.text_field :street, class:"field__forminput"
       .field
         = f.label :建物（任意）, class:"field__formlabel"
-        %span.field__formspan 任意
+        %span.field__formspan-optional 任意
         %br/
         = f.text_field :building, class:"field__forminput"
       .field
         = f.label :電話番号（任意）, class:"field__formlabel"
-        %span.field__formspan 任意
+        %span.field__formspan-optional 任意
         %br/
         = f.text_field :telephone_number, class:"field__forminput"
       .actions

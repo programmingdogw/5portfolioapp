@@ -96,6 +96,27 @@
   // メイン部分
   &__mypagecontents{
     background-color: rgb(248, 253, 235);
+    .menu__item {
+      background: #5200b7;
+      color: #fff;
+      cursor: pointer;
+      display: block;
+      margin-bottom: 1px;
+      .js-menu__item {
+        color: #fff;
+        display: block;
+        padding: 1rem;
+      }
+      .submenu {
+        background: #fff;
+        display: none;
+        .submenu__item {
+          border-bottom: 1px solid #5200b7;
+          color: #222;
+          padding: 1rem;
+        }
+      }
+    }
   }
 
   // フッター

@@ -190,10 +190,27 @@
             right: 30%;
             border-radius: 10%;
           }
+          &__formspan-optional{
+            background-color:lightgreen;
+            color: white;
+            position: absolute;
+            width: 40px;
+            right: 30%;
+            border-radius: 10%;
+          }
         }
         @media screen and (max-width: 768px){
           &__formspan{
             background-color:red;
+            color: white;
+            position: absolute;
+            width: 40px;
+            right: 30%;
+            opacity: 0.3;
+            border-radius: 10%;
+          }
+          &__formspan-optional{
+            background-color:purple;
             color: white;
             position: absolute;
             width: 40px;

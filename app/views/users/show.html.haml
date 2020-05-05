@@ -10,13 +10,56 @@
 
   -# メイン  
   .pagecontainer__mypagecontents 
-    %p ニックネーム
-    = @user.nickname
-    %p 生年月日
-    = @user.birthdate
-    %p メールアドレス
-    = @user.email
-  
+    %ul.menu
+      %li.menu__item
+        .js-menu__item ユーザー登録情報（クリックで開く）
+        %ul.submenu
+          %li.submenu__item
+            %p ユーザーネーム
+            %p 
+              ="#{@user.nickname}" 
+          %li.submenu__item
+            %p 生年月日
+            %p 
+              ="#{@user.birthdate}"
+          %li.submenu__item
+            %p 会社名
+            %p 
+              ="#{@user.company_name}"
+          %li.submenu__item
+            %a{:href => ""} 登録情報変更。ここはリンクでええやろ
+        .js-menu__item 出品履歴確認（クリックで開く）
+        %ul.submenu
+          %li.submenu__item
+            %a{:href => ""} ここに出品中。取引中。売却済みとか入れとくか。
+          %li.submenu__item
+            %a{:href => ""} サブメニュー2
+          %li.submenu__item
+            %a{:href => ""} サブメニュー3
+          %li.submenu__item
+            %a{:href => ""} サブメニュー4
+        .js-menu__item 売り上げ確認（クリックで開く）
+        %ul.submenu
+          %li.submenu__item
+            %a{:href => ""} まだ実装してないので一旦このメニューは置いとくか。payjp実装するかなぁ。
+          %li.submenu__item
+            %a{:href => ""} マイページに表示する情報は購入機能実装してからじゃないとあんまないもんなぁ。
+          %li.submenu__item
+            %a{:href => ""} サブメニュー3
+          %li.submenu__item
+            %a{:href => ""} サブメニュー4
+        .js-menu__item クレジットカード登録（クリックで開く）
+        %ul.submenu
+          %li.submenu__item
+            %a{:href => ""} クレジットカード登録。これは一旦別ページに遷移させた方がいいやろなぁ
+          %li.submenu__item
+            %a{:href => ""} 登録情報変更
+          %li.submenu__item
+            %a{:href => ""} サブメニュー3
+          %li.submenu__item
+            %a{:href => ""} サブメニュー4
+
+
 
   -# フッター
   = render 'home/topfooter'
