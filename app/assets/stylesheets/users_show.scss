@@ -103,21 +103,20 @@
       display: block;
       margin-bottom: 1px;
       position: relative;
-    }
-    .menu__item__link {
-      color: #fff;
-      display: block;
-      padding: 1rem;
-    }
-     
-    .submenu {
-      background: #fff;
-      display: none;
-    }
-    .submenu__item {
-      border-bottom: 1px solid #5200b7;
-      color: #222;
-      padding: 1rem;
+      .menu__item__link {
+        color: #fff;
+        display: block;
+        padding: 1rem;
+      }
+      .submenu {
+        background: #fff;
+        display: none;
+        .submenu__item {
+          border-bottom: 1px solid #5200b7;
+          color: #222;
+          padding: 1rem;
+        }
+      }
     }
   }
 
