@@ -35,15 +35,10 @@
         %span.field__formspan 必須
         %br/
         = f.text_field :postal_code, class:"field__forminput"
-      -# .field
-      -#   = f.label :県, class:"field__formlabel"
-      -#   %span.field__formspan 必須
-      -#   %br/
-      -#   .field__formprefecture
-      -#     = f.select :prefecture, Address.prefectures.keys, prompt: '選択してください'
+     
       .field
         .prefecture-wrapper
-          %p.prefecture-p 発送元
+          %p.prefecture-p 県
           %span.formspan-prefecture 必須
         = f.label :prefecture, class:"field__formlabel-prefecture" do
           = f.select :prefecture, Address.prefectures.keys,  {include_blank: true}, {class: 'decoratedselect-from'}
