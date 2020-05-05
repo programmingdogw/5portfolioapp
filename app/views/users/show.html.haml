@@ -10,12 +10,6 @@
 
   -# メイン  
   .pagecontainer__mypagecontents 
-    -# %p ニックネーム
-    -# = @user.nickname
-    -# %p 生年月日
-    -# = @user.birthdate
-    -# %p メールアドレス
-    -# = @user.email
     %ul.menu
       %li.menu__item
         .js-menu__item ユーザー登録情報（クリックで開く）
@@ -29,7 +23,9 @@
             %p 
               ="#{@user.birthdate}"
           %li.submenu__item
-            %a{:href => ""} 会社名とか入れるかも
+            %p 会社名
+            %p 
+              ="#{@user.company_name}"
           %li.submenu__item
             %a{:href => ""} 登録情報変更。ここはリンクでええやろ
         .js-menu__item 出品履歴確認（クリックで開く）
