@@ -26,6 +26,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session["devise.regist_data"][:user]["password"] = params[:user][:password]
     @address = @user.build_address
     render :new_address
+
   end
 
   def create_address
@@ -92,7 +93,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 
   # ユーザーのストロングパラメタ許可はアプリケーションコントローラーに記述してる
-
+  # ここのストロングパラメタは住所側なので注意
   def address_params
     params.require(:address).permit(:lastname, :firstname, :lastname_kana, :firstname_kana,:postal_code, :prefecture, :municipality, :street, :building, :telephone_number )
   end
