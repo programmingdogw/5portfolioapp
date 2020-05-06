@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_04_15_090456) do
 
-  create_table "addresses", force: :cascade do |t|
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.string "lastname", null: false
     t.string "firstname", null: false
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_090456) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "appropriations", force: :cascade do |t|
+  create_table "appropriations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "item_id", null: false
     t.boolean "appropriation"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_090456) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "categories", force: :cascade do |t|
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_090456) do
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
-  create_table "comments", force: :cascade do |t|
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "item_id", null: false
     t.string "comment_content", null: false
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_090456) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "credit_cards", force: :cascade do |t|
+  create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.text "bank", null: false
     t.text "number", null: false
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_090456) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "evaluations", force: :cascade do |t|
+  create_table "evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "item_id", null: false
     t.integer "evaluation"
@@ -68,14 +68,14 @@ ActiveRecord::Schema.define(version: 2020_04_15_090456) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "images", force: :cascade do |t|
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "item_id", null: false
     t.string "image", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "items", force: :cascade do |t|
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "category_id", null: false
     t.string "name", null: false
@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_090456) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "news", force: :cascade do |t|
+  create_table "news", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.text "lead_text", null: false
     t.text "content_text", null: false
@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_090456) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "todos", force: :cascade do |t|
+  create_table "todos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.text "lead_text", null: false
     t.text "content_text", null: false
@@ -113,7 +113,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_090456) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
