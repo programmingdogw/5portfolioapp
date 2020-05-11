@@ -42,7 +42,7 @@ test:
 
 
 production:
-  <<: *default
+  # <<: *default
   database: 5portfolioapp_database
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
