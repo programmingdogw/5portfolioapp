@@ -21,7 +21,7 @@ development:
   database: 5portfolioapp_database_development
   pool: 5
   username: root
-  password:
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   host: localhost
 
 
@@ -36,14 +36,14 @@ test:
   database: 5portfolioapp_database_test
   pool: 5
   username: root
-  password:
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   host: localhost
 
 
 
 production:
   <<: *default
-  database: 5portfolioapp_database
+  database: 5portfolioapp_database_production
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
