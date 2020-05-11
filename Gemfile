@@ -49,6 +49,12 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'faker'
 
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+
   # Use sqlite3 as the database for Active Record
   # gem 'sqlite3'
 end
