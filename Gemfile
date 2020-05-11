@@ -112,3 +112,4 @@ gem 'payjp'
 gem "jquery-rails"
 
 gem "ransack"
+
