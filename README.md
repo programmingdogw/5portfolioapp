@@ -1,5 +1,15 @@
 画像アップ中
 
+階層的なカテゴリ設定機能
+![ptfーcategory](https://user-images.githubusercontent.com/59106983/81794494-d3633e00-9545-11ea-838d-9e2d2c801658.gif)
+
+複数枚画像投稿機能
+![ptfimagepost](https://user-images.githubusercontent.com/59106983/81794802-4c629580-9546-11ea-9657-f8e47bc1fb65.gif)
+
+ハンバーガーメニューで快適にサイト内移動
+![portfolio-hamburger](https://user-images.githubusercontent.com/59106983/81794984-8a5fb980-9546-11ea-8d06-84e29c9a1743.gif)
+
+
 レスポンシブ０
 ![responsive0](https://user-images.githubusercontent.com/59106983/81793742-c1cd6680-9544-11ea-9210-b04b2f00cce9.gif)
 
