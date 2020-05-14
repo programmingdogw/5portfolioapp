@@ -36,6 +36,22 @@ ReadMeは現在作成中です。
 ![portfolio-search](https://user-images.githubusercontent.com/59106983/81924629-55249b80-961a-11ea-9ea5-97e8f9c404a0.gif)
 
 
+並べ替え検索
+![portfolio-orderchange](https://user-images.githubusercontent.com/59106983/81926825-8d79a900-961d-11ea-98dc-c2522816b782.gif)
+
+
+条件検索
+![portfolio-deailsearch](https://user-images.githubusercontent.com/59106983/81926923-c0bc3800-961d-11ea-9565-75a42f7d0074.gif)
+
+
+カテゴリ検索１
+![portfolio-categorysearch](https://user-images.githubusercontent.com/59106983/81926975-d893bc00-961d-11ea-9780-717ee81c6922.gif)
+
+
+カテゴリ検索２
+![portfolio-categorysearch2](https://user-images.githubusercontent.com/59106983/81927016-e8ab9b80-961d-11ea-872a-ee789fab6d36.gif)
+
+
 
 レスポンシブなサイト構成
 
