@@ -12,8 +12,11 @@ ReadMeは現在作成中です。
 ハンバーガーメニューで快適にサイト内移動
 ![portfolio-hamburger](https://user-images.githubusercontent.com/59106983/81794984-8a5fb980-9546-11ea-8d06-84e29c9a1743.gif)
 
+
 ウィザード形式のユーザー登録
 gif作成中
+
+
 様々な検索機能 キーワード、カテゴリ、条件、並び替え等
 gif作成中
 
