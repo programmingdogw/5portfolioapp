@@ -3,22 +3,41 @@ ReadMeは現在作成中です。
 
 画像アップ中
 
+
+ウィザード形式によるユーザー登録機能
+![portfolio-registration](https://user-images.githubusercontent.com/59106983/81923934-5dc8a200-9619-11ea-9d0c-61fb2ba7843a.gif)
+
+
 階層的なカテゴリ設定機能
 ![ptfーcategory](https://user-images.githubusercontent.com/59106983/81794494-d3633e00-9545-11ea-838d-9e2d2c801658.gif)
 
+
+
 複数枚画像投稿機能
 ![ptfimagepost](https://user-images.githubusercontent.com/59106983/81794802-4c629580-9546-11ea-9657-f8e47bc1fb65.gif)
+
+
+標準的な詳細表示・編集・削除機能
+![portfolio-item-detail](https://user-images.githubusercontent.com/59106983/81924080-936d8b00-9619-11ea-94fc-c6d18f440353.gif)
+
 
 ハンバーガーメニューで快適にサイト内移動
 ![portfolio-hamburger](https://user-images.githubusercontent.com/59106983/81794984-8a5fb980-9546-11ea-8d06-84e29c9a1743.gif)
 
 
-ウィザード形式のユーザー登録
-gif作成中
+ユーザーマイページのアコーディオンメニュー（gifと説明文変更予定）
+![portfolio-accordion](https://user-images.githubusercontent.com/59106983/81924555-3920fa00-961a-11ea-86eb-7cfd507a3f11.gif)
 
 
-様々な検索機能 キーワード、カテゴリ、条件、並び替え等
-gif作成中
+様々な検索機能
+
+
+キーワード検索
+![portfolio-search](https://user-images.githubusercontent.com/59106983/81924629-55249b80-961a-11ea-9ea5-97e8f9c404a0.gif)
+
+
+
+レスポンシブなサイト構成
 
 
 レスポンシブ０
