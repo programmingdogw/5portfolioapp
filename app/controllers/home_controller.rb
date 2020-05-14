@@ -95,5 +95,9 @@ class HomeController < ApplicationController
     # エラーハンドリングの遷移先として置いてる
   end
 
+  def help
+    # 一応ヘルプ作ったので定義だけしてる
+  end
+
 
 end

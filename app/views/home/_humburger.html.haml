@@ -7,8 +7,6 @@
     %ul.nav_menu_ul
       %li.nav_menu_li
         = link_to "ホーム", root_path, class:"humburgerlink"
-      %li.nav_menu_li
-        = link_to "ヘルプ", help_path, class: "humburgerlink"
       -if user_signed_in?
         %li.nav_menu_li
           = link_to "マイページ", user_path(current_user), class:"humburgerlink"
@@ -23,7 +21,8 @@
         = link_to "条件検索", search_path, class:"humburgerlink"
       %li.nav_menu_li
         = link_to "カテゴリ一覧", categories_path, class:"humburgerlink"
-    
+      %li.nav_menu_li
+        = link_to "ヘルプ", help_path, class: "humburgerlink"
     
     
     
