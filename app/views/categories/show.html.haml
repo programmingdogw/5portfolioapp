@@ -21,12 +21,13 @@
 
     %p.titlebar 商品一覧
     - @childitems.each do |item|
-      = item.name
+      = link_to "#{item.name}", item_path(item), class:"categorylinks"
       = image_tag item.images.first.image.url
 
     - @grandchilditems.each do |item|
-      = item.name
+      = link_to "#{item.name}", item_path(item), class:"categorylinks"
       = image_tag item.images.first.image.url
+      
 
 
   -# フッター
