@@ -50,4 +50,8 @@ Rails.application.routes.draw do
   get 'get_category_grandchildren', to: 'home#get_category_grandchildren'
   
   resources :categories, only: [:index, :show]
+
+
+  # 静的なページの追加
+  get '/help', to: 'home#help'
 end
