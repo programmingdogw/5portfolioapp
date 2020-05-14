@@ -39,7 +39,7 @@ set :keep_releases, 5
 
 
 # secrets.yml用のシンボリックリンクを追加
-set :linked_files, %w{ config/credentials.yml }
+set :linked_files, %w{ config/credentials.yml.enc }
 
 # 元々記述されていた after 「'deploy:publishing', 'deploy:restart'」以下を削除して、次のように書き換え
 
@@ -49,13 +49,13 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 
-  desc 'upload credentials.yml'
+  desc 'upload credentials.yml.enc'
   task :upload do
     on roles(:app) do |host|
       if test "[ ! -d #{shared_path}/config ]"
         execute "mkdir -p #{shared_path}/config"
       end
-      upload!('config/credentials.yml', "#{shared_path}/config/credentials.yml")
+      upload!('config/credentials.yml.enc', "#{shared_path}/config/credentials.yml.enc")
     end
   end
   before :starting, 'deploy:upload'
