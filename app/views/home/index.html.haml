@@ -36,7 +36,7 @@
     .contentswrapper
       .contentswrapper__item
         -if @item1 != nil
-          = link_to item_path(@item1), class: "" do
+          = link_to item_path(@item1), class: "", data: {"turbolinks" => false} do
             = image_tag @item1.images.first.image.url,  alt: '商品が投稿されていません', :size =>'300x300'
             %br
             = "商品名#{@item1.name}"
@@ -46,7 +46,7 @@
           = image_tag 'noimage.png', class: 'product-image', :size =>'300x300'
       .contentswrapper__item
         -if @item2 != nil
-          = link_to item_path(@item2), class: "" do
+          = link_to item_path(@item2), class: "", data: {"turbolinks" => false} do
             = image_tag @item2.images.first.image.url,  alt: '商品が投稿されていません', :size =>'300x300'
             %br  
             = "商品名#{@item2.name}"
@@ -56,7 +56,7 @@
           = image_tag 'noimage.png', class: 'product-image', :size =>'300x300'
       .contentswrapper__item
         -if @item3 != nil
-          = link_to item_path(@item3), class: "" do
+          = link_to item_path(@item3), class: "", data: {"turbolinks" => false} do
             = image_tag @item3.images.first.image.url,  alt: '商品が投稿されていません' , :size =>'300x300'
             %br  
             = "商品名#{@item3.name}"
@@ -70,7 +70,7 @@
     .contentswrapper
       .contentswrapper__item
         -if @item4 != nil
-          = link_to item_path(@item4), class: "" do
+          = link_to item_path(@item4), class: "", data: {"turbolinks" => false} do
             = image_tag @item4.images.first.image.url,  alt: '商品が投稿されていません', :size =>'300x300'
             %br
             = "商品名#{@item4.name}"
@@ -80,7 +80,7 @@
           = image_tag 'noimage.png', class: 'product-image', :size =>'300x300'
       .contentswrapper__item
         -if @item5 != nil
-          = link_to item_path(@item5), class: "" do
+          = link_to item_path(@item5), class: "", data: {"turbolinks" => false} do
             = image_tag @item5.images.first.image.url,  alt: '商品が投稿されていません', :size =>'300x300'
             %br  
             = "商品名#{@item5.name}"
@@ -90,7 +90,7 @@
           = image_tag 'noimage.png', class: 'product-image', :size =>'300x300'
       .contentswrapper__item
         -if @item6 != nil
-          = link_to item_path(@item6), class: "" do
+          = link_to item_path(@item6), class: "", data: {"turbolinks" => false} do
             = image_tag @item6.images.first.image.url,  alt: '商品が投稿されていません' , :size =>'300x300'
             %br  
             = "商品名#{@item6.name}"

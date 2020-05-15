@@ -131,12 +131,16 @@ class ItemsController < ApplicationController
   require 'payjp'
 
     def purchase
+      
+      @item = Item.find(params["item_id"])
+
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
       Payjp::Charge.create(
-        amount: 809, # 決済する値段
+        amount: @item.price, # 決済する値段
         card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
         currency: 'jpy'
       )
+
     end
 
   
