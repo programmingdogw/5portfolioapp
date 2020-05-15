@@ -133,6 +133,9 @@ class ItemsController < ApplicationController
     def purchase
       
       @item = Item.find(params["item_id"])
+      @item.sold = true
+      @item.auction = false
+      @item.save
 
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
       Payjp::Charge.create(
