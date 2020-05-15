@@ -29,6 +29,12 @@ ReadMeは現在作成中です。
 ![portfolio-accordion](https://user-images.githubusercontent.com/59106983/81924555-3920fa00-961a-11ea-86eb-7cfd507a3f11.gif)
 
 
+payjpを使った決済
+
+
+マイページから売り上げや出品中、売却済みの商品の確認等が可能（上のアコーディオンと挿し替える）
+
+
 様々な検索機能
 
 
