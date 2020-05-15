@@ -36,11 +36,11 @@
           %li.submenu__item
             %p 現在までの売り上げ
             %p 
-              ="#{@user.sales}円購入されています"
+              ="売り上げ：#{@user.sales}円の売り上げました"
           %li.submenu__item
             %p 現在までの利益（出金は１０００円単位です）
             %p 
-              ="#{@user.sales * 0.9}円があなたの利益になります"
+              ="利益：#{@user.sales * 0.9}円があなたの利益になります"
 
   
         .js-menu__item 出品中の商品（クリックで開く）
