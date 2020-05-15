@@ -83,6 +83,8 @@
         - elsif @user != current_user
           .purchase-div
             = link_to '商品購入', edit_user_path(current_user), class: "btnlink"
+            = form_with url: item_purchase_path(@item) do
+              %script.payjp-button{"data-key" => Rails.application.credentials.payjp[:PAYJP_PUBLIC_KEY], src: "https://checkout.pay.jp", type: "text/javascript"}
         - else
           .extra-div
             %p これが表示されることはないはず

@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   
-  before_action :set_item, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren]
+  before_action :set_item, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren, :purchase]
   
   
     def index
@@ -57,6 +57,10 @@ class ItemsController < ApplicationController
       @child = Category.find(@item.childcategory)
       @grandchild = Category.find(@item.category_id)
       @price = @item.price.to_s(:delimited, delimiter: ',')
+
+      
+      gon.payjp_public_key = Rails.application.credentials.payjp[:PAYJP_PUBLIC_KEY]
+    
     end
   
   
@@ -124,7 +128,21 @@ class ItemsController < ApplicationController
     end
   
     
-  
+  require 'payjp'
+
+    def purchase
+      
+      @item = Item.find(params["item_id"])
+
+      Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
+      Payjp::Charge.create(
+        amount: @item.price, # 決済する値段
+        card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
+        currency: 'jpy'
+      )
+
+    end
+
   
     
   

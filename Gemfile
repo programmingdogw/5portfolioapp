@@ -113,3 +113,6 @@ gem "jquery-rails"
 
 gem "ransack"
 
+gem "gon"
+
+gem "dotenv-rails"
