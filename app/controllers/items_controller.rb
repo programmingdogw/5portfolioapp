@@ -69,6 +69,9 @@ class ItemsController < ApplicationController
   
     def edit
       @item = Item.find(params[:id])
+      if @item.sold == 1
+        redirect_to unexpectederrors_path
+      end
        #セレクトボックスの初期値設定
        @category_parent_array = ["---"]
        #データベースから、親カテゴリーのみ抽出し、配列化
