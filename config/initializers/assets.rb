@@ -24,6 +24,7 @@ Rails.application.config.assets.precompile += %w( search.scss )
 
 Rails.application.config.assets.precompile += %w( users.scss )
 Rails.application.config.assets.precompile += %w( users_show.scss )
+Rails.application.config.assets.precompile += %w( users_edit.scss )
 
 
 Rails.application.config.assets.precompile += %w( items_new.scss )

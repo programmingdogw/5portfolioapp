@@ -54,4 +54,6 @@ Rails.application.routes.draw do
 
   # 静的なページの追加
   get '/help', to: 'home#help'
+
+
 end

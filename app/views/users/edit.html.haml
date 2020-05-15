@@ -1,0 +1,14 @@
+= stylesheet_link_tag 'users_edit'
+
+.pagecontainer
+  -# ヘッダー
+  %header.pagecontainer__header
+    = render 'home/humburger'
+    =link_to image_tag('logo.png', alt: "ロゴ画像", class:"logolink__image"), root_path, class: "logolink"
+
+  -# メイン
+  .pagecontainer__usersedit
+    %p 購入ページ兼ユーザー編集ページ
+
+  -# フッター
+  = render partial:'devise/registrations/footer'

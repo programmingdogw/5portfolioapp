@@ -82,7 +82,7 @@
             = link_to '商品削除', item_path(@item), method: :delete, class: "btnlink"
         - elsif @user != current_user
           .purchase-div
-            = link_to '商品購入', '#', class: "btnlink"
+            = link_to '商品購入', edit_user_path(current_user), class: "btnlink"
         - else
           .extra-div
             %p これが表示されることはないはず
