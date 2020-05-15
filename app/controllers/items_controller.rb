@@ -61,6 +61,7 @@ class ItemsController < ApplicationController
       
       gon.payjp_public_key = Rails.application.credentials.payjp[:PAYJP_PUBLIC_KEY]
     
+    
     end
   
   
@@ -147,7 +148,6 @@ class ItemsController < ApplicationController
       @user.sales = @user.sales + @item.price
       @user.save
 
-      binding.pry
 
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
       Payjp::Charge.create(

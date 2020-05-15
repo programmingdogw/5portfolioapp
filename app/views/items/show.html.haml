@@ -76,8 +76,9 @@
 
       - if user_signed_in?
         - if @user == current_user
-          .edit-div
-            = link_to '商品情報編集', edit_item_path(@item), class: "btnlink"
+          -if @item.sold == false
+            .edit-div
+              = link_to '商品情報編集', edit_item_path(@item), class: "btnlink"
           .delete-div
             = link_to '商品削除', item_path(@item), method: :delete, class: "btnlink"
         - elsif @user != current_user

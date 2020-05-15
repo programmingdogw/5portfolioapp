@@ -42,15 +42,7 @@
             %p 
               ="#{@user.sales * 0.9}円があなたの利益になります"
 
-        -# - @auctionitems.each do |item|
-        -#   %li
-        -#     = item.name
-        -# - @solditems.each do |item|
-        -#   %li
-        -#     = item.name
-        
-
-         
+  
         .js-menu__item 出品中の商品（クリックで開く）
         %ul.submenu
           - @auctionitems.each do |item|
