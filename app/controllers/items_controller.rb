@@ -61,6 +61,7 @@ class ItemsController < ApplicationController
       
       gon.payjp_public_key = Rails.application.credentials.payjp[:PAYJP_PUBLIC_KEY]
     
+    
     end
   
   
@@ -69,6 +70,9 @@ class ItemsController < ApplicationController
   
     def edit
       @item = Item.find(params[:id])
+      if @item.sold == 1
+        redirect_to unexpectederrors_path
+      end
        #セレクトボックスの初期値設定
        @category_parent_array = ["---"]
        #データベースから、親カテゴリーのみ抽出し、配列化
@@ -133,6 +137,17 @@ class ItemsController < ApplicationController
     def purchase
       
       @item = Item.find(params["item_id"])
+      @item.sold = true
+      @item.auction = false
+      @item.save
+
+      @user = User.find(@item.user_id)
+      if @user.sales == nil
+        @user.sales = 0
+      end
+      @user.sales = @user.sales + @item.price
+      @user.save
+
 
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
       Payjp::Charge.create(

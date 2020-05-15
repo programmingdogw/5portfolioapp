@@ -27,37 +27,53 @@
             %p 
               ="#{@user.company_name}"
           %li.submenu__item
-            %a{:href => ""} 残高： ０円
-        .js-menu__item 残高確認（クリックで開く）
-        %ul.submenu
-          %li.submenu__item
-            %a{:href => ""} 未実装。pay.jpはダミーで動かせるっぽいからそれ使おうかな
-          %li.submenu__item
-            %a{:href => ""} 未実装メニュー2
-          %li.submenu__item
-            %a{:href => ""} 未実装メニュー3
-          %li.submenu__item
-            %a{:href => ""} 未実装メニュー4
-        .js-menu__item 出品履歴確認（クリックで開く）
-        %ul.submenu
-          %li.submenu__item
-            %a{:href => ""} 未実装。改装中。商品の状態などを確認できるようにする。
-          %li.submenu__item
-            %a{:href => ""} 未実装メニュー2
-          %li.submenu__item
-            %a{:href => ""} 未実装メニュー3
-          %li.submenu__item
-            %a{:href => ""} 未実装メニュー4
+            %p e-mail
+            %p 
+              ="#{@user.email}"
+            
         .js-menu__item 売り上げ確認（クリックで開く）
         %ul.submenu
           %li.submenu__item
-            %a{:href => ""} 未実装。改装中。
+            %p 現在までの売り上げ
+            %p 
+              ="#{@user.sales}円購入されています"
           %li.submenu__item
-            %a{:href => ""} 未実装メニュー２
-          %li.submenu__item
-            %a{:href => ""} 未実装メニュー3
-          %li.submenu__item
-            %a{:href => ""} 未実装メニュー4
+            %p 現在までの利益（出金は１０００円単位です）
+            %p 
+              ="#{@user.sales * 0.9}円があなたの利益になります"
+
+  
+        .js-menu__item 出品中の商品（クリックで開く）
+        %ul.submenu
+          - @auctionitems.each do |item|
+            %li.submenu__item
+              = link_to "商品名:#{item.name}", item_path(item), class: "", data: {"turbolinks" => false} 
+        
+        .js-menu__item 売却済みの商品（クリックで開く）
+        %ul.submenu
+          - @solditems.each do |item|
+            %li.submenu__item
+              = link_to "商品名:#{item.name}", item_path(item), class: "", data: {"turbolinks" => false}
+        
+          -# %li.submenu__item
+          -#   %a{:href => ""} 未実装。改装中。商品の状態などを確認できるようにする。
+          -# %li.submenu__item
+          -#   %a{:href => ""} 未実装メニュー2
+          -# %li.submenu__item
+          -#   %a{:href => ""} 未実装メニュー3
+          -# %li.submenu__item
+          -#   %a{:href => ""} 未実装メニュー4
+
+        -# .js-menu__item ダミーメニュー
+        -# %ul.submenu
+        -#   %li.submenu__item
+        -#     %a{:href => ""} ダミーメニュー１
+        -#   %li.submenu__item
+        -#     %a{:href => ""} ダミーメニュー２
+        -#   %li.submenu__item
+        -#     %a{:href => ""} ダミーメニュー３
+        -#   %li.submenu__item
+        -#     %a{:href => ""} ダミーメニュー４
         
         
 

@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   def search
     @user = current_user
-    @firstitems = Item.firstsearch(params[:firstsearch])
+    @firstitems = Item.firstsearch(params[:firstsearch]).where(sold: 0)
   
     
     @search = Item.ransack(params[:q])  #ransack
@@ -52,7 +52,7 @@ class HomeController < ApplicationController
   
     @user = current_user
     
-    @pickupitems = Item.includes(:images).last(6)
+    @pickupitems = Item.includes(:images).where(sold: 0).last(6)
     @item1 = @pickupitems[0]
     @item2 = @pickupitems[1] 
     @item3 = @pickupitems[2]
