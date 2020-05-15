@@ -140,6 +140,15 @@ class ItemsController < ApplicationController
       @item.auction = false
       @item.save
 
+      @user = User.find(@item.user_id)
+      if @user.sales == nil
+        @user.sales = 0
+      end
+      @user.sales = @user.sales + @item.price
+      @user.save
+
+      binding.pry
+
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
       Payjp::Charge.create(
         amount: @item.price, # 決済する値段
