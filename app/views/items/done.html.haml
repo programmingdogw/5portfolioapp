@@ -1,1 +1,19 @@
-購入完了です
+= stylesheet_link_tag 'items_done'
+
+.pagecontainer
+
+  -# ヘッダー
+  .pagecontainer__doneheader
+    = render 'home/humburger'
+    .firststage
+    =link_to image_tag('logo.png', alt: "ロゴ画像", class:"headerlogo"), root_path
+
+  -# メイン
+  .pagecontainer__donecontents
+    %p 購入完了です
+    
+  
+  
+  -# フッター
+  = render 'home/topfooter'
+  
