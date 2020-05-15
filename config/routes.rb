@@ -33,7 +33,7 @@ Rails.application.routes.draw do
 
     get 'images/destroy'
     post 'purchase'
-    
+    get 'done'
   end
   
 

@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   
-  before_action :set_item, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren, :purchase]
+  before_action :set_item, except: [:index, :new, :create, :get_category_children, :get_category_grandchildren, :purchase, :done]
   
   
     def index
@@ -141,7 +141,13 @@ class ItemsController < ApplicationController
         currency: 'jpy'
       )
 
+      redirect_to action: :done
     end
+
+    def done
+      # 購入完了を表示するだけ
+    end
+    
 
   
     
