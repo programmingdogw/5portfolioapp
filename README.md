@@ -98,5 +98,3 @@
 ### レスポンシブ３
 ![responsive3](https://user-images.githubusercontent.com/59106983/81794121-3f917200-9545-11ea-8f81-5afdc76724d7.gif)
 
-### レスポンシブ４
-![responsive4 (1)](https://user-images.githubusercontent.com/59106983/81794186-5df76d80-9545-11ea-9ea3-3b5f5f40da50.gif)
