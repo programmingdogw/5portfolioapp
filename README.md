@@ -73,10 +73,6 @@
 ![portfoliocomments](https://user-images.githubusercontent.com/59106983/82196658-f2424580-9934-11ea-8dc7-61a4ffbc9cf6.gif)
 
 
-### ハンバーガーメニューで快適にサイト内移動
-![portfolio-hamburger](https://user-images.githubusercontent.com/59106983/81794984-8a5fb980-9546-11ea-8d06-84e29c9a1743.gif)
-
-
 ### payjpを使った決済
 ![portfolio-payjp_1](https://user-images.githubusercontent.com/59106983/82042461-db0d1900-96e4-11ea-9c5a-1562ee7cb387.gif)
 
@@ -84,6 +80,9 @@
 ### マイページから売り上げや出品中、売却済みの商品の確認等が可能
 ![portfolio-sales_1](https://user-images.githubusercontent.com/59106983/82042514-f6782400-96e4-11ea-894d-a17c26dd1dd2.gif)
 
+
+### ハンバーガーメニューで快適にサイト内移動
+![portfolio-hamburger](https://user-images.githubusercontent.com/59106983/81794984-8a5fb980-9546-11ea-8d06-84e29c9a1743.gif)
 
 
 ## 様々な検索機能
