@@ -95,8 +95,10 @@
           = link_to '購入（ログイン）', new_user_session_path, class: "btnlink"
 
     .itemexplanation
-      = @item.description
-      
+      .itemexplanation__title 商品説明
+      .itemexplanation__content
+        - text = @item.description
+        = simple_format text
     .comments
       - if current_user
         = form_with(model: [@item, @comment]) do |form|

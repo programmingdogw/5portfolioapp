@@ -242,6 +242,21 @@
       }
     }
 
+    .itemexplanation{
+      text-align: center;
+      &__title{
+        font-size: 20px;
+        color:grey;
+      }
+      &__content{
+        margin: auto;
+        width: 70%;
+        min-height: 150px;
+        background-color:rgb(230, 223, 223);
+        padding: 13px;
+        text-align: left;
+      }
+    }
 
 
   }
