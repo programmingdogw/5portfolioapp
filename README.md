@@ -124,3 +124,8 @@
 ### レスポンシブ３
 ![responsive3](https://user-images.githubusercontent.com/59106983/81794121-3f917200-9545-11ea-8f81-5afdc76724d7.gif)
 
+
+### ※
+一部アップデートや改装によりgif画像と異なる場合がありますがご了承ください
+
+
