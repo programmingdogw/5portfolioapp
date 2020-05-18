@@ -95,6 +95,24 @@
           = link_to '購入（ログイン）', new_user_session_path, class: "btnlink"
 
     .itemexplanation
+      = @item.description
+      
+    .comments
+      - if current_user
+        = form_with(model: [@item, @comment]) do |form|
+          = form.text_field :comment_content, placeholder: "コメントする"
+          = form.submit "SEND"
+      - else
+        %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+
+      %h4 ＜コメント一覧＞
+      - if @comments
+        - @comments.each do |comment|
+          %p
+            %strong
+              = link_to comment.user.nickname, "/users/#{comment.user_id}"
+              ：
+            = comment.comment_content
 
     
 

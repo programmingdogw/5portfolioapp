@@ -60,6 +60,9 @@ class ItemsController < ApplicationController
 
       
       gon.payjp_public_key = Rails.application.credentials.payjp[:PAYJP_PUBLIC_KEY]
+
+      @comment = Comment.new
+      @comments = @item.comments.includes(:user)
     
     
     end
