@@ -177,6 +177,7 @@
       padding:50px;
     }
 
+    // 編集・削除・購入
     .purchase-or-edit-delete{
       .edit-div{
         font-size: 25px;
@@ -242,6 +243,7 @@
       }
     }
 
+    // 商品説明
     .itemexplanation{
       text-align: center;
       &__title{
@@ -254,8 +256,14 @@
         min-height: 150px;
         background-color:rgb(230, 223, 223);
         padding: 13px;
+        border-radius: 10px;
         text-align: left;
       }
+    }
+
+    // コメント
+    .itemcomments{
+      background-color: red;
     }
 
 
