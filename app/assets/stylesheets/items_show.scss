@@ -177,6 +177,7 @@
       padding:50px;
     }
 
+    // 編集・削除・購入
     .purchase-or-edit-delete{
       .edit-div{
         font-size: 25px;
@@ -242,6 +243,71 @@
       }
     }
 
+    
+
+    // 商品説明
+    .itemexplanation{
+      text-align: center;
+      &__title{
+        font-size: 20px;
+        color:grey;
+      }
+      &__content{
+        margin: auto;
+        width: 70%;
+        min-height: 150px;
+        background-color:rgb(230, 223, 223);
+        padding: 13px;
+        border-radius: 10px;
+        text-align: left;
+      }
+    }
+    // 横棒
+    .simplebar{
+      margin: auto;
+      width:90%;
+      background: lightgray;
+      height:1px;
+      margin-top:30px;
+    }
+
+    // コメント
+    .itemcomments{
+      margin-top: 20px;
+      text-align: center;
+      &__wrapper{
+        justify-content: column;
+        .commentform{
+          line-height: 40px;
+          width: 80%;
+          margin-bottom: 10px;
+        }
+        
+      }
+      .submitbtn{
+        background-color: lightskyblue;
+        color: white;
+        margin-left: 15px;
+        width: 60px;
+        height: 30px;
+        border-radius: 10px;
+      }
+      .commentp{
+        text-align: center;
+        color: grey;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+      .comments-indexp{
+        background-color: white;
+        width: 80%;
+        margin: auto;
+        border: solid 0.5px lightgrey;
+        text-align: left;
+        line-height: 33px;
+      }
+
+    }
 
 
   }

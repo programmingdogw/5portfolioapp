@@ -34,6 +34,9 @@ Rails.application.routes.draw do
     get 'images/destroy'
     post 'purchase'
     get 'done'
+
+    resources :comments, only: :create
+    
   end
   
 
