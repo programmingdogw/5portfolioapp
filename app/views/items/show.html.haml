@@ -71,6 +71,7 @@
     .itemcost
       ="商品代金    #{@price}円"
 
+
     -# 編集・削除・商品購入
     .purchase-or-edit-delete
 
@@ -94,31 +95,32 @@
         .purchase-login
           = link_to '購入（ログイン）', new_user_session_path, class: "btnlink"
 
+    .simplebar
+
     -# 商品説明
     .itemexplanation
       .itemexplanation__title 商品説明
       .itemexplanation__content
         - text = @item.description
         = simple_format text
-
+    .simplebar
 
     -# コメント
     .itemcomments
       - if current_user
         = form_with(model: [@item, @comment]) do |form|
           .itemcomments__wrapper
-            = form.text_field :comment_content, placeholder: "コメントする"
-            = form.submit "SEND"
+            = form.text_field :comment_content, placeholder: "コメントする", class: "commentform"
+          = form.submit "送信", class:"submitbtn"
       - else
-        %p.commentp ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+        %p.commentp  コメントを投稿するにはログインが必要です。 
 
-      %h4 ＜コメント一覧＞
+      %p.commentp ＜コメント一覧＞
       - if @comments
         - @comments.each do |comment|
-          %p
-            %strong
-              = link_to comment.user.nickname, "/users/#{comment.user_id}"
-              ：
+          %p.comments-indexp
+            = link_to comment.user.nickname, "/users/#{comment.user_id}"
+            ：
             = comment.comment_content
 
     
