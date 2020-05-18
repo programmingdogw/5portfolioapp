@@ -61,12 +61,16 @@
 
 
 
-### 複数枚画像投稿機能
+### 複数枚画像投稿できる出品機能
 ![ptfimagepost](https://user-images.githubusercontent.com/59106983/81794802-4c629580-9546-11ea-9657-f8e47bc1fb65.gif)
 
 
 ### 標準的な詳細表示・編集・削除機能
 ![portfolio-item-detail](https://user-images.githubusercontent.com/59106983/81924080-936d8b00-9619-11ea-94fc-c6d18f440353.gif)
+
+
+### 商品に対するコメント機能
+![portfoliocomments](https://user-images.githubusercontent.com/59106983/82196658-f2424580-9934-11ea-8dc7-61a4ffbc9cf6.gif)
 
 
 ### ハンバーガーメニューで快適にサイト内移動
