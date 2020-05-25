@@ -1,3 +1,26 @@
+# 主に使用した技術・言語
+  - ruby
+  - ruby on rails
+  - haml
+  - sass
+  - jQuery
+  - mySQL
+  - AWS(EC2,S3,IAM)
+  - unicorn
+  - nginx
+  - gemなどの細かな部分
+    - devise
+    - ancestry
+    - mini-magick
+    - carrier-wave
+    - active-hash
+    - ransack
+    - payjp
+    - fog-aws
+# 概要
+
+商品の出品・検索・購入・利益の確認ができるアプリ
+
 
 ## 何故作ったか
 
