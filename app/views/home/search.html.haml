@@ -97,12 +97,13 @@
             = link_to "詳細へ", item_path(item)
  
       -else
-        - @result.each do |item|
+        - @notsoldresult.each do |item|
           .changewrapper{"data-price": "#{item.price}"}
             =item.name
             =image_tag item.images.first.image.url
             = "#{item.price}円"
             = link_to "詳細へ", item_path(item)
+            
 
 
   = render "topfooter"

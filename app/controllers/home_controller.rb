@@ -2,10 +2,18 @@ class HomeController < ApplicationController
 
   def search
     @user = current_user
-    @firstitems = Item.firstsearch(params[:firstsearch])
+    
+    @preitems = Item.firstsearch(params[:firstsearch])
+
+    if @preitems != nil
+      @firstitems = @preitems.where(sold: 0)
+    end
     
     @search = Item.ransack(params[:q])  #ransack
     @result = @search.result        #ransack
+    @notsoldresult = @result.where(sold: 0)
+
+
 
     @allparentcategories = Category.where(ancestry: nil)
     
