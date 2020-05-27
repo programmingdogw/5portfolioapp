@@ -2,8 +2,7 @@ class HomeController < ApplicationController
 
   def search
     @user = current_user
-    @firstitems = Item.firstsearch(params[:firstsearch]).where(sold: 0)
-  
+    @firstitems = Item.firstsearch(params[:firstsearch])
     
     @search = Item.ransack(params[:q])  #ransack
     @result = @search.result        #ransack
